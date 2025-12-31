@@ -14,7 +14,7 @@
   {#each basicItems as item}
     <div class="flex items-center gap-1.5">
       <kbd
-        class="kbd kbd-sm shadow-none border-none flex items-center justify-center text-[14px]"
+        class="kbd kbd-sm shadow-none border-none flex items-center justify-center text-[14px] select-none"
         style="background-color: {item.color}">{item.action}</kbd
       >
       <span class="text-base-content/70">{item.label}</span>
@@ -26,7 +26,7 @@
     {#each doubleItems as item}
       <div class="flex items-center gap-1.5">
         <kbd
-          class="kbd kbd-sm shadow-none border-none flex items-center justify-center text-[13px]"
+          class="kbd kbd-sm shadow-none border-none flex items-center justify-center text-[13px] select-none"
           style="background-color: {item.color}">{item.action}</kbd
         >
         <span class="text-base-content/70">{item.label}</span>

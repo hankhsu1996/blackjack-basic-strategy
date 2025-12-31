@@ -15,7 +15,7 @@
       <tr>
         {#each data.headers as header}
           <th
-            class="w-7 h-6 lg:w-8 lg:h-7 text-center text-xs lg:text-sm font-medium text-base-content/60"
+            class="w-7 h-6 lg:w-8 lg:h-7 text-center text-xs lg:text-sm font-medium text-base-content/60 select-none"
           >
             {header}
           </th>
@@ -26,7 +26,7 @@
       {#each data.rows as row}
         <tr>
           <td
-            class="w-7 h-6 lg:w-8 lg:h-7 text-center text-xs lg:text-sm font-medium text-base-content/60"
+            class="w-7 h-6 lg:w-8 lg:h-7 text-center text-xs lg:text-sm font-medium text-base-content/60 select-none"
           >
             {row.label}
           </td>
