@@ -1,8 +1,8 @@
-# Blackjack Basic Strategy Generator
+# Blackjack Basic Strategy
 
 ## Project Overview
 
-A Python project that generates mathematically optimal blackjack basic strategy tables based on configurable game rules. The strategy is computed using Expected Value (EV) calculations. Includes an interactive web app for visualization.
+Interactive blackjack basic strategy calculator for any rule combination. The strategy is computed using Expected Value (EV) calculations. House edge is verified using Monte Carlo simulation on GPU with CUDA.
 
 **Live Demo**: https://hankhsu1996.github.io/blackjack-basic-strategy/
 

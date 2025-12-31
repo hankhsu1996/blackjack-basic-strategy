@@ -1,6 +1,6 @@
 # Blackjack Basic Strategy
 
-An interactive tool that calculates mathematically optimal blackjack play for any rule combination.
+Interactive blackjack basic strategy calculator for any rule combination.
 
 **[Try it now](https://hankhsu1996.github.io/blackjack-basic-strategy/)**
 
@@ -21,13 +21,18 @@ The strategy is computed using Expected Value (EV) analysis:
 
 The calculations use composition-dependent probabilities, adjusting for cards already seen (your hand + dealer's upcard). This matches how basic strategy charts are computed for real casino conditions.
 
-## Local Development
+House edge is verified using Monte Carlo simulation running on GPU with CUDA.
+
+## Development
 
 ```bash
-# Generate strategy data
+# Install dependencies
+uv sync
+
+# Generate strategy JSON files
 uv run python -m scripts.generate_strategies
 
-# Start dev server
+# Start web dev server
 cd web && npm install && npm run dev
 ```
 
@@ -37,4 +42,4 @@ MIT
 
 ## Credits
 
-[Poker chip icons created by IconsNova - Flaticon](https://www.flaticon.com/free-icons/poker-chip)
+[Playing cards icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/playing-cards)

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hankhsu1996.github.io/blackjack-basic-strategy/sitemap.xml
