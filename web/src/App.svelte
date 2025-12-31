@@ -87,9 +87,9 @@
     </div>
   {/if}
 
-  <!-- Desktop Sidebar -->
+  <!-- Desktop Sidebar (fixed) -->
   <aside
-    class="hidden lg:flex w-72 shrink-0 bg-base-200 p-4 h-screen h-[100dvh] overflow-y-auto flex-col"
+    class="hidden lg:flex fixed left-0 top-0 w-72 bg-base-200 p-4 h-screen h-[100dvh] overflow-y-auto flex-col"
   >
     <h1 class="font-semibold mt-4 mb-10 text-center">Blackjack Basic Strategy</h1>
 
@@ -111,31 +111,33 @@
   </aside>
 
   <!-- Strategy Tables -->
-  <div class="flex-1 p-4 pt-8 pb-32 lg:pt-4 lg:pb-4 overflow-auto flex flex-col items-center justify-center">
+  <div class="flex-1 p-4 pt-8 pb-32 lg:pt-4 lg:pb-4 overflow-auto flex flex-col items-center lg:items-start justify-center">
     {#if error}
       <div class="alert alert-error">
         <span>{error}</span>
       </div>
     {:else if strategyData}
-      <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 lg:-ml-36">
-        <StrategyTable title="Hard Totals" data={strategyData.hard} />
-        <StrategyTable title="Soft Totals" data={strategyData.soft} />
-        <StrategyTable title="Pairs" data={strategyData.pairs} />
-      </div>
-
-      <Legend />
-
-      <!-- House Edge (only shown when MC data is available) -->
-      {#if currentMC}
-        <div class="text-center text-sm text-base-content/70 mt-4 flex items-center justify-center gap-1">
-          House Edge:
-          <span class="font-medium">{currentMC.house_edge.toFixed(3)}%</span>
-          <span class="text-base-content/50">&plusmn; {currentMC.ci.toFixed(3)}%</span>
-          <div class="tooltip tooltip-left lg:tooltip-top before:max-w-[200px] lg:before:max-w-xs before:text-xs lg:before:text-sm before:text-left before:bg-base-200 before:text-base-content before:p-2 lg:before:p-3" data-tip="Monte Carlo simulation ({currentMC.hands_billions}B hands){strategyData?.config.num_decks === 0 ? '' : ', 75% penetration'}. Simulates real casino play.">
-            <Info size={13} class="opacity-50 hover:opacity-100 cursor-help" />
-          </div>
+      <div class="contents lg:block lg:w-fit lg:mx-auto" style="margin-left: max(18rem, calc(50% - 530px))">
+        <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+          <StrategyTable title="Hard Totals" data={strategyData.hard} />
+          <StrategyTable title="Soft Totals" data={strategyData.soft} />
+          <StrategyTable title="Pairs" data={strategyData.pairs} />
         </div>
-      {/if}
+
+        <Legend />
+
+        <!-- House Edge (only shown when MC data is available) -->
+        {#if currentMC}
+          <div class="text-center text-sm text-base-content/70 mt-4 flex items-center justify-center gap-1">
+            House Edge:
+            <span class="font-medium">{currentMC.house_edge.toFixed(3)}%</span>
+            <span class="text-base-content/50">&plusmn; {currentMC.ci.toFixed(3)}%</span>
+            <div class="tooltip tooltip-left lg:tooltip-top before:max-w-[200px] lg:before:max-w-xs before:text-xs lg:before:text-sm before:text-left before:bg-base-200 before:text-base-content before:p-2 lg:before:p-3" data-tip="Monte Carlo simulation ({currentMC.hands_billions}B hands){strategyData?.config.num_decks === 0 ? '' : ', 75% penetration'}. Simulates real casino play.">
+              <Info size={13} class="opacity-50 hover:opacity-100 cursor-help" />
+            </div>
+          </div>
+        {/if}
+      </div>
     {/if}
   </div>
 </main>
