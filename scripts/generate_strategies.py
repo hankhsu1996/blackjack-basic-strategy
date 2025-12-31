@@ -7,7 +7,7 @@ from concurrent.futures import ProcessPoolExecutor
 from itertools import product
 from pathlib import Path
 
-from src.blackjack import GameConfig, HouseEdgeCalculator, StrategyTables
+from src.blackjack import GameConfig, StrategyTables
 
 
 def config_to_filename(config: GameConfig) -> str:
@@ -88,9 +88,6 @@ def generate_for_base_config(base_params: tuple) -> list[dict]:
 
             filename = config_to_filename(config)
 
-            # Calculate house edge (this depends on blackjack_pays and max_split_hands)
-            house_edge = HouseEdgeCalculator(config).calculate()
-
             data = {
                 "config": {
                     "num_decks": config.num_decks,
@@ -102,7 +99,6 @@ def generate_for_base_config(base_params: tuple) -> list[dict]:
                     "blackjack_pays": config.blackjack_pays,
                     "description": str(config),
                 },
-                "house_edge": round(house_edge, 4),
                 **table_data,
             }
 
@@ -113,11 +109,10 @@ def generate_for_base_config(base_params: tuple) -> list[dict]:
                 {
                     "filename": filename,
                     "config": data["config"],
-                    "house_edge": data["house_edge"],
                 }
             )
 
-            print(f"Generated: {filename} (house edge: {house_edge:.4f}%)")
+            print(f"Generated: {filename}")
 
     return results
 

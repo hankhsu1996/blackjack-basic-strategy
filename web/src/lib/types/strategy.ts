@@ -21,7 +21,6 @@ export interface TableData {
 
 export interface StrategyData {
   config: Config;
-  house_edge: number;
   hard: TableData;
   soft: TableData;
   pairs: TableData;
