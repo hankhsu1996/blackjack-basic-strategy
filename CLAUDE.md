@@ -2,9 +2,25 @@
 
 ## Project Overview
 
-A Python project that generates mathematically optimal blackjack basic strategy tables based on configurable game rules. The strategy is computed using Expected Value (EV) calculations.
+A Python project that generates mathematically optimal blackjack basic strategy tables based on configurable game rules. The strategy is computed using Expected Value (EV) calculations. Includes an interactive web app for visualization.
+
+**Live Demo**: https://hankhsu1996.github.io/blackjack-basic-strategy/
 
 ## Quick Start
+
+### Web App (Recommended)
+
+```bash
+# Generate strategy JSON files
+uv run python -m scripts.generate_strategies
+
+# Start dev server
+cd web && npm run dev
+```
+
+Open http://localhost:5173/blackjack-basic-strategy/
+
+### CLI
 
 ```bash
 # Text output to terminal
@@ -12,66 +28,86 @@ uv run main.py
 
 # HTML output (color-coded)
 uv run main.py --format html
-
-# Custom output file
-uv run main.py --format html --output my-strategy.html
-```
-
-## CLI Options
-
-| Option | Description |
-|--------|-------------|
-| `-f, --format` | Output format: `text` (default) or `html` |
-| `-o, --output` | Output file path (default: stdout for text, strategy.html for HTML) |
-
-## Development
-
-Setup (installs dependencies automatically):
-```bash
-uv sync
-```
-
-Run:
-```bash
-uv run main.py
-```
-
-Lint:
-```bash
-uv run ruff check .
-```
-
-Format:
-```bash
-uv run ruff format .
-```
-
-Lint and fix auto-fixable issues:
-```bash
-uv run ruff check --fix .
 ```
 
 ## Project Structure
 
 ```
-src/blackjack/
-├── config.py      # GameConfig dataclass - all rule variations
-├── cards.py       # Card values, probabilities, hand_value()
-├── dealer.py      # DealerProbabilities - dealer outcome distribution
-├── evaluator.py   # EVCalculator - EV for stand/hit/double/split
-├── strategy.py    # BasicStrategy - optimal action selection
-├── tables.py      # StrategyTables - data generation
-└── renderers.py   # TextRenderer, HTMLRenderer - output formatting
+├── src/blackjack/       # Python strategy calculation
+│   ├── config.py        # GameConfig dataclass
+│   ├── cards.py         # Card values, probabilities
+│   ├── dealer.py        # Dealer outcome distribution
+│   ├── evaluator.py     # EV calculations
+│   ├── strategy.py      # Optimal action selection
+│   ├── tables.py        # Strategy data generation
+│   └── renderers.py     # Text/HTML renderers
+├── scripts/
+│   └── generate_strategies.py  # Generate JSON for web app
+├── web/                 # Svelte + Tailwind + DaisyUI
+│   ├── src/
+│   │   ├── App.svelte
+│   │   └── lib/
+│   │       ├── components/   # UI components
+│   │       ├── stores/       # Svelte stores
+│   │       ├── types/        # TypeScript types
+│   │       └── utils/        # Color utilities
+│   └── public/strategies/    # Pre-computed JSON (generated)
+└── main.py              # CLI entry point
 ```
+
+## Development
+
+### Python
+
+```bash
+uv sync                      # Install dependencies
+uv run main.py               # Run CLI
+uv run ruff check .          # Lint
+uv run ruff format .         # Format
+```
+
+### Web App
+
+```bash
+cd web
+npm install                  # Install dependencies
+npm run dev                  # Dev server
+npm run build                # Production build
+```
+
+### Generate Strategy JSON
+
+```bash
+uv run python -m scripts.generate_strategies
+```
+
+Generates 96 JSON files (6 deck options × 2⁴ boolean options) to `web/public/strategies/`.
+
+## Configuration Options
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| num_decks | 6 | Number of decks (0 = infinite) |
+| dealer_hits_soft_17 | False | H17 vs S17 rule |
+| double_after_split | True | DAS allowed |
+| resplit_aces | False | RSA allowed |
+| dealer_peeks | True | Dealer checks for blackjack |
+
+## Action Codes
+
+- `S` - Stand
+- `H` - Hit
+- `D` / `Dh` / `Ds` - Double (or Hit/Stand if not allowed)
+- `P` / `Ph` - Split (or Hit if not allowed)
 
 ## Architecture
 
 ### Data Flow
 
 ```
-GameConfig → EVCalculator → BasicStrategy → StrategyTables → Renderer → Output
-                ↓                                ↓
-        DealerProbabilities              StrategyData
+GameConfig → EVCalculator → BasicStrategy → StrategyTables → JSON/Renderer
+                ↓
+        DealerProbabilities
 ```
 
 ### Key Classes
@@ -107,51 +143,34 @@ For finite decks (num_decks > 0), the calculator uses composition-dependent prob
 
 This matches real-world 4-8 deck basic strategy charts. For infinite deck (num_decks = 0), standard probabilities are used.
 
-## Configuration Options
+### Web App Stack
 
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| num_decks | 6 | Number of decks (0 = infinite) |
-| dealer_hits_soft_17 | False | H17 vs S17 rule |
-| double_after_split | True | DAS allowed |
-| resplit_aces | False | RSA allowed |
-| max_splits | 3 | Max splits (3 = up to 4 hands) |
-| blackjack_pays | 1.5 | 3:2 = 1.5, 6:5 = 1.2 |
-| dealer_peeks | True | Dealer checks for blackjack |
+- **Svelte 5** - Reactive UI framework
+- **Tailwind CSS** - Utility-first styling
+- **DaisyUI** - Component library
+- **Vite** - Build tool
 
-## Action Codes
+### Key Design Decisions
 
-- `S` - Stand
-- `H` - Hit
-- `D` - Double
-- `Dh` - Double if allowed, otherwise Hit
-- `Ds` - Double if allowed, otherwise Stand
-- `P` - Split
+1. **Pre-computed strategies**: 96 JSON files cover all rule combinations. Faster than runtime calculation.
+2. **HSL colors**: Easy to adjust whiteness/saturation for accessibility.
+3. **Responsive layout**: Desktop shows sidebar + horizontal tables; mobile uses collapsible config.
+
+## Deployment
+
+GitHub Actions automatically:
+1. Generates strategy JSON files
+2. Builds Svelte app
+3. Deploys to GitHub Pages
 
 ## Commit Format
 
 ```
 <Summary starting with verb, 50 chars or less>
 
-- First change description (wrap at 72 chars)
-- Second change description
-- 2-5 bullets based on change size
+- Bullet points (2-5)
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
 Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 ```
-
-## Testing
-
-```bash
-python3 -m pytest tests/
-```
-
-## Dependencies
-
-Runtime: `tabulate` for table formatting
-
-Dev: `ruff` for linting and formatting
-
-Managed with `uv` - see https://docs.astral.sh/uv/
