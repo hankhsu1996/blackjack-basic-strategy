@@ -1,15 +1,26 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
+  import { onMount } from "svelte";
   import { ExternalLink, Info, Menu, X } from "lucide-svelte";
   import ConfigPanel from "./lib/components/ConfigPanel.svelte";
   import StrategyTable from "./lib/components/StrategyTable.svelte";
   import Legend from "./lib/components/Legend.svelte";
   import { strategyFilename } from "./lib/stores/config";
+  import { mcData, loadMCData } from "./lib/stores/mcHouseEdge";
   import type { StrategyData } from "./lib/types/strategy";
 
   let strategyData: StrategyData | null = null;
   let error: string | null = null;
   let menuOpen = false;
+
+  // Load MC data on mount
+  onMount(() => {
+    loadMCData();
+  });
+
+  // Derive current MC result based on strategy filename
+  $: configKey = $strategyFilename.replace(".json", "");
+  $: currentMC = $mcData?.[configKey] ?? null;
 
   // Lock body scroll when menu is open
   $: if (typeof document !== "undefined") {
@@ -114,13 +125,17 @@
 
       <Legend />
 
-      <!-- House Edge -->
-      <div class="text-center text-sm text-base-content/70 mt-4 flex items-center justify-center gap-1">
-        House Edge: <span class="font-medium">{strategyData.house_edge.toFixed(2)}%</span>
-        <div class="tooltip tooltip-top before:max-w-xs before:text-left before:bg-base-200 before:text-base-content before:p-3" data-tip="Calculated analytically with composition-dependent probabilities for both player draws and dealer outcomes, accounting for card removal. Verified against GPU Monte Carlo simulation (40B hands, ±0.001% precision).">
-          <Info size={13} class="opacity-50 hover:opacity-100 cursor-help" />
+      <!-- House Edge (only shown when MC data is available) -->
+      {#if currentMC}
+        <div class="text-center text-sm text-base-content/70 mt-4 flex items-center justify-center gap-1">
+          House Edge:
+          <span class="font-medium">{currentMC.house_edge.toFixed(3)}%</span>
+          <span class="text-base-content/50">&plusmn; {currentMC.ci.toFixed(3)}%</span>
+          <div class="tooltip tooltip-left lg:tooltip-top before:max-w-[200px] lg:before:max-w-xs before:text-xs lg:before:text-sm before:text-left before:bg-base-200 before:text-base-content before:p-2 lg:before:p-3" data-tip="Monte Carlo simulation ({currentMC.hands_billions}B hands){strategyData?.config.num_decks === 0 ? '' : ', 75% penetration'}. Simulates real casino play.">
+            <Info size={13} class="opacity-50 hover:opacity-100 cursor-help" />
+          </div>
         </div>
-      </div>
+      {/if}
     {/if}
   </div>
 </main>

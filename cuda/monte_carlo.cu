@@ -27,6 +27,9 @@ struct GameConfig {
     bool dealer_hits_soft_17;
     float blackjack_pays;
     bool dealer_peeks;
+    int max_split_hands;      // Max hands from splitting (default 4)
+    bool resplit_aces;        // Can resplit aces
+    float penetration;        // Reshuffle at this fraction (0.75 = 75%)
 };
 
 // Strategy tables (will be copied to GPU)
@@ -117,17 +120,27 @@ bool load_strategy(const char* filename,
         cJSON* peek = cJSON_GetObjectItem(cfg, "dealer_peeks");
         cJSON* bj = cJSON_GetObjectItem(cfg, "blackjack_pays");
 
+        cJSON* max_split = cJSON_GetObjectItem(cfg, "max_split_hands");
+        cJSON* rsa = cJSON_GetObjectItem(cfg, "resplit_aces");
+        cJSON* pen = cJSON_GetObjectItem(cfg, "penetration");
+
         config->num_decks = decks ? decks->valueint : 6;
         config->dealer_hits_soft_17 = h17 && cJSON_IsTrue(h17);
         config->dealer_peeks = peek && cJSON_IsTrue(peek);
         config->blackjack_pays = bj ? (float)bj->valuedouble : 1.5f;
+        config->max_split_hands = max_split ? max_split->valueint : 4;  // Default to 4 hands
+        config->resplit_aces = rsa && cJSON_IsTrue(rsa);
+        config->penetration = pen ? (float)pen->valuedouble : 0.75f;  // Default 75%
     }
 
-    printf("Config: Decks=%d, H17=%s, Peek=%s, BJ=%.2f\n",
+    printf("Config: Decks=%d, H17=%s, Peek=%s, BJ=%.2f, MaxSplit=%d, RSA=%s, Pen=%.0f%%\n",
            config->num_decks,
            config->dealer_hits_soft_17 ? "Yes" : "No",
            config->dealer_peeks ? "Yes" : "No",
-           config->blackjack_pays);
+           config->blackjack_pays,
+           config->max_split_hands,
+           config->resplit_aces ? "Yes" : "No",
+           config->penetration * 100);
 
     // Parse hard strategy
     cJSON* hard_obj = cJSON_GetObjectItem(json, "hard");
@@ -221,15 +234,22 @@ bool load_strategy(const char* filename,
 // Shoe structure for finite deck simulation
 struct Shoe {
     int8_t cards[416];  // Max 8 decks * 52 cards
-    int size;           // Total cards in shoe
+    int size;           // Total cards in shoe (0 = infinite deck mode)
     int pos;            // Current position (cards dealt = pos)
     int reshuffle_at;   // Reshuffle when pos reaches this
 };
 
-__device__ void init_shoe(Shoe* shoe, int num_decks, curandState* state) {
+__device__ void init_shoe(Shoe* shoe, int num_decks, float penetration, curandState* state) {
     shoe->size = num_decks * 52;
     shoe->pos = 0;
-    shoe->reshuffle_at = shoe->size * 3 / 4;  // Reshuffle at 75% penetration
+
+    // Infinite deck mode: size=0, no cards to shuffle
+    if (num_decks == 0) {
+        shoe->reshuffle_at = 0;
+        return;
+    }
+
+    shoe->reshuffle_at = (int)(shoe->size * penetration);  // Reshuffle at penetration %
 
     // Build and shuffle shoe
     int idx = 0;
@@ -256,6 +276,9 @@ __device__ void init_shoe(Shoe* shoe, int num_decks, curandState* state) {
 }
 
 __device__ void reshuffle_shoe(Shoe* shoe, curandState* state) {
+    // No-op for infinite deck
+    if (shoe->size == 0) return;
+
     shoe->pos = 0;
     // Fisher-Yates shuffle
     for (int i = shoe->size - 1; i > 0; i--) {
@@ -266,19 +289,31 @@ __device__ void reshuffle_shoe(Shoe* shoe, curandState* state) {
     }
 }
 
+// Infinite deck draw (for continuous shuffle / no shoe)
+__device__ __forceinline__ int draw_card_infinite(curandState* state) {
+    int r = curand(state) % 13;
+    if (r == 0) return 11;      // Ace
+    if (r >= 10) return 10;     // 10, J, Q, K
+    return r + 1;               // 2-9
+}
+
 __device__ __forceinline__ int draw_card_from_shoe(Shoe* shoe, curandState* state) {
+    // Should not be called for infinite deck, but guard anyway
+    if (shoe->size == 0) {
+        return draw_card_infinite(state);
+    }
     if (shoe->pos >= shoe->reshuffle_at) {
         reshuffle_shoe(shoe, state);
     }
     return shoe->cards[shoe->pos++];
 }
 
-// Infinite deck draw (for comparison)
-__device__ __forceinline__ int draw_card_infinite(curandState* state) {
-    int r = curand(state) % 13;
-    if (r == 0) return 11;      // Ace
-    if (r >= 10) return 10;     // 10, J, Q, K
-    return r + 1;               // 2-9
+// Draw card - from shoe or infinite deck depending on config
+__device__ __forceinline__ int draw_card(Shoe* shoe, curandState* state) {
+    if (d_config.num_decks == 0) {
+        return draw_card_infinite(state);
+    }
+    return draw_card_from_shoe(shoe, state);
 }
 
 __device__ __forceinline__ int hand_value(int* cards, int num_cards) {
@@ -339,12 +374,12 @@ __device__ int play_dealer(int* cards, int num_cards, Shoe* shoe, curandState* s
         if (total > 17) return total;
         if (total == 17) {
             if (d_config.dealer_hits_soft_17 && is_soft) {
-                cards[num_cards++] = draw_card_from_shoe(shoe, state);
+                cards[num_cards++] = draw_card(shoe, state);
                 continue;
             }
             return total;
         }
-        cards[num_cards++] = draw_card_from_shoe(shoe, state);
+        cards[num_cards++] = draw_card(shoe, state);
     }
 }
 
@@ -369,21 +404,21 @@ __device__ int play_player_hand(
         } else if (action == 3) {
             // Double if can, else stand
             if (*num_cards == 2) {
-                cards[(*num_cards)++] = draw_card_from_shoe(shoe, state);
+                cards[(*num_cards)++] = draw_card(shoe, state);
                 *bet *= 2.0f;
                 return hand_value(cards, *num_cards) % 100;
             }
             return total;
         } else if (action == 1) {
-            cards[(*num_cards)++] = draw_card_from_shoe(shoe, state);
+            cards[(*num_cards)++] = draw_card(shoe, state);
         } else if (action == 2) {
             // Double if can, else hit
             if (*num_cards == 2) {
-                cards[(*num_cards)++] = draw_card_from_shoe(shoe, state);
+                cards[(*num_cards)++] = draw_card(shoe, state);
                 *bet *= 2.0f;
                 return hand_value(cards, *num_cards) % 100;
             }
-            cards[(*num_cards)++] = draw_card_from_shoe(shoe, state);
+            cards[(*num_cards)++] = draw_card(shoe, state);
         } else {
             return total;
         }
@@ -411,20 +446,20 @@ __device__ float play_single_hand(
             break;
         } else if (action == 3) {
             if (player_count == 2) {
-                player_cards[player_count++] = draw_card_from_shoe(shoe, state);
+                player_cards[player_count++] = draw_card(shoe, state);
                 bet *= 2.0f;
                 break;
             }
             break;
         } else if (action == 1) {
-            player_cards[player_count++] = draw_card_from_shoe(shoe, state);
+            player_cards[player_count++] = draw_card(shoe, state);
         } else if (action == 2) {
             if (player_count == 2) {
-                player_cards[player_count++] = draw_card_from_shoe(shoe, state);
+                player_cards[player_count++] = draw_card(shoe, state);
                 bet *= 2.0f;
                 break;
             }
-            player_cards[player_count++] = draw_card_from_shoe(shoe, state);
+            player_cards[player_count++] = draw_card(shoe, state);
         } else {
             break;
         }
@@ -457,16 +492,24 @@ __global__ void simulate_kernel(
 
     // Initialize finite deck shoe for this thread
     Shoe shoe;
-    init_shoe(&shoe, d_config.num_decks, &localState);
+    init_shoe(&shoe, d_config.num_decks, d_config.penetration, &localState);
+
+    // Continuous shuffle mode: reshuffle before every hand
+    bool continuous_shuffle = (d_config.penetration <= 0.0f);
 
     for (unsigned long long i = 0; i < hands_per_thread; i++) {
+        // In continuous shuffle mode, reshuffle before each hand
+        if (continuous_shuffle) {
+            reshuffle_shoe(&shoe, &localState);
+        }
+
         int player_cards[12];
         int dealer_cards[12];
 
-        player_cards[0] = draw_card_from_shoe(&shoe, &localState);
-        player_cards[1] = draw_card_from_shoe(&shoe, &localState);
-        dealer_cards[0] = draw_card_from_shoe(&shoe, &localState);
-        dealer_cards[1] = draw_card_from_shoe(&shoe, &localState);
+        player_cards[0] = draw_card(&shoe, &localState);
+        player_cards[1] = draw_card(&shoe, &localState);
+        dealer_cards[0] = draw_card(&shoe, &localState);
+        dealer_cards[1] = draw_card(&shoe, &localState);
 
         int player_hv = hand_value(player_cards, 2);
         int dealer_hv = hand_value(dealer_cards, 2);
@@ -485,50 +528,111 @@ __global__ void simulate_kernel(
             int action = get_action(player_cards, 2, dealer_cards[0], true);
 
             if (action == 4 && player_cards[0] == player_cards[1]) {
+                // Split with resplit support
                 int pair_card = player_cards[0];
                 bool is_ace = (pair_card == 11);
                 float split_result = 0.0f;
 
-                int hand1[12], hand2[12];
-                hand1[0] = pair_card;
-                hand1[1] = draw_card_from_shoe(&shoe, &localState);
-                hand2[0] = pair_card;
-                hand2[1] = draw_card_from_shoe(&shoe, &localState);
+                // Hands array: each hand has cards[12], count, bet, is_from_ace_split
+                int hands_cards[4][12];
+                int hands_count[4];
+                float hands_bet[4];
+                bool hands_from_ace[4];
+                int num_hands = 0;
+                int max_hands = d_config.max_split_hands;
 
-                if (is_ace) {
-                    int total1 = hand_value(hand1, 2) % 100;
-                    int total2 = hand_value(hand2, 2) % 100;
-                    int dealer_total = play_dealer(dealer_cards, 2, &shoe, &localState);
+                // Initial split: create two hands
+                hands_cards[0][0] = pair_card;
+                hands_cards[0][1] = draw_card(&shoe, &localState);
+                hands_count[0] = 2;
+                hands_bet[0] = 1.0f;
+                hands_from_ace[0] = is_ace;
 
-                    if (dealer_total > 21) {
-                        split_result = 2.0f;
-                    } else {
-                        if (total1 > dealer_total) split_result += 1.0f;
-                        else if (total1 < dealer_total) split_result -= 1.0f;
-                        if (total2 > dealer_total) split_result += 1.0f;
-                        else if (total2 < dealer_total) split_result -= 1.0f;
+                hands_cards[1][0] = pair_card;
+                hands_cards[1][1] = draw_card(&shoe, &localState);
+                hands_count[1] = 2;
+                hands_bet[1] = 1.0f;
+                hands_from_ace[1] = is_ace;
+
+                num_hands = 2;
+
+                // Check for resplits (process hands that might be pairs)
+                // We iterate until no more splits possible
+                bool did_split = true;
+                while (did_split && num_hands < max_hands) {
+                    did_split = false;
+                    for (int h = 0; h < num_hands && num_hands < max_hands; h++) {
+                        // Only check 2-card hands that haven't been played yet
+                        if (hands_count[h] != 2) continue;
+
+                        // Check if it's a pair
+                        if (hands_cards[h][0] != hands_cards[h][1]) continue;
+
+                        int new_pair_card = hands_cards[h][0];
+                        bool new_is_ace = (new_pair_card == 11);
+
+                        // Can't resplit aces unless allowed
+                        if (new_is_ace && !d_config.resplit_aces) continue;
+
+                        // Check if strategy says to split
+                        int dealer_idx = dealer_cards[0] - 2;
+                        int pair_idx = new_pair_card - 2;
+                        int split_action = d_pair_strategy[pair_idx * 10 + dealer_idx];
+                        if (split_action != 4) continue;
+
+                        // Perform resplit
+                        // Keep first card in current hand, add new card
+                        hands_cards[h][1] = draw_card(&shoe, &localState);
+
+                        // Create new hand with second card
+                        hands_cards[num_hands][0] = new_pair_card;
+                        hands_cards[num_hands][1] = draw_card(&shoe, &localState);
+                        hands_count[num_hands] = 2;
+                        hands_bet[num_hands] = 1.0f;
+                        hands_from_ace[num_hands] = new_is_ace || hands_from_ace[h];
+                        num_hands++;
+
+                        did_split = true;
+                        break;  // Restart loop to check new hands
                     }
-                } else {
-                    int h1_cards[12], h2_cards[12];
-                    h1_cards[0] = hand1[0]; h1_cards[1] = hand1[1];
-                    h2_cards[0] = hand2[0]; h2_cards[1] = hand2[1];
-                    int h1_count = 2, h2_count = 2;
-                    float bet1 = 1.0f, bet2 = 1.0f;
-
-                    int h1_total = play_player_hand(h1_cards, &h1_count, dealer_cards[0], &bet1, &shoe, &localState);
-                    int h2_total = play_player_hand(h2_cards, &h2_count, dealer_cards[0], &bet2, &shoe, &localState);
-                    int dealer_total = play_dealer(dealer_cards, 2, &shoe, &localState);
-
-                    if (h1_total > 21) split_result -= bet1;
-                    else if (dealer_total > 21) split_result += bet1;
-                    else if (h1_total > dealer_total) split_result += bet1;
-                    else if (h1_total < dealer_total) split_result -= bet1;
-
-                    if (h2_total > 21) split_result -= bet2;
-                    else if (dealer_total > 21) split_result += bet2;
-                    else if (h2_total > dealer_total) split_result += bet2;
-                    else if (h2_total < dealer_total) split_result -= bet2;
                 }
+
+                // Now play out all hands
+                int hands_total[4];
+                for (int h = 0; h < num_hands; h++) {
+                    if (hands_from_ace[h]) {
+                        // Aces get one card only, already have it
+                        hands_total[h] = hand_value(hands_cards[h], 2) % 100;
+                    } else {
+                        // Play normally
+                        hands_total[h] = play_player_hand(
+                            hands_cards[h], &hands_count[h],
+                            dealer_cards[0], &hands_bet[h],
+                            &shoe, &localState
+                        );
+                    }
+                }
+
+                // Dealer plays
+                int dealer_total = play_dealer(dealer_cards, 2, &shoe, &localState);
+
+                // Calculate results for each hand
+                for (int h = 0; h < num_hands; h++) {
+                    int pt = hands_total[h];
+                    float bet = hands_bet[h];
+
+                    if (pt > 21) {
+                        split_result -= bet;
+                    } else if (dealer_total > 21) {
+                        split_result += bet;
+                    } else if (pt > dealer_total) {
+                        split_result += bet;
+                    } else if (pt < dealer_total) {
+                        split_result -= bet;
+                    }
+                    // Push: no change
+                }
+
                 result = split_result;
             } else {
                 result = play_single_hand(player_cards, 2, dealer_cards, 2, &shoe, &localState, 1.0f);
@@ -553,7 +657,7 @@ __global__ void init_rng_kernel(curandState* states, unsigned long long seed) {
 // ============================================================================
 
 int main(int argc, char** argv) {
-    const char* strategy_file = "../web/public/strategies/6-h17-das-rsa-peek-32.json";
+    const char* strategy_file = "../web/public/strategies/8-s17-das-nrsa-sp4-peek-32.json";
     unsigned long long num_hands_billions = 1;
     int num_blocks = 34;
     int threads_per_block = 256;

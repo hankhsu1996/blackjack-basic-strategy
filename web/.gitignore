@@ -12,8 +12,9 @@ dist
 dist-ssr
 *.local
 
-# Generated strategies
+# Generated strategies (except MC results which require GPU)
 public/strategies/
+!public/strategies/mc_house_edge.json
 
 # Editor directories and files
 .vscode/*

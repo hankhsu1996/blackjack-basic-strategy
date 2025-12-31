@@ -16,9 +16,10 @@ def config_to_filename(config: GameConfig) -> str:
     s17 = "h17" if config.dealer_hits_soft_17 else "s17"
     das = "das" if config.double_after_split else "ndas"
     rsa = "rsa" if config.resplit_aces else "nrsa"
+    msh = f"sp{config.max_split_hands}"  # sp2, sp3, sp4
     peek = "peek" if config.dealer_peeks else "nopeek"
     bj = "32" if config.blackjack_pays == 1.5 else "65"
-    return f"{decks}-{s17}-{das}-{rsa}-{peek}-{bj}.json"
+    return f"{decks}-{s17}-{das}-{rsa}-{msh}-{peek}-{bj}.json"
 
 
 def get_table_data(tables: StrategyTables) -> dict:
@@ -47,71 +48,76 @@ def get_table_data(tables: StrategyTables) -> dict:
 
 
 def generate_for_base_config(base_params: tuple) -> list[dict]:
-    """Generate strategies for a base config (both 3:2 and 6:5).
+    """Generate strategies for a base config (all payout and max_split_hands combos).
 
-    Strategy tables are the same for both payouts, only house edge differs.
+    Strategy tables are the same for both payouts and max_split_hands,
+    only house edge differs.
     """
     decks, h17, das, rsa, peek = base_params
     output_dir = Path("web/public/strategies")
 
-    # Create base config (without blackjack_pays affecting strategy)
+    # Create base config for strategy tables (these don't affect strategy)
     base_config = GameConfig(
         num_decks=decks,
         dealer_hits_soft_17=h17,
         double_after_split=das,
         resplit_aces=rsa,
+        max_split_hands=4,  # Doesn't affect strategy tables
         dealer_peeks=peek,
         blackjack_pays=1.5,  # Doesn't affect strategy tables
     )
 
-    # Generate strategy tables once (same for both payouts)
+    # Generate strategy tables once (same for all payouts and max_split_hands)
     tables = StrategyTables(base_config)
     table_data = get_table_data(tables)
 
     results = []
 
-    # Generate for both payout options
+    # Generate for all payout and max_split_hands combinations
     for bj_pays in [1.5, 1.2]:
-        config = GameConfig(
-            num_decks=decks,
-            dealer_hits_soft_17=h17,
-            double_after_split=das,
-            resplit_aces=rsa,
-            dealer_peeks=peek,
-            blackjack_pays=bj_pays,
-        )
+        for max_hands in [2, 3, 4]:
+            config = GameConfig(
+                num_decks=decks,
+                dealer_hits_soft_17=h17,
+                double_after_split=das,
+                resplit_aces=rsa,
+                max_split_hands=max_hands,
+                dealer_peeks=peek,
+                blackjack_pays=bj_pays,
+            )
 
-        filename = config_to_filename(config)
+            filename = config_to_filename(config)
 
-        # Calculate house edge (this depends on blackjack_pays)
-        house_edge = HouseEdgeCalculator(config).calculate()
+            # Calculate house edge (this depends on blackjack_pays and max_split_hands)
+            house_edge = HouseEdgeCalculator(config).calculate()
 
-        data = {
-            "config": {
-                "num_decks": config.num_decks,
-                "dealer_hits_soft_17": config.dealer_hits_soft_17,
-                "double_after_split": config.double_after_split,
-                "resplit_aces": config.resplit_aces,
-                "dealer_peeks": config.dealer_peeks,
-                "blackjack_pays": config.blackjack_pays,
-                "description": str(config),
-            },
-            "house_edge": round(house_edge, 4),
-            **table_data,
-        }
-
-        output_path = output_dir / filename
-        output_path.write_text(json.dumps(data, indent=2))
-
-        results.append(
-            {
-                "filename": filename,
-                "config": data["config"],
-                "house_edge": data["house_edge"],
+            data = {
+                "config": {
+                    "num_decks": config.num_decks,
+                    "dealer_hits_soft_17": config.dealer_hits_soft_17,
+                    "double_after_split": config.double_after_split,
+                    "resplit_aces": config.resplit_aces,
+                    "max_split_hands": config.max_split_hands,
+                    "dealer_peeks": config.dealer_peeks,
+                    "blackjack_pays": config.blackjack_pays,
+                    "description": str(config),
+                },
+                "house_edge": round(house_edge, 4),
+                **table_data,
             }
-        )
 
-        print(f"Generated: {filename} (house edge: {house_edge:.4f}%)")
+            output_path = output_dir / filename
+            output_path.write_text(json.dumps(data, indent=2))
+
+            results.append(
+                {
+                    "filename": filename,
+                    "config": data["config"],
+                    "house_edge": data["house_edge"],
+                }
+            )
+
+            print(f"Generated: {filename} (house edge: {house_edge:.4f}%)")
 
     return results
 
@@ -134,10 +140,10 @@ def main():
         )
     )
 
-    print(f"Generating {len(base_configs) * 2} strategy files using multiprocessing...")
+    print(f"Generating {len(base_configs) * 6} strategy files using multiprocessing...")
 
-    # Use all available CPU cores
-    num_workers = os.cpu_count() or 4
+    # Use half of available CPU cores to avoid overloading
+    num_workers = max(1, (os.cpu_count() or 4) // 2)
 
     all_configs = []
     with ProcessPoolExecutor(max_workers=num_workers) as executor:

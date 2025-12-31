@@ -370,42 +370,109 @@ class EVCalculator:
         adj_dealer_outcomes: dict,
         removed: tuple[int, ...] | None = None,
     ) -> float:
-        """Calculate split EV with proper card removal between hands.
+        """Calculate split EV with resplit support.
 
-        Models both split hands separately, accounting for the card drawn
-        to hand 1 when calculating hand 2's probabilities.
+        Uses recursive calculation to handle resplitting up to max_split_hands.
         """
         if removed is None:
-            # Fallback for infinite deck
+            # Fallback for infinite deck (no resplit modeling)
             return 2 * self._ev_single_split_hand(
                 pair_card, dealer_upcard, adj_probs, adj_dealer_outcomes
             )
 
+        # Start with 2 hands from initial split
+        return self._ev_split_recursive(
+            pair_card=pair_card,
+            dealer_upcard=dealer_upcard,
+            adj_dealer_outcomes=adj_dealer_outcomes,
+            removed=removed,
+            current_hands=2,
+        )
+
+    def _ev_split_recursive(
+        self,
+        pair_card: int,
+        dealer_upcard: int,
+        adj_dealer_outcomes: dict,
+        removed: tuple[int, ...],
+        current_hands: int,
+    ) -> float:
+        """Recursively calculate split EV with resplit support.
+
+        Args:
+            pair_card: The card value being split
+            dealer_upcard: Dealer's upcard
+            adj_dealer_outcomes: Dealer outcome probabilities
+            removed: Cards already removed from deck
+            current_hands: Current number of hands from splitting
+
+        Returns:
+            Total EV for all hands from this split
+        """
+        is_ace = pair_card == 11
+        can_resplit = (
+            current_hands < self.config.max_split_hands
+            and (not is_ace or self.config.resplit_aces)
+        )
+
+        adj_probs = get_card_probabilities(self.config.num_decks, removed)
         total_ev = 0.0
 
-        # For each possible card drawn to hand 1
+        # Calculate EV for hand 1
         for card1 in DISTINCT_CARDS:
             prob1 = adj_probs[card1]
             hand1_removed = removed + (card1,)
 
-            # Calculate hand 1's EV
-            hand1_ev = self._ev_split_hand_with_card(
-                pair_card, card1, dealer_upcard, adj_probs, adj_dealer_outcomes,
-                hand1_removed
-            )
+            # Check if hand 1 forms a new pair that can be resplit
+            if can_resplit and card1 == pair_card:
+                # Option 1: Play the pair normally
+                play_ev = self._ev_split_hand_with_card(
+                    pair_card, card1, dealer_upcard, adj_probs, adj_dealer_outcomes,
+                    hand1_removed
+                )
+                # Option 2: Resplit (adds one more hand)
+                resplit_ev = self._ev_split_recursive(
+                    pair_card=pair_card,
+                    dealer_upcard=dealer_upcard,
+                    adj_dealer_outcomes=adj_dealer_outcomes,
+                    removed=hand1_removed,
+                    current_hands=current_hands + 1,
+                )
+                hand1_ev = max(play_ev, resplit_ev)
+            else:
+                hand1_ev = self._ev_split_hand_with_card(
+                    pair_card, card1, dealer_upcard, adj_probs, adj_dealer_outcomes,
+                    hand1_removed
+                )
 
-            # Hand 2 sees deck with hand 1's card removed
+            # Calculate EV for hand 2 (deck now has hand1's card removed)
             hand2_probs = get_card_probabilities(self.config.num_decks, hand1_removed)
 
-            # Calculate hand 2's expected EV
             hand2_ev = 0.0
             for card2 in DISTINCT_CARDS:
                 prob2 = hand2_probs[card2]
                 hand2_removed = hand1_removed + (card2,)
-                h2_ev = self._ev_split_hand_with_card(
-                    pair_card, card2, dealer_upcard, hand2_probs, adj_dealer_outcomes,
-                    hand2_removed
-                )
+
+                # Check if hand 2 forms a new pair that can be resplit
+                if can_resplit and card2 == pair_card:
+                    play_ev = self._ev_split_hand_with_card(
+                        pair_card, card2, dealer_upcard, hand2_probs, adj_dealer_outcomes,
+                        hand2_removed
+                    )
+                    resplit_ev = self._ev_split_recursive(
+                        pair_card=pair_card,
+                        dealer_upcard=dealer_upcard,
+                        adj_dealer_outcomes=adj_dealer_outcomes,
+                        removed=hand2_removed,
+                        current_hands=current_hands + 1,
+                    )
+                    h2_ev = max(play_ev, resplit_ev)
+                else:
+                    h2_ev = self._ev_split_hand_with_card(
+                        pair_card, card2, dealer_upcard, hand2_probs, adj_dealer_outcomes,
+                        hand2_removed
+                    )
+
                 hand2_ev += prob2 * h2_ev
 
             total_ev += prob1 * (hand1_ev + hand2_ev)

@@ -14,9 +14,17 @@
     { value: "3:2", label: "3:2" },
     { value: "6:5", label: "6:5" },
   ];
+
+  const maxSplitOptions = [
+    { value: 2, label: "2" },
+    { value: 3, label: "3" },
+    { value: 4, label: "4" },
+  ];
 </script>
 
 <div class="space-y-4 px-4">
+  <!-- === GAME SETUP === -->
+
   <!-- Number of Decks -->
   <div>
     <div class="text-sm mb-2">Decks</div>
@@ -51,6 +59,8 @@
     </div>
   </div>
 
+  <!-- === DEALER RULES === -->
+
   <!-- Dealer Hits Soft 17 -->
   <div class="form-control">
     <label class="label cursor-pointer justify-start gap-3">
@@ -63,6 +73,20 @@
     </label>
   </div>
 
+  <!-- Dealer Peeks -->
+  <div class="form-control">
+    <label class="label cursor-pointer justify-start gap-3">
+      <input
+        type="checkbox"
+        class="toggle toggle-sm"
+        bind:checked={$config.dealerPeeks}
+      />
+      <span class="label-text">Dealer peeks for BJ</span>
+    </label>
+  </div>
+
+  <!-- === DOUBLING === -->
+
   <!-- Double After Split -->
   <div class="form-control">
     <label class="label cursor-pointer justify-start gap-3">
@@ -73,6 +97,25 @@
       />
       <span class="label-text">Double after split (DAS)</span>
     </label>
+  </div>
+
+  <!-- === SPLITTING === -->
+
+  <!-- Max Split Hands -->
+  <div>
+    <div class="text-sm mb-2">Max Split Hands</div>
+    <div class="flex gap-1">
+      {#each maxSplitOptions as opt}
+        <button
+          class="btn btn-sm flex-1 min-w-0 {$config.maxSplitHands === opt.value
+            ? 'bg-base-300 border-base-300'
+            : 'btn-ghost'}"
+          onclick={() => ($config.maxSplitHands = opt.value)}
+        >
+          {opt.label}
+        </button>
+      {/each}
+    </div>
   </div>
 
   <!-- Resplit Aces -->
@@ -87,15 +130,31 @@
     </label>
   </div>
 
-  <!-- Dealer Peeks -->
-  <div class="form-control">
-    <label class="label cursor-pointer justify-start gap-3">
+  <!-- Hit split aces (fixed: no) -->
+  <div class="form-control opacity-50">
+    <label class="label cursor-not-allowed justify-start gap-3">
       <input
         type="checkbox"
         class="toggle toggle-sm"
-        bind:checked={$config.dealerPeeks}
+        disabled
+        checked={false}
       />
-      <span class="label-text">Dealer peeks for BJ</span>
+      <span class="label-text">Hit split aces</span>
+    </label>
+  </div>
+
+  <!-- === OTHER === -->
+
+  <!-- Surrender (not supported yet) -->
+  <div class="form-control opacity-50">
+    <label class="label cursor-not-allowed justify-start gap-3">
+      <input
+        type="checkbox"
+        class="toggle toggle-sm"
+        disabled
+        checked={false}
+      />
+      <span class="label-text">Surrender</span>
     </label>
   </div>
 </div>

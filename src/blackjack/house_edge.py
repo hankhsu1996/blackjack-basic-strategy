@@ -21,6 +21,7 @@ class HouseEdgeCalculator:
             dealer_hits_soft_17=config.dealer_hits_soft_17,
             double_after_split=config.double_after_split,
             resplit_aces=config.resplit_aces,
+            max_split_hands=config.max_split_hands,
             blackjack_pays=config.blackjack_pays,
             dealer_peeks=True,  # Always condition on no dealer BJ
         )
