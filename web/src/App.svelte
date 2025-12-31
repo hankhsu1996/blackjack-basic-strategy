@@ -11,6 +11,11 @@
   let error: string | null = null;
   let menuOpen = false;
 
+  // Lock body scroll when menu is open
+  $: if (typeof document !== "undefined") {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+  }
+
   $: loadStrategy($strategyFilename);
 
   async function loadStrategy(filename: string) {
@@ -29,9 +34,9 @@
   }
 </script>
 
-<main class="min-h-screen flex flex-col lg:flex-row bg-base-100">
-  <!-- Mobile header -->
-  <header class="lg:hidden flex items-center justify-center relative p-4 bg-base-200">
+<main class="min-h-screen min-h-[100dvh] flex flex-col lg:flex-row bg-base-100">
+  <!-- Mobile header (fixed) -->
+  <header class="lg:hidden fixed top-0 left-0 right-0 h-14 flex items-center justify-center bg-base-200 z-50">
     <h1 class="font-semibold">Blackjack Basic Strategy</h1>
     <button
       class="btn btn-ghost btn-sm absolute right-4"
@@ -45,10 +50,13 @@
     </button>
   </header>
 
+  <!-- Mobile header spacer -->
+  <div class="lg:hidden h-14 shrink-0"></div>
+
   <!-- Mobile menu overlay -->
   {#if menuOpen}
     <div
-      class="lg:hidden fixed inset-0 top-14 bg-base-200 px-12 py-4 z-50 flex flex-col"
+      class="lg:hidden fixed inset-0 top-14 bg-base-200 px-12 py-4 z-40 flex flex-col overflow-y-auto"
       transition:fade={{ duration: 150 }}
     >
       <ConfigPanel />
@@ -70,7 +78,7 @@
 
   <!-- Desktop Sidebar -->
   <aside
-    class="hidden lg:flex w-72 shrink-0 bg-base-200 p-4 h-screen overflow-y-auto flex-col"
+    class="hidden lg:flex w-72 shrink-0 bg-base-200 p-4 h-screen h-[100dvh] overflow-y-auto flex-col"
   >
     <h1 class="font-semibold mt-4 mb-10 text-center">Blackjack Basic Strategy</h1>
 
