@@ -31,7 +31,15 @@ jobs:
           cache: "npm"
           cache-dependency-path: web/package-lock.json
 
+      - name: Cache strategy JSON files
+        id: cache-strategies
+        uses: actions/cache@v4
+        with:
+          path: web/public/strategies
+          key: strategies-${{ hashFiles('src/blackjack/**/*.py', 'scripts/generate_strategies.py', 'pyproject.toml', 'uv.lock') }}
+
       - name: Generate strategy JSON files
+        if: steps.cache-strategies.outputs.cache-hit != 'true'
         run: uv run python -m scripts.generate_strategies
 
       - name: Install npm dependencies
