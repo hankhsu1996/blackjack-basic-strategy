@@ -2,7 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,svelte}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["DM Sans", "system-ui", "sans-serif"],
+      },
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {

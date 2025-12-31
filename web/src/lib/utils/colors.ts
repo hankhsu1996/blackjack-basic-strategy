@@ -1,19 +1,19 @@
-// HSL colors for actions - easy to adjust whiteness via lightness
+// Action colors
 const ACTION_COLORS: Record<string, string> = {
-  // Stand - Red family
-  S: "hsl(0, 70%, 85%)",
+  // Stand - Red
+  S: "#F6D6D6",
 
-  // Hit - Yellow family
-  H: "hsl(50, 80%, 80%)",
+  // Hit - Yellow
+  H: "#FFF2C2",
 
-  // Double - Blue family
-  D: "hsl(210, 70%, 85%)",
-  Dh: "hsl(210, 70%, 85%)",
-  Ds: "hsl(210, 70%, 85%)",
+  // Double - Blue
+  D: "#C2E2FA",
+  Dh: "#C2E2FA",
+  Ds: "#C2E2FA",
 
-  // Split - Green family
-  P: "hsl(120, 50%, 80%)",
-  Ph: "hsl(120, 50%, 80%)",
+  // Split - Green
+  P: "#CBF3BB",
+  Ph: "#CBF3BB",
 };
 
 // Default for unknown actions
@@ -27,6 +27,7 @@ export function getActionColor(action: string): string {
 export const LEGEND_ITEMS = [
   { action: "S", label: "Stand", color: ACTION_COLORS["S"] },
   { action: "H", label: "Hit", color: ACTION_COLORS["H"] },
-  { action: "D", label: "Double", color: ACTION_COLORS["D"] },
   { action: "P", label: "Split", color: ACTION_COLORS["P"] },
+  { action: "Dh", label: "Double (or Hit)", color: ACTION_COLORS["Dh"] },
+  { action: "Ds", label: "Double (or Stand)", color: ACTION_COLORS["Ds"] },
 ];

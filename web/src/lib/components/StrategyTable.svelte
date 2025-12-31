@@ -7,13 +7,15 @@
 </script>
 
 <div class="strategy-table">
-  <h3 class="text-sm font-semibold mb-2 text-center">{title}</h3>
-  <table class="table-fixed border-collapse text-xs">
+  <h3 class="text-sm font-medium mb-2 text-center text-base-content/70">
+    {title}
+  </h3>
+  <table class="table-fixed border-separate border-spacing-0.5">
     <thead>
       <tr>
         {#each data.headers as header}
           <th
-            class="w-7 h-6 lg:w-8 lg:h-7 bg-base-200 border border-base-300 text-center text-xs lg:text-sm"
+            class="w-7 h-6 lg:w-8 lg:h-7 text-center text-xs lg:text-sm font-medium text-base-content/60"
           >
             {header}
           </th>
@@ -24,7 +26,7 @@
       {#each data.rows as row}
         <tr>
           <td
-            class="w-7 h-6 lg:w-8 lg:h-7 bg-base-200 border border-base-300 text-center font-medium text-xs lg:text-sm"
+            class="w-7 h-6 lg:w-8 lg:h-7 text-center text-xs lg:text-sm font-medium text-base-content/60"
           >
             {row.label}
           </td>

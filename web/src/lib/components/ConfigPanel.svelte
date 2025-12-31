@@ -1,27 +1,32 @@
 <script lang="ts">
   import { config } from "../stores/config";
+
+  const deckOptions = [
+    { value: 1, label: "1" },
+    { value: 2, label: "2" },
+    { value: 4, label: "4" },
+    { value: 6, label: "6" },
+    { value: 8, label: "8" },
+    { value: 0, label: "∞" },
+  ];
 </script>
 
-<div class="space-y-4">
-  <h2 class="text-lg font-bold">Game Rules</h2>
-
+<div class="space-y-4 px-4">
   <!-- Number of Decks -->
-  <div class="form-control w-full">
-    <label class="label" for="num-decks">
-      <span class="label-text">Number of Decks</span>
-    </label>
-    <select
-      id="num-decks"
-      class="select select-bordered select-sm w-full"
-      bind:value={$config.numDecks}
-    >
-      <option value={1}>1 Deck</option>
-      <option value={2}>2 Decks</option>
-      <option value={4}>4 Decks</option>
-      <option value={6}>6 Decks</option>
-      <option value={8}>8 Decks</option>
-      <option value={0}>Infinite</option>
-    </select>
+  <div>
+    <div class="text-sm mb-2">Decks</div>
+    <div class="flex gap-1">
+      {#each deckOptions as opt}
+        <button
+          class="btn btn-sm flex-1 min-w-0 {$config.numDecks === opt.value
+            ? 'bg-base-300 border-base-300'
+            : 'btn-ghost'}"
+          onclick={() => ($config.numDecks = opt.value)}
+        >
+          {opt.label}
+        </button>
+      {/each}
+    </div>
   </div>
 
   <!-- Dealer Hits Soft 17 -->

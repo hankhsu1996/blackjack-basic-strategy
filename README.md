@@ -10,30 +10,6 @@ Basic strategy is the mathematically optimal way to play every hand in blackjack
 
 This tool computes basic strategy for any combination of casino rules, so you can find the correct play whether you're in Las Vegas, Atlantic City, or playing online.
 
-## How to Read the Chart
-
-The strategy tables show the optimal action for each combination of your hand and the dealer's upcard.
-
-| Code | Action | Meaning |
-|------|--------|---------|
-| S | Stand | Don't take any more cards |
-| H | Hit | Take another card |
-| D | Double | Double your bet, take exactly one card |
-| Ds | Double/Stand | Double if allowed, otherwise stand |
-| Dh | Double/Hit | Double if allowed, otherwise hit |
-| P | Split | Split your pair into two hands |
-| Ph | Split/Hit | Split if double after split allowed, otherwise hit |
-
-## Configuration Options
-
-| Option | Description |
-|--------|-------------|
-| **Number of Decks** | 1, 2, 4, 6, 8, or infinite deck |
-| **Dealer Hits Soft 17** | H17 (hits) vs S17 (stands) on soft 17 |
-| **Double After Split** | Whether you can double down after splitting |
-| **Resplit Aces** | Whether you can split aces more than once |
-| **Dealer Peeks** | Whether dealer checks for blackjack with 10/A showing |
-
 ## How It Works
 
 The strategy is computed using Expected Value (EV) analysis:
@@ -54,12 +30,6 @@ uv run python -m scripts.generate_strategies
 # Start dev server
 cd web && npm install && npm run dev
 ```
-
-## Tech Stack
-
-- **Strategy calculation**: Python with composition-dependent EV analysis
-- **Web app**: Svelte 5 + Tailwind CSS + DaisyUI
-- **Deployment**: GitHub Pages
 
 ## License
 
