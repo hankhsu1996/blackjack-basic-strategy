@@ -37,4 +37,4 @@ MIT
 
 ## Credits
 
-[Solitaire icons created by Mihimihi - Flaticon](https://www.flaticon.com/free-icons/solitaire)
+[Poker chip icons created by IconsNova - Flaticon](https://www.flaticon.com/free-icons/poker-chip)

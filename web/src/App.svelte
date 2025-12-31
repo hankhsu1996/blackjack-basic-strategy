@@ -48,6 +48,7 @@
 <main class="min-h-screen min-h-[100dvh] flex flex-col lg:flex-row bg-base-100">
   <!-- Mobile header (fixed) -->
   <header class="lg:hidden fixed top-0 left-0 right-0 h-14 flex items-center justify-center bg-base-200 z-50">
+    <img src="{import.meta.env.BASE_URL}favicon.png" alt="" class="w-5 h-5 mr-3" />
     <h1 class="font-semibold">Blackjack Basic Strategy</h1>
     <button
       class="btn btn-ghost btn-sm absolute right-4"
@@ -91,7 +92,10 @@
   <aside
     class="hidden lg:flex fixed left-0 top-0 w-72 bg-base-200 p-4 h-screen h-[100dvh] overflow-y-auto flex-col"
   >
-    <h1 class="font-semibold mt-4 mb-10 text-center">Blackjack Basic Strategy</h1>
+    <h1 class="font-semibold mt-4 mb-10 text-center flex items-center justify-center gap-3">
+      <img src="{import.meta.env.BASE_URL}favicon.png" alt="" class="w-6 h-6" />
+      Blackjack Basic Strategy
+    </h1>
 
     <ConfigPanel />
 
