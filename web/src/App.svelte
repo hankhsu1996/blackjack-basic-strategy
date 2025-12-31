@@ -1,7 +1,7 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
-  import { ExternalLink, Info, Menu, X } from "lucide-svelte";
+  import { Coffee, Github, Info, Menu, X } from "lucide-svelte";
   import ConfigPanel from "./lib/components/ConfigPanel.svelte";
   import StrategyTable from "./lib/components/StrategyTable.svelte";
   import Legend from "./lib/components/Legend.svelte";
@@ -76,15 +76,26 @@
       <!-- Spacer -->
       <div class="flex-1"></div>
 
-      <a
-        href="https://github.com/hankhsu1996/blackjack-basic-strategy"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center justify-center gap-1.5 text-sm font-medium text-base-content/70 hover:text-base-content mb-8"
-      >
-        <span>View on GitHub</span>
-        <ExternalLink size={14} />
-      </a>
+      <div class="flex items-center justify-center gap-4 mb-8">
+        <a
+          href="https://github.com/hankhsu1996/blackjack-basic-strategy"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1.5 text-sm font-medium text-base-content/70 hover:text-base-content"
+        >
+          <Github size={14} />
+          <span>GitHub</span>
+        </a>
+        <a
+          href="https://buymeacoffee.com/hankhsu1996"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1.5 text-sm font-medium text-base-content/70 hover:text-base-content"
+        >
+          <Coffee size={14} />
+          <span>Buy me a coffee</span>
+        </a>
+      </div>
     </div>
   {/if}
 
@@ -102,16 +113,27 @@
     <!-- Spacer -->
     <div class="flex-1"></div>
 
-    <!-- GitHub link -->
-    <a
-      href="https://github.com/hankhsu1996/blackjack-basic-strategy"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="flex items-center justify-center gap-1.5 text-sm font-medium text-base-content/70 hover:text-base-content mt-4"
-    >
-      <span>View on GitHub</span>
-      <ExternalLink size={14} />
-    </a>
+    <!-- Footer links -->
+    <div class="flex items-center justify-center gap-4 mt-4">
+      <a
+        href="https://github.com/hankhsu1996/blackjack-basic-strategy"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-1.5 text-sm font-medium text-base-content/70 hover:text-base-content"
+      >
+        <Github size={14} />
+        <span>GitHub</span>
+      </a>
+      <a
+        href="https://buymeacoffee.com/hankhsu1996"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-1.5 text-sm font-medium text-base-content/70 hover:text-base-content"
+      >
+        <Coffee size={14} />
+        <span>Buy me a coffee</span>
+      </a>
+    </div>
   </aside>
 
   <!-- Strategy Tables -->

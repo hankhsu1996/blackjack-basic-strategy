@@ -2,7 +2,7 @@
 
 Interactive blackjack basic strategy calculator for any rule combination.
 
-**[Try it now](https://hankhsu1996.github.io/blackjack-basic-strategy/)**
+<a href="https://hankhsu1996.github.io/blackjack-basic-strategy/" target="_blank"><b>Try it now 🔗</b></a>
 
 ## What is Basic Strategy?
 
