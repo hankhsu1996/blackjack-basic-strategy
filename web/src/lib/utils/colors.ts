@@ -7,9 +7,9 @@ const ACTION_COLORS: Record<string, string> = {
   H: "#FFF2C2",
 
   // Double - Blue
-  D: "#C2E2FA",
-  Dh: "#C2E2FA",
-  Ds: "#C2E2FA",
+  D: "#C2E7FA",
+  Dh: "#C2E7FA",
+  Ds: "#C2E7FA",
 
   // Split - Green
   P: "#CBF3BB",
