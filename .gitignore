@@ -36,14 +36,6 @@ ENV/
 .coverage
 htmlcov/
 
-# Generated files
-strategy.html
-web/public/strategies/
-
-# Web app
-web/node_modules/
-web/dist/
-
 # Linting cache
 .ruff_cache/
 

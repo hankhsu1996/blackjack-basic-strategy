@@ -11,17 +11,19 @@ class GameConfig:
         num_decks: Number of decks (0 for infinite deck approximation)
         dealer_hits_soft_17: True if dealer hits on soft 17 (H17), False for stand (S17)
         double_after_split: True if doubling is allowed after splitting
-        resplit_aces: True if player can resplit aces
-        max_splits: Maximum number of splits allowed (e.g., 3 means up to 4 hands)
+        resplit_aces: True if player can resplit aces (one card only after split)
         blackjack_pays: Payout ratio for blackjack (1.5 for 3:2, 1.2 for 6:5)
         dealer_peeks: True if dealer peeks for blackjack with 10/A showing
+
+    Note:
+        Resplitting is not modeled (assumes max 2 hands from split).
+        Surrender is not modeled.
     """
 
     num_decks: int = 6
     dealer_hits_soft_17: bool = False  # S17 by default
     double_after_split: bool = True
     resplit_aces: bool = False
-    max_splits: int = 3
     blackjack_pays: float = 1.5  # 3:2
     dealer_peeks: bool = True
 

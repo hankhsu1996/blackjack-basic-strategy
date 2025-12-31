@@ -20,16 +20,6 @@ cd web && npm run dev
 
 Open http://localhost:5173/blackjack-basic-strategy/
 
-### CLI
-
-```bash
-# Text output to terminal
-uv run main.py
-
-# HTML output (color-coded)
-uv run main.py --format html
-```
-
 ## Project Structure
 
 ```
@@ -38,21 +28,24 @@ uv run main.py --format html
 │   ├── cards.py         # Card values, probabilities
 │   ├── dealer.py        # Dealer outcome distribution
 │   ├── evaluator.py     # EV calculations
+│   ├── house_edge.py    # House edge calculation
 │   ├── strategy.py      # Optimal action selection
 │   ├── tables.py        # Strategy data generation
-│   └── renderers.py     # Text/HTML renderers
+│   └── renderers.py     # Data structures
+├── cuda/                # GPU Monte Carlo simulation
+│   ├── monte_carlo.cu   # CUDA implementation
+│   └── Makefile         # Build configuration
 ├── scripts/
 │   └── generate_strategies.py  # Generate JSON for web app
-├── web/                 # Svelte + Tailwind + DaisyUI
-│   ├── src/
-│   │   ├── App.svelte
-│   │   └── lib/
-│   │       ├── components/   # UI components
-│   │       ├── stores/       # Svelte stores
-│   │       ├── types/        # TypeScript types
-│   │       └── utils/        # Color utilities
-│   └── public/strategies/    # Pre-computed JSON (generated)
-└── main.py              # CLI entry point
+└── web/                 # Svelte + Tailwind + DaisyUI
+    ├── src/
+    │   ├── App.svelte
+    │   └── lib/
+    │       ├── components/   # UI components
+    │       ├── stores/       # Svelte stores
+    │       ├── types/        # TypeScript types
+    │       └── utils/        # Color utilities
+    └── public/strategies/    # Pre-computed JSON (generated)
 ```
 
 ## Development
@@ -61,7 +54,6 @@ uv run main.py --format html
 
 ```bash
 uv sync                      # Install dependencies
-uv run main.py               # Run CLI
 uv run ruff check .          # Lint
 uv run ruff format .         # Format
 ```
@@ -81,7 +73,21 @@ npm run build                # Production build
 uv run python -m scripts.generate_strategies
 ```
 
-Generates 96 JSON files (6 deck options × 2⁴ boolean options) to `web/public/strategies/`.
+Generates strategy JSON files for all rule combinations to `web/public/strategies/`.
+
+### CUDA Monte Carlo (Optional)
+
+For verifying house edge calculations with high precision:
+
+```bash
+cd cuda
+make                    # Build (requires NVIDIA GPU + CUDA toolkit)
+make test               # Quick test: 1B hands
+make run                # Standard: 10B hands (~±0.002%)
+make precision          # High precision: 40B hands (~±0.001%)
+```
+
+See `cuda/README.md` for setup instructions.
 
 ## Configuration Options
 
@@ -115,17 +121,9 @@ GameConfig → EVCalculator → BasicStrategy → StrategyTables → JSON/Render
 - **GameConfig**: Immutable dataclass holding all rule parameters
 - **DealerProbabilities**: Calculates P(dealer final total | upcard)
 - **EVCalculator**: Core EV calculations using (total, soft_aces) state
+- **HouseEdgeCalculator**: Computes house edge for a given configuration
 - **BasicStrategy**: Determines optimal action by comparing EVs
 - **StrategyTables**: Generates strategy data (`StrategyData`)
-- **TextRenderer**: Renders tables as ASCII text (tabulate)
-- **HTMLRenderer**: Renders tables as color-coded HTML
-
-### Renderer Pattern
-
-The renderer architecture separates data from presentation:
-- `StrategyData` / `TableData`: Format-agnostic data structures
-- `Renderer` Protocol: Any class with `render(StrategyData) -> str`
-- Easy to add new formats (PDF, Image) by implementing the protocol
 
 ### State Representation
 

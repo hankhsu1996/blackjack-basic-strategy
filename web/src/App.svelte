@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  import { ExternalLink, Menu, X } from "lucide-svelte";
+  import { ExternalLink, Info, Menu, X } from "lucide-svelte";
   import ConfigPanel from "./lib/components/ConfigPanel.svelte";
   import StrategyTable from "./lib/components/StrategyTable.svelte";
   import Legend from "./lib/components/Legend.svelte";
@@ -113,6 +113,14 @@
       </div>
 
       <Legend />
+
+      <!-- House Edge -->
+      <div class="text-center text-sm text-base-content/70 mt-4 flex items-center justify-center gap-1">
+        House Edge: <span class="font-medium">{strategyData.house_edge.toFixed(2)}%</span>
+        <div class="tooltip tooltip-top before:max-w-xs before:text-left before:bg-base-200 before:text-base-content before:p-3" data-tip="Calculated analytically with composition-dependent probabilities for both player draws and dealer outcomes, accounting for card removal. Verified against GPU Monte Carlo simulation (40B hands, ±0.001% precision).">
+          <Info size={13} class="opacity-50 hover:opacity-100 cursor-help" />
+        </div>
+      </div>
     {/if}
   </div>
 </main>

@@ -9,6 +9,11 @@
     { value: 8, label: "8" },
     { value: 0, label: "∞" },
   ];
+
+  const bjPayOptions: Array<{ value: "3:2" | "6:5"; label: string }> = [
+    { value: "3:2", label: "3:2" },
+    { value: "6:5", label: "6:5" },
+  ];
 </script>
 
 <div class="space-y-4 px-4">
@@ -22,6 +27,23 @@
             ? 'bg-base-300 border-base-300'
             : 'btn-ghost'}"
           onclick={() => ($config.numDecks = opt.value)}
+        >
+          {opt.label}
+        </button>
+      {/each}
+    </div>
+  </div>
+
+  <!-- Blackjack Payout -->
+  <div>
+    <div class="text-sm mb-2">Blackjack Pays</div>
+    <div class="flex gap-1">
+      {#each bjPayOptions as opt}
+        <button
+          class="btn btn-sm flex-1 min-w-0 {$config.blackjackPays === opt.value
+            ? 'bg-base-300 border-base-300'
+            : 'btn-ghost'}"
+          onclick={() => ($config.blackjackPays = opt.value)}
         >
           {opt.label}
         </button>

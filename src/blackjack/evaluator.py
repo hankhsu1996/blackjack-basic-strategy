@@ -7,6 +7,17 @@ from .config import GameConfig
 from .dealer import DealerProbabilities
 
 
+def _removed_to_counts(removed: tuple[int, ...]) -> tuple[int, ...]:
+    """Convert removed cards to counts tuple for memoization.
+
+    Returns tuple of (count_2, count_3, ..., count_10, count_11).
+    """
+    counts = [0] * 10
+    for card in removed:
+        counts[card - 2] += 1
+    return tuple(counts)
+
+
 class EVCalculator:
     """Calculate expected values for each player action.
 
@@ -22,6 +33,8 @@ class EVCalculator:
         self._dealer_cache: dict[int, dict] = {}
         for upcard in range(2, 12):
             self._dealer_cache[upcard] = self.dealer_probs.get_outcome_probs(upcard)
+        # Cache for composition-adjusted dealer outcomes: (upcard, counts) -> outcomes
+        self._dealer_comp_cache: dict[tuple, dict] = {}
 
     def _add_card_to_state(
         self, total: int, soft_aces: int, card: int
@@ -124,8 +137,8 @@ class EVCalculator:
                 total = pair_card + card
                 soft_aces = 0
 
-            if is_ace and not self.config.resplit_aces:
-                # Only one card on split aces
+            if is_ace:
+                # Split aces ALWAYS get only one card (standard rule)
                 hand_ev = self.ev_stand(total, dealer_upcard)
             else:
                 # Can play normally
@@ -195,18 +208,18 @@ class EVCalculator:
     ) -> dict[str, float]:
         """Calculate EVs with composition-dependent probabilities.
 
-        Both card draw probabilities AND dealer outcome probabilities
-        are adjusted for removed cards.
+        Uses adjusted card draw probabilities AND adjusted dealer outcomes
+        based on removed cards. This matches real finite-deck play.
         """
         adj_probs = get_card_probabilities(self.config.num_decks, removed)
-        adj_dealer_outcomes = self._get_dealer_outcomes_adjusted(
-            dealer_upcard, adj_probs
-        )
+        # Use composition-dependent dealer outcomes (adjusted for removed cards)
+        # This matches GPU simulation behavior for finite deck
+        adj_dealer_outcomes = self._get_dealer_outcomes_adjusted(dealer_upcard, adj_probs, removed)
 
         evs = {
             "stand": self._ev_stand_with_dealer(total, adj_dealer_outcomes),
             "hit": self._ev_hit_composition(
-                total, soft_aces, dealer_upcard, adj_probs, adj_dealer_outcomes
+                total, soft_aces, dealer_upcard, adj_probs, adj_dealer_outcomes, removed
             ),
         }
 
@@ -217,15 +230,23 @@ class EVCalculator:
 
         if can_split and len(player_cards) == 2 and player_cards[0] == player_cards[1]:
             evs["split"] = self._ev_split_composition(
-                player_cards[0], dealer_upcard, adj_probs, adj_dealer_outcomes
+                player_cards[0], dealer_upcard, adj_probs, adj_dealer_outcomes, removed
             )
 
         return evs
 
     def _get_dealer_outcomes_adjusted(
-        self, upcard: int, adj_probs: dict[int, float]
+        self, upcard: int, adj_probs: dict[int, float], removed: tuple[int, ...] | None = None
     ) -> dict:
-        """Calculate dealer outcomes with adjusted card probabilities."""
+        """Calculate dealer outcomes with adjusted card probabilities.
+
+        Uses memoization based on removed card counts for efficiency.
+        """
+        # Check cache
+        if removed is not None:
+            cache_key = (upcard, _removed_to_counts(removed))
+            if cache_key in self._dealer_comp_cache:
+                return self._dealer_comp_cache[cache_key]
 
         def calc_outcomes(hand: tuple[int, ...]) -> dict:
             total, is_soft = hand_value(hand)
@@ -263,9 +284,15 @@ class EVCalculator:
                     conditioned[key] = (outcomes[key] - p_bj) / p_no_bj
                 else:
                     conditioned[key] = outcomes[key] / p_no_bj
-            return conditioned
+            result = conditioned
+        else:
+            result = outcomes
 
-        return outcomes
+        # Store in cache
+        if removed is not None:
+            self._dealer_comp_cache[cache_key] = result
+
+        return result
 
     def _ev_stand_with_dealer(self, player_total: int, dealer_outcomes: dict) -> float:
         """Calculate stand EV with specific dealer outcomes."""
@@ -285,8 +312,14 @@ class EVCalculator:
         dealer_upcard: int,
         adj_probs: dict[int, float],
         adj_dealer_outcomes: dict,
+        removed: tuple[int, ...] | None = None,
     ) -> float:
-        """Calculate hit EV with adjusted probabilities for first draw."""
+        """Calculate hit EV with composition-dependent first draw.
+
+        Uses adjusted card probabilities for the first draw and adjusted
+        dealer outcomes based on initial removed cards. Subsequent draws
+        use infinite deck approximation for speed.
+        """
         ev = 0.0
 
         for card in DISTINCT_CARDS:
@@ -296,10 +329,12 @@ class EVCalculator:
             if new_total > 21:
                 ev -= prob  # Bust
             else:
-                # Use adjusted dealer outcomes for stand comparison
+                # Use the passed-in dealer outcomes (already adjusted for initial removed cards)
                 stand_ev = self._ev_stand_with_dealer(new_total, adj_dealer_outcomes)
-                # Use cached calculations for subsequent hits
+
+                # Use infinite deck for subsequent hits (fast)
                 hit_ev = self.ev_hit(new_total, new_soft, dealer_upcard)
+
                 ev += prob * max(stand_ev, hit_ev)
 
         return ev
@@ -333,22 +368,121 @@ class EVCalculator:
         dealer_upcard: int,
         adj_probs: dict[int, float],
         adj_dealer_outcomes: dict,
+        removed: tuple[int, ...] | None = None,
     ) -> float:
-        """Calculate split EV with adjusted probabilities."""
+        """Calculate split EV with proper card removal between hands.
+
+        Models both split hands separately, accounting for the card drawn
+        to hand 1 when calculating hand 2's probabilities.
+        """
+        if removed is None:
+            # Fallback for infinite deck
+            return 2 * self._ev_single_split_hand(
+                pair_card, dealer_upcard, adj_probs, adj_dealer_outcomes
+            )
+
+        total_ev = 0.0
+
+        # For each possible card drawn to hand 1
+        for card1 in DISTINCT_CARDS:
+            prob1 = adj_probs[card1]
+            hand1_removed = removed + (card1,)
+
+            # Calculate hand 1's EV
+            hand1_ev = self._ev_split_hand_with_card(
+                pair_card, card1, dealer_upcard, adj_probs, adj_dealer_outcomes,
+                hand1_removed
+            )
+
+            # Hand 2 sees deck with hand 1's card removed
+            hand2_probs = get_card_probabilities(self.config.num_decks, hand1_removed)
+
+            # Calculate hand 2's expected EV
+            hand2_ev = 0.0
+            for card2 in DISTINCT_CARDS:
+                prob2 = hand2_probs[card2]
+                hand2_removed = hand1_removed + (card2,)
+                h2_ev = self._ev_split_hand_with_card(
+                    pair_card, card2, dealer_upcard, hand2_probs, adj_dealer_outcomes,
+                    hand2_removed
+                )
+                hand2_ev += prob2 * h2_ev
+
+            total_ev += prob1 * (hand1_ev + hand2_ev)
+
+        return total_ev
+
+    def _ev_split_hand_with_card(
+        self,
+        pair_card: int,
+        drawn_card: int,
+        dealer_upcard: int,
+        adj_probs: dict[int, float],
+        adj_dealer_outcomes: dict,
+        removed: tuple[int, ...],
+    ) -> float:
+        """Calculate EV for a single split hand after drawing a card.
+
+        Uses composition-adjusted dealer outcomes for stand EV, but falls back
+        to cached infinite-deck EVs for hit/double to maintain reasonable speed.
+        """
+        is_ace = pair_card == 11
+
+        # Calculate hand total
+        if pair_card == 11:  # Ace
+            total = 11 + (drawn_card if drawn_card != 11 else 1)
+            soft_aces = 1 if drawn_card != 11 else 1
+            if total > 21:
+                total -= 10
+                soft_aces = 0
+        elif drawn_card == 11:  # Drew an ace
+            total = pair_card + 11
+            soft_aces = 1
+            if total > 21:
+                total -= 10
+                soft_aces = 0
+        else:
+            total = pair_card + drawn_card
+            soft_aces = 0
+
+        if is_ace:
+            # Split aces ALWAYS get only one card
+            return self._ev_stand_with_dealer(total, adj_dealer_outcomes)
+
+        # Use composition-adjusted stand EV
+        stand_ev = self._ev_stand_with_dealer(total, adj_dealer_outcomes)
+        # Use cached infinite-deck hit EV (fast, good approximation)
+        hit_ev = self.ev_hit(total, soft_aces, dealer_upcard)
+        hand_ev = max(stand_ev, hit_ev)
+
+        if self.config.double_after_split:
+            # Use cached infinite-deck double EV
+            double_ev = self.ev_double(total, soft_aces, dealer_upcard)
+            hand_ev = max(hand_ev, double_ev)
+
+        return hand_ev
+
+    def _ev_single_split_hand(
+        self,
+        pair_card: int,
+        dealer_upcard: int,
+        adj_probs: dict[int, float],
+        adj_dealer_outcomes: dict,
+    ) -> float:
+        """Calculate EV for a single split hand (infinite deck fallback)."""
         is_ace = pair_card == 11
         ev = 0.0
 
         for card in DISTINCT_CARDS:
             prob = adj_probs[card]
 
-            # After split, we have (pair_card, new_card)
-            if pair_card == 11:  # Ace
+            if pair_card == 11:
                 total = 11 + (card if card != 11 else 1)
-                soft_aces = 1 if card != 11 else 1
+                soft_aces = 1
                 if total > 21:
                     total -= 10
                     soft_aces = 0
-            elif card == 11:  # Drew an ace
+            elif card == 11:
                 total = pair_card + 11
                 soft_aces = 1
                 if total > 21:
@@ -358,7 +492,7 @@ class EVCalculator:
                 total = pair_card + card
                 soft_aces = 0
 
-            if is_ace and not self.config.resplit_aces:
+            if is_ace:
                 hand_ev = self._ev_stand_with_dealer(total, adj_dealer_outcomes)
             else:
                 stand_ev = self._ev_stand_with_dealer(total, adj_dealer_outcomes)
@@ -371,4 +505,4 @@ class EVCalculator:
 
             ev += prob * hand_ev
 
-        return 2 * ev
+        return ev

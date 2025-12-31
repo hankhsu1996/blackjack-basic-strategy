@@ -11,6 +11,7 @@ Basic strategy is derived by calculating the **Expected Value (EV)** for each po
 For each dealer upcard, we compute the probability distribution of final outcomes.
 
 ### Dealer Rules
+
 - Dealer must hit on 16 or less
 - Dealer must stand on hard 17+
 - On soft 17: depends on H17/S17 rule
@@ -29,13 +30,13 @@ P(final | hand) =
 ### Example: Dealer showing 6
 
 | Final Total | Probability |
-|-------------|-------------|
-| 17 | 16.5% |
-| 18 | 10.6% |
-| 19 | 10.6% |
-| 20 | 10.1% |
-| 21 | 9.7% |
-| Bust | 42.3% |
+| ----------- | ----------- |
+| 17          | 16.5%       |
+| 18          | 10.6%       |
+| 19          | 10.6%       |
+| 20          | 10.1%       |
+| 21          | 9.7%        |
+| Bust        | 42.3%       |
 
 ## Step 2: Player EV Calculations
 
@@ -60,6 +61,7 @@ EV_hit(total, soft_aces, dealer_upcard) =
 ```
 
 The recursion terminates because:
+
 - Busted hands return -1 immediately
 - Hands at 21 will always stand (hitting can only hurt)
 
@@ -84,6 +86,7 @@ EV_split = 2 × Σ P(card=c) × EV_optimal(pair_card, c, dealer_upcard)
 ```
 
 Special cases:
+
 - Split aces often get only one card each
 - Resplit rules affect calculation
 - DAS affects whether doubling is considered
@@ -93,11 +96,13 @@ Special cases:
 ### Why (total, soft_aces)?
 
 Using full card tuples creates exponential state space:
+
 - 10 distinct cards
 - Hands can have 2-11 cards
 - State space: O(10^11) combinations
 
 Using (total, soft_aces):
+
 - total: 4-21 (18 values)
 - soft_aces: 0-1 (2 values)
 - dealer: 2-11 (10 values)
@@ -141,14 +146,22 @@ def ev_hit(total, soft_aces, dealer_upcard):
 
 This ensures each unique state is computed only once.
 
-## Infinite Deck Approximation
+## Composition-Dependent Calculation
 
-For simplicity, we use infinite deck probabilities:
+For finite decks, we use composition-dependent probabilities that account for removed cards:
 
-| Card | Probability |
-|------|-------------|
-| 2-9 | 1/13 each |
+```python
+# Cards already seen: player hand + dealer upcard
+removed = player_cards + (dealer_upcard,)
+adj_probs = get_card_probabilities(num_decks, removed)
+```
+
+This adjusts both player draw probabilities and dealer outcome probabilities based on the specific cards in play.
+
+For infinite deck (num_decks = 0), standard probabilities are used:
+
+| Card     | Probability   |
+| -------- | ------------- |
+| 2-9      | 1/13 each     |
 | 10,J,Q,K | 4/13 combined |
-| A | 1/13 |
-
-This closely approximates 6-8 deck shoes and simplifies calculations by not tracking card removal.
+| A        | 1/13          |

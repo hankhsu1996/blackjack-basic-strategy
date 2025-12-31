@@ -4,6 +4,7 @@ export interface Config {
   double_after_split: boolean;
   resplit_aces: boolean;
   dealer_peeks: boolean;
+  blackjack_pays: number;
   description: string;
 }
 
@@ -19,6 +20,7 @@ export interface TableData {
 
 export interface StrategyData {
   config: Config;
+  house_edge: number;
   hard: TableData;
   soft: TableData;
   pairs: TableData;

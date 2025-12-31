@@ -130,11 +130,11 @@ Only applicable when first two cards are a pair.
 
 ## Action Legend
 
-| Code | Meaning |
-|------|---------|
-| S | Stand |
-| H | Hit |
-| D | Double down |
-| Dh | Double if allowed, otherwise Hit |
-| Ds | Double if allowed, otherwise Stand |
-| P | Split |
+| Code | Meaning                            |
+| ---- | ---------------------------------- |
+| S    | Stand                              |
+| H    | Hit                                |
+| D    | Double down                        |
+| Dh   | Double if allowed, otherwise Hit   |
+| Ds   | Double if allowed, otherwise Stand |
+| P    | Split                              |

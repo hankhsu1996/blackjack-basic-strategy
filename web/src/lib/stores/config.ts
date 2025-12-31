@@ -6,6 +6,7 @@ export interface ConfigState {
   doubleAfterSplit: boolean;
   resplitAces: boolean;
   dealerPeeks: boolean;
+  blackjackPays: "3:2" | "6:5";
 }
 
 export const config = writable<ConfigState>({
@@ -14,6 +15,7 @@ export const config = writable<ConfigState>({
   doubleAfterSplit: true,
   resplitAces: false,
   dealerPeeks: true,
+  blackjackPays: "3:2",
 });
 
 export const strategyFilename = derived(config, ($config) => {
@@ -22,5 +24,6 @@ export const strategyFilename = derived(config, ($config) => {
   const das = $config.doubleAfterSplit ? "das" : "ndas";
   const rsa = $config.resplitAces ? "rsa" : "nrsa";
   const peek = $config.dealerPeeks ? "peek" : "nopeek";
-  return `${decks}-${s17}-${das}-${rsa}-${peek}.json`;
+  const bj = $config.blackjackPays === "3:2" ? "32" : "65";
+  return `${decks}-${s17}-${das}-${rsa}-${peek}-${bj}.json`;
 });

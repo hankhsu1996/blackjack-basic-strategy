@@ -1,7 +1,7 @@
 """Strategy table generation and formatting."""
 
 from .config import GameConfig
-from .renderers import StrategyData, TableData, TextRenderer
+from .renderers import StrategyData, TableData
 from .strategy import BasicStrategy
 
 
@@ -92,9 +92,3 @@ class StrategyTables:
                 row.append(strategy.get((val, dealer), "?"))
             rows.append(row)
         return rows
-
-    def print_all(self) -> None:
-        """Print all strategy tables to stdout."""
-        data = self.get_strategy_data()
-        renderer = TextRenderer()
-        print(renderer.render(data))

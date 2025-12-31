@@ -8,13 +8,13 @@ The `GameConfig` dataclass controls all rule variations that affect basic strate
 
 Number of decks in the shoe.
 
-| Value | Meaning |
-|-------|---------|
-| 0 | Infinite deck approximation |
-| 1 | Single deck |
-| 2 | Double deck |
-| 6 | Six deck (most common) |
-| 8 | Eight deck |
+| Value | Meaning                     |
+| ----- | --------------------------- |
+| 0     | Infinite deck approximation |
+| 1     | Single deck                 |
+| 2     | Double deck                 |
+| 6     | Six deck (most common)      |
+| 8     | Eight deck                  |
 
 **Impact**: More decks slightly favor the house. Single deck has notable strategy differences.
 
@@ -22,10 +22,10 @@ Number of decks in the shoe.
 
 Whether dealer hits or stands on soft 17 (Ace + 6).
 
-| Value | Rule | House Edge |
-|-------|------|------------|
-| False | S17 (Stand) | Lower |
-| True | H17 (Hit) | ~0.2% higher |
+| Value | Rule        | House Edge   |
+| ----- | ----------- | ------------ |
+| False | S17 (Stand) | Lower        |
+| True  | H17 (Hit)   | ~0.2% higher |
 
 **Impact**: H17 is worse for players. Affects doubling and some stand/hit decisions.
 
@@ -33,9 +33,9 @@ Whether dealer hits or stands on soft 17 (Ace + 6).
 
 Whether player can double down after splitting a pair.
 
-| Value | Meaning |
-|-------|---------|
-| True | DAS allowed |
+| Value | Meaning       |
+| ----- | ------------- |
+| True  | DAS allowed   |
 | False | NDAS (No DAS) |
 
 **Impact**: DAS makes splitting more valuable. Affects pair splitting decisions.
@@ -44,9 +44,9 @@ Whether player can double down after splitting a pair.
 
 Whether player can resplit aces if dealt another ace after splitting.
 
-| Value | Meaning |
-|-------|---------|
-| True | RSA allowed |
+| Value | Meaning       |
+| ----- | ------------- |
+| True  | RSA allowed   |
 | False | NRSA (No RSA) |
 
 **Impact**: RSA makes splitting aces slightly more valuable.
@@ -55,12 +55,12 @@ Whether player can resplit aces if dealt another ace after splitting.
 
 Maximum number of times a hand can be split.
 
-| Value | Hands Possible |
-|-------|----------------|
-| 1 | 2 hands max |
-| 2 | 3 hands max |
-| 3 | 4 hands max (common) |
-| 4 | 5 hands max |
+| Value | Hands Possible       |
+| ----- | -------------------- |
+| 1     | 2 hands max          |
+| 2     | 3 hands max          |
+| 3     | 4 hands max (common) |
+| 4     | 5 hands max          |
 
 **Impact**: More splits = more flexibility = slightly better for player.
 
@@ -68,11 +68,11 @@ Maximum number of times a hand can be split.
 
 Payout ratio for natural blackjack (Ace + 10-value on first two cards).
 
-| Value | Payout | House Edge |
-|-------|--------|------------|
-| 1.5 | 3:2 | Standard |
-| 1.2 | 6:5 | ~1.4% higher |
-| 1.0 | Even money | ~2.3% higher |
+| Value | Payout     | House Edge   |
+| ----- | ---------- | ------------ |
+| 1.5   | 3:2        | Standard     |
+| 1.2   | 6:5        | ~1.4% higher |
+| 1.0   | Even money | ~2.3% higher |
 
 **Impact**: 6:5 blackjack significantly increases house edge. Avoid these games.
 
@@ -80,12 +80,12 @@ Payout ratio for natural blackjack (Ace + 10-value on first two cards).
 
 Whether dealer checks for blackjack when showing 10 or Ace.
 
-| Value | Meaning |
-|-------|---------|
-| True | Peek (US rules) |
+| Value | Meaning                  |
+| ----- | ------------------------ |
+| True  | Peek (US rules)          |
 | False | No peek (European rules) |
 
-**Impact**: No peek means you might lose doubles/splits to dealer blackjack. Not yet implemented in calculations.
+**Impact**: No peek means you might lose doubles/splits to dealer blackjack. Strategy is adjusted accordingly.
 
 ## Common Configurations
 

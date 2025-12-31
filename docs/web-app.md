@@ -4,13 +4,13 @@ The interactive strategy visualization is built with Svelte, Tailwind CSS, and D
 
 ## Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| Svelte 5 | Reactive UI framework |
-| TypeScript | Type safety |
+| Technology   | Purpose               |
+| ------------ | --------------------- |
+| Svelte 5     | Reactive UI framework |
+| TypeScript   | Type safety           |
 | Tailwind CSS | Utility-first styling |
-| DaisyUI | Component library |
-| Vite | Build tool |
+| DaisyUI      | Component library     |
+| Vite         | Build tool            |
 
 ## Component Structure
 
@@ -46,8 +46,12 @@ export const config = writable<ConfigState>({
 });
 
 // Derived filename for JSON loading
-export const strategyFilename = derived(config, ($c) =>
-  `${$c.numDecks === 0 ? 'inf' : $c.numDecks}-${$c.dealerHitsSoft17 ? 'h17' : 's17'}-...`
+export const strategyFilename = derived(
+  config,
+  ($c) =>
+    `${$c.numDecks === 0 ? "inf" : $c.numDecks}-${
+      $c.dealerHitsSoft17 ? "h17" : "s17"
+    }-...`
 );
 ```
 
@@ -55,13 +59,13 @@ When any config value changes, the derived filename updates, triggering a fetch 
 
 ## Pre-computed Strategies
 
-Instead of calculating strategies at runtime, we pre-compute all 96 combinations:
+Instead of calculating strategies at runtime, we pre-compute all rule combinations as JSON files:
 
-- 6 deck options: 1, 2, 4, 6, 8, infinite
-- 4 boolean options: H17, DAS, RSA, dealer peeks
-- Total: 6 × 2⁴ = 96 JSON files
+- Deck options: 1, 2, 4, 6, 8, infinite
+- Boolean options: H17/S17, DAS/NDAS, RSA/NRSA, Peek/NoPeek
+- Blackjack payout: 3:2 or 6:5
 
-Files are named: `{decks}-{s17|h17}-{das|ndas}-{rsa|nrsa}-{peek|nopeek}.json`
+Files are named: `{decks}-{s17|h17}-{das|ndas}-{rsa|nrsa}-{peek|nopeek}-{32|65}.json`
 
 ## Color System
 
@@ -69,10 +73,10 @@ Colors use HSL for easy customization:
 
 ```typescript
 const ACTION_COLORS = {
-  S: 'hsl(0, 70%, 85%)',     // Stand - red
-  H: 'hsl(50, 80%, 80%)',    // Hit - yellow
-  D: 'hsl(210, 70%, 85%)',   // Double - blue
-  P: 'hsl(120, 50%, 80%)',   // Split - green
+  S: "hsl(0, 70%, 85%)", // Stand - red
+  H: "hsl(50, 80%, 80%)", // Hit - yellow
+  D: "hsl(210, 70%, 85%)", // Double - blue
+  P: "hsl(120, 50%, 80%)", // Split - green
 };
 ```
 
@@ -80,11 +84,11 @@ Adjusting the lightness (85%) makes colors more/less washed out.
 
 ## Responsive Design
 
-| Breakpoint | Layout |
-|------------|--------|
-| Desktop (lg+) | Sidebar left, 3 tables horizontal |
-| Tablet | Collapsible config, horizontal scroll |
-| Mobile | Config accordion, tables stacked |
+| Breakpoint    | Layout                                |
+| ------------- | ------------------------------------- |
+| Desktop (lg+) | Sidebar left, 3 tables horizontal     |
+| Tablet        | Collapsible config, horizontal scroll |
+| Mobile        | Config accordion, tables stacked      |
 
 ## Build & Deploy
 

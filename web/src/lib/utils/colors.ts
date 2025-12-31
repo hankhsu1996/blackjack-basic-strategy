@@ -1,7 +1,7 @@
 // Action colors
 const ACTION_COLORS: Record<string, string> = {
   // Stand - Red
-  S: "#F6D6D6",
+  S: "#FFDADA",
 
   // Hit - Yellow
   H: "#FFF2C2",
