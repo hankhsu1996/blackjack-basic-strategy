@@ -17,6 +17,10 @@ class DealerProbabilities:
     def get_outcome_probs(self, upcard: int) -> dict[int, float]:
         """Get probability distribution of dealer final totals.
 
+        When dealer_peeks is True and upcard is 10 or A, the probabilities
+        are conditioned on dealer NOT having blackjack (since player would
+        have already lost).
+
         Args:
             upcard: Dealer's upcard value (2-11, where 11 is Ace)
 
@@ -26,7 +30,39 @@ class DealerProbabilities:
         """
         # Start with dealer's upcard
         initial_hand = (upcard,)
-        return self._calculate_outcomes(initial_hand)
+        outcomes = self._calculate_outcomes(initial_hand)
+
+        # If dealer peeks for blackjack and shows 10 or A, condition on no BJ
+        if self.config.dealer_peeks and upcard in (10, 11):
+            outcomes = self._condition_on_no_blackjack(upcard, outcomes)
+
+        return outcomes
+
+    def _condition_on_no_blackjack(
+        self, upcard: int, outcomes: dict[int, float]
+    ) -> dict[int, float]:
+        """Condition outcome probabilities on dealer not having blackjack.
+
+        When dealer shows 10 or A and peeks, we know they don't have BJ.
+        This removes the blackjack probability from P(21) and renormalizes.
+        """
+        # P(blackjack): Ace if showing 10, 10-value if showing Ace
+        p_bj = self.card_probs[11] if upcard == 10 else self.card_probs[10]
+
+        p_no_bj = 1.0 - p_bj
+
+        # The unconditional P(21) includes blackjack
+        # P(21 | no BJ) = (P(21) - P(BJ)) / P(no BJ)
+        # P(other | no BJ) = P(other) / P(no BJ)
+        conditioned = {}
+        for key in outcomes:
+            if key == 21:
+                # Remove blackjack probability from 21
+                conditioned[key] = (outcomes[key] - p_bj) / p_no_bj
+            else:
+                conditioned[key] = outcomes[key] / p_no_bj
+
+        return conditioned
 
     def _calculate_outcomes(self, hand: tuple[int, ...]) -> dict[int, float]:
         """Recursively calculate outcome probabilities for a dealer hand."""

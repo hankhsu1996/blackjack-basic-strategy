@@ -1,6 +1,5 @@
 """Basic strategy calculation - optimal action selection."""
 
-
 from .config import GameConfig
 from .evaluator import EVCalculator
 
@@ -81,7 +80,11 @@ class BasicStrategy:
                     cards = (player_total,)  # Simplified representation
                 else:
                     # Use two cards that sum to total without ace-as-11
-                    cards = (10, player_total - 10) if player_total > 11 else (player_total,)
+                    cards = (
+                        (10, player_total - 10)
+                        if player_total > 11
+                        else (player_total,)
+                    )
 
                 # For proper EV calculation, we need valid card tuples
                 cards = self._make_hard_hand(player_total)
@@ -130,12 +133,15 @@ class BasicStrategy:
         return strategy
 
     def _make_hard_hand(self, total: int) -> tuple[int, ...]:
-        """Create a hard hand tuple for a given total."""
-        if total <= 10:
-            # Single card or small cards
-            if total <= 11:
-                return (total,) if total >= 2 else (2,)
-            return (total,)
+        """Create a hard hand tuple for a given total.
+
+        Always returns 2 cards so doubling can be considered.
+        """
+        if total <= 4:
+            return (2, 2) if total == 4 else (2, total - 2)
+        elif total <= 10:
+            # Use (total - 2, 2) to make a 2-card hand
+            return (total - 2, 2)
         elif total == 11:
             return (6, 5)
         elif total <= 19:

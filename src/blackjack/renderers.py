@@ -158,13 +158,15 @@ class HTMLRenderer:
         table {
             border-collapse: collapse;
             margin: 15px 0;
-            width: 100%;
+            table-layout: fixed;
         }
         th, td {
             border: 1px solid #ccc;
-            padding: 10px 8px;
+            padding: 8px;
             text-align: center;
             font-size: 14px;
+            width: 45px;
+            height: 45px;
         }
         th {
             background-color: #f8f8f8;
@@ -174,10 +176,10 @@ class HTMLRenderer:
             background-color: #f8f8f8;
             font-weight: 600;
         }
-        .stand { background-color: #90EE90; }
-        .hit { background-color: #FFB6C1; }
-        .double { background-color: #FFFF99; }
-        .split { background-color: #ADD8E6; }
+        .stand { background-color: #FFDDDD; }
+        .hit { background-color: #FFFF99; }
+        .double { background-color: #DDEEFF; }
+        .split { background-color: #DDFFDD; }
         .legend {
             margin-top: 40px;
             padding: 20px;
@@ -200,7 +202,7 @@ class HTMLRenderer:
         }"""
 
     def _render_table(self, table: TableData) -> str:
-        html = ['<table>', '<thead><tr>']
+        html = ["<table>", "<thead><tr>"]
 
         for header in table.headers:
             html.append(f"<th>{header}</th>")

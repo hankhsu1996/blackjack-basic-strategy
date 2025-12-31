@@ -99,6 +99,14 @@ Hands are represented as `(total, soft_aces)` tuples for efficiency:
 
 This reduces state space from exponential (card combinations) to ~40 states.
 
+### Composition-Dependent Strategy
+
+For finite decks (num_decks > 0), the calculator uses composition-dependent probabilities:
+- Card draw probabilities are adjusted for known removed cards (player's hand + dealer upcard)
+- Dealer outcome probabilities are recalculated with adjusted deck composition
+
+This matches real-world 4-8 deck basic strategy charts. For infinite deck (num_decks = 0), standard probabilities are used.
+
 ## Configuration Options
 
 | Parameter | Default | Description |
@@ -120,9 +128,19 @@ This reduces state space from exponential (card combinations) to ~40 states.
 - `Ds` - Double if allowed, otherwise Stand
 - `P` - Split
 
-## Known Issues
+## Commit Format
 
-- Hard totals 5-10 currently use single-card representations, which prevents doubling from being offered. Need to fix `_make_hard_hand()` in strategy.py.
+```
+<Summary starting with verb, 50 chars or less>
+
+- First change description (wrap at 72 chars)
+- Second change description
+- 2-5 bullets based on change size
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+```
 
 ## Testing
 

@@ -1,6 +1,5 @@
 """Strategy table generation and formatting."""
 
-
 from .config import GameConfig
 from .renderers import StrategyData, TableData, TextRenderer
 from .strategy import BasicStrategy
@@ -50,21 +49,17 @@ class StrategyTables:
             ),
         )
 
-    def _build_hard_rows(
-        self, strategy: dict[tuple[int, int], str]
-    ) -> list[list[str]]:
+    def _build_hard_rows(self, strategy: dict[tuple[int, int], str]) -> list[list[str]]:
         """Build rows for hard totals table."""
         rows = []
-        for total in range(5, 18):
+        for total in range(5, 20):
             row = [str(total)]
             for dealer in range(2, 12):
                 row.append(strategy.get((total, dealer), "?"))
             rows.append(row)
         return rows
 
-    def _build_soft_rows(
-        self, strategy: dict[tuple[int, int], str]
-    ) -> list[list[str]]:
+    def _build_soft_rows(self, strategy: dict[tuple[int, int], str]) -> list[list[str]]:
         """Build rows for soft totals table."""
         rows = []
         for other in range(2, 10):
@@ -74,14 +69,20 @@ class StrategyTables:
             rows.append(row)
         return rows
 
-    def _build_pair_rows(
-        self, strategy: dict[tuple[int, int], str]
-    ) -> list[list[str]]:
+    def _build_pair_rows(self, strategy: dict[tuple[int, int], str]) -> list[list[str]]:
         """Build rows for pairs table."""
         rows = []
         pair_labels = [
-            "2,2", "3,3", "4,4", "5,5", "6,6",
-            "7,7", "8,8", "9,9", "10,10", "A,A",
+            "2,2",
+            "3,3",
+            "4,4",
+            "5,5",
+            "6,6",
+            "7,7",
+            "8,8",
+            "9,9",
+            "10,10",
+            "A,A",
         ]
         pair_values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 

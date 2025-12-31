@@ -1,11 +1,20 @@
 """Card values and deck probability calculations."""
 
-
 # Card values: 2-9 face value, 10/J/Q/K = 10, A = 1 or 11
 CARD_VALUES: dict[str, int] = {
-    "2": 2, "3": 3, "4": 4, "5": 5, "6": 6,
-    "7": 7, "8": 8, "9": 9, "10": 10,
-    "J": 10, "Q": 10, "K": 10, "A": 11,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
+    "J": 10,
+    "Q": 10,
+    "K": 10,
+    "A": 11,
 }
 
 # For calculations, we only care about distinct values
@@ -13,18 +22,23 @@ CARD_VALUES: dict[str, int] = {
 DISTINCT_CARDS: list[int] = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]  # 11 represents Ace
 
 
-def get_card_probabilities(num_decks: int = 0) -> dict[int, float]:
+def get_card_probabilities(
+    num_decks: int = 0,
+    removed_cards: tuple[int, ...] = (),
+) -> dict[int, float]:
     """Get probability of drawing each card value.
 
     Args:
         num_decks: Number of decks. 0 for infinite deck approximation.
+        removed_cards: Cards already removed from deck (for composition-dependent).
+                       Each card value (2-10, 11 for Ace) can appear multiple times.
 
     Returns:
         Dictionary mapping card value to probability.
         Note: Ace is represented as 11.
     """
     if num_decks == 0:
-        # Infinite deck: 4/52 for 2-9 and A, 16/52 for 10-value
+        # Infinite deck: card removal doesn't matter
         probs = {}
         for card in range(2, 10):
             probs[card] = 4 / 52  # ~0.0769
@@ -32,13 +46,27 @@ def get_card_probabilities(num_decks: int = 0) -> dict[int, float]:
         probs[11] = 4 / 52  # Ace ~0.0769
         return probs
     else:
-        # Finite deck (same ratios, but could be extended for card removal)
-        total_cards = 52 * num_decks
+        # Finite deck with card removal
+        # Count how many of each card value are removed
+        removed_counts: dict[int, int] = {}
+        for card in removed_cards:
+            removed_counts[card] = removed_counts.get(card, 0) + 1
+
+        # Calculate remaining cards
+        total_removed = len(removed_cards)
+        remaining_total = 52 * num_decks - total_removed
+
         probs = {}
         for card in range(2, 10):
-            probs[card] = (4 * num_decks) / total_cards
-        probs[10] = (16 * num_decks) / total_cards
-        probs[11] = (4 * num_decks) / total_cards
+            remaining = 4 * num_decks - removed_counts.get(card, 0)
+            probs[card] = remaining / remaining_total
+        # 10-value cards (10, J, Q, K)
+        remaining_tens = 16 * num_decks - removed_counts.get(10, 0)
+        probs[10] = remaining_tens / remaining_total
+        # Aces
+        remaining_aces = 4 * num_decks - removed_counts.get(11, 0)
+        probs[11] = remaining_aces / remaining_total
+
         return probs
 
 
