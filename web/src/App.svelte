@@ -137,7 +137,7 @@
   </aside>
 
   <!-- Strategy Tables -->
-  <div class="flex-1 p-4 pt-8 pb-32 lg:pt-4 lg:pb-4 overflow-auto flex flex-col items-center lg:items-start justify-center">
+  <div class="flex-1 p-4 pr-6 pt-8 pb-32 lg:pt-4 lg:pb-4 overflow-auto flex flex-col items-center lg:items-start justify-center">
     {#if error}
       <div class="alert alert-error">
         <span>{error}</span>
