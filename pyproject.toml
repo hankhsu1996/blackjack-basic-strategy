@@ -1,0 +1,47 @@
+[project]
+name = "blackjack-strategy"
+version = "0.1.0"
+description = "Generate blackjack basic strategy tables based on configurable rules"
+requires-python = ">=3.10"
+dependencies = ["tabulate>=0.9.0"]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.1.0"]
+
+[project.scripts]
+blackjack-strategy = "src.blackjack:main"
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+src = ["src"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "I",    # isort
+    "N",    # pep8-naming
+    "W",    # pycodestyle warnings
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "SIM",  # flake8-simplify
+]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+    "B019",  # lru_cache on methods (used intentionally for performance)
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["blackjack"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.10",
+]
