@@ -3,7 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  html,
   body {
-    @apply text-gray-700 bg-base-200;
+    @apply bg-base-200;
+    overscroll-behavior: none;
+  }
+
+  body {
+    @apply text-gray-700;
+  }
+
+  /* Remove tap highlight on touch devices */
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 }

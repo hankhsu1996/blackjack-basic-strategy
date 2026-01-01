@@ -51,7 +51,7 @@
     <img src="{import.meta.env.BASE_URL}favicon.png" alt="" class="w-5 h-5 mr-3" />
     <h1 class="font-semibold">Blackjack Basic Strategy</h1>
     <button
-      class="btn btn-ghost btn-sm absolute right-4"
+      class="btn btn-ghost btn-sm absolute right-2"
       onclick={() => (menuOpen = !menuOpen)}
     >
       {#if menuOpen}
@@ -68,7 +68,7 @@
   <!-- Mobile menu overlay -->
   {#if menuOpen}
     <div
-      class="lg:hidden fixed inset-0 top-14 bg-base-200 px-12 py-4 z-40 flex flex-col overflow-y-auto"
+      class="lg:hidden fixed inset-0 top-14 bg-base-200 px-12 py-4 z-40 flex flex-col overflow-y-auto" style="bottom: calc(-1 * env(safe-area-inset-bottom, 0px))"
       transition:fade={{ duration: 150 }}
     >
       <ConfigPanel />

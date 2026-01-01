@@ -22,7 +22,7 @@
   ];
 </script>
 
-<div class="space-y-4 px-4">
+<div class="space-y-3 lg:space-y-4 px-2 lg:px-4">
   <!-- === GAME SETUP === -->
 
   <!-- Number of Decks -->
