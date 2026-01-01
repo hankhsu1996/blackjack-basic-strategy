@@ -18,11 +18,4 @@
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* Disable button active state darkening on touch devices */
-  @media (hover: none) {
-    .btn:active:not(:focus-visible) {
-      --tw-brightness: none;
-      filter: none;
-    }
-  }
 }

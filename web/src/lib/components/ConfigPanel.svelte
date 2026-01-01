@@ -31,9 +31,9 @@
     <div class="flex gap-1">
       {#each deckOptions as opt}
         <button
-          class="btn btn-sm flex-1 min-w-0 {$config.numDecks === opt.value
-            ? 'bg-base-300 border-base-300'
-            : 'btn-ghost'}"
+          class="flex-1 min-w-0 h-8 rounded-lg text-sm font-medium transition-colors {$config.numDecks === opt.value
+            ? 'bg-base-300'
+            : 'hover:bg-base-300/50'}"
           onclick={() => ($config.numDecks = opt.value)}
         >
           {opt.label}
@@ -48,9 +48,9 @@
     <div class="flex gap-1">
       {#each bjPayOptions as opt}
         <button
-          class="btn btn-sm flex-1 min-w-0 {$config.blackjackPays === opt.value
-            ? 'bg-base-300 border-base-300'
-            : 'btn-ghost'}"
+          class="flex-1 min-w-0 h-8 rounded-lg text-sm font-medium transition-colors {$config.blackjackPays === opt.value
+            ? 'bg-base-300'
+            : 'hover:bg-base-300/50'}"
           onclick={() => ($config.blackjackPays = opt.value)}
         >
           {opt.label}
@@ -107,9 +107,9 @@
     <div class="flex gap-1">
       {#each maxSplitOptions as opt}
         <button
-          class="btn btn-sm flex-1 min-w-0 {$config.maxSplitHands === opt.value
-            ? 'bg-base-300 border-base-300'
-            : 'btn-ghost'}"
+          class="flex-1 min-w-0 h-8 rounded-lg text-sm font-medium transition-colors {$config.maxSplitHands === opt.value
+            ? 'bg-base-300'
+            : 'hover:bg-base-300/50'}"
           onclick={() => ($config.maxSplitHands = opt.value)}
         >
           {opt.label}
