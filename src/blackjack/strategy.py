@@ -11,6 +11,7 @@ ACTION_DOUBLE_OR_HIT = "Dh"  # Double if allowed, otherwise hit
 ACTION_DOUBLE_OR_STAND = "Ds"  # Double if allowed, otherwise stand
 ACTION_SPLIT = "P"
 ACTION_SPLIT_OR_HIT = "Ph"  # Split if DAS, otherwise hit
+ACTION_SURRENDER = "R"  # Surrender (give up half bet)
 
 
 class BasicStrategy:
@@ -36,7 +37,7 @@ class BasicStrategy:
             can_double: Whether doubling is allowed
 
         Returns:
-            Action code (S, H, D, Dh, Ds, P)
+            Action code (S, H, D, Dh, Ds, P, R)
         """
         evs = self.ev_calc.get_all_evs(
             player_cards, dealer_upcard, can_split, can_double
@@ -57,6 +58,9 @@ class BasicStrategy:
 
         if best_action == "split":
             return ACTION_SPLIT
+
+        if best_action == "surrender":
+            return ACTION_SURRENDER
 
         if best_action == "stand":
             return ACTION_STAND

@@ -19,7 +19,8 @@ def config_to_filename(config: GameConfig) -> str:
     msh = f"sp{config.max_split_hands}"  # sp2, sp3, sp4
     peek = "peek" if config.dealer_peeks else "nopeek"
     bj = "32" if config.blackjack_pays == 1.5 else "65"
-    return f"{decks}-{s17}-{das}-{rsa}-{msh}-{peek}-{bj}.json"
+    sur = "sur" if config.late_surrender else "nosur"
+    return f"{decks}-{s17}-{das}-{rsa}-{msh}-{peek}-{bj}-{sur}.json"
 
 
 def get_table_data(tables: StrategyTables) -> dict:
@@ -53,7 +54,7 @@ def generate_for_base_config(base_params: tuple) -> list[dict]:
     Strategy tables are the same for both payouts and max_split_hands,
     only house edge differs.
     """
-    decks, h17, das, rsa, peek = base_params
+    decks, h17, das, rsa, peek, surrender = base_params
     output_dir = Path("web/public/strategies")
 
     # Create base config for strategy tables (these don't affect strategy)
@@ -65,6 +66,7 @@ def generate_for_base_config(base_params: tuple) -> list[dict]:
         max_split_hands=4,  # Doesn't affect strategy tables
         dealer_peeks=peek,
         blackjack_pays=1.5,  # Doesn't affect strategy tables
+        late_surrender=surrender,
     )
 
     # Generate strategy tables once (same for all payouts and max_split_hands)
@@ -84,6 +86,7 @@ def generate_for_base_config(base_params: tuple) -> list[dict]:
                 max_split_hands=max_hands,
                 dealer_peeks=peek,
                 blackjack_pays=bj_pays,
+                late_surrender=surrender,
             )
 
             filename = config_to_filename(config)
@@ -97,6 +100,7 @@ def generate_for_base_config(base_params: tuple) -> list[dict]:
                     "max_split_hands": config.max_split_hands,
                     "dealer_peeks": config.dealer_peeks,
                     "blackjack_pays": config.blackjack_pays,
+                    "late_surrender": config.late_surrender,
                     "description": str(config),
                 },
                 **table_data,
@@ -132,6 +136,7 @@ def main():
             bool_options,  # double_after_split
             bool_options,  # resplit_aces
             bool_options,  # dealer_peeks
+            bool_options,  # late_surrender
         )
     )
 

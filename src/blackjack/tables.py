@@ -38,7 +38,7 @@ class StrategyTables:
                 rows=self._build_hard_rows(hard),
             ),
             soft_table=TableData(
-                title="Soft Totals",
+                title="Soft Hands",
                 headers=self.DEALER_HEADERS,
                 rows=self._build_soft_rows(soft),
             ),

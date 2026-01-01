@@ -194,6 +194,9 @@ class EVCalculator:
         if can_split and len(player_cards) == 2 and player_cards[0] == player_cards[1]:
             evs["split"] = self.ev_split(player_cards[0], dealer_upcard)
 
+        if self.config.late_surrender and len(player_cards) == 2:
+            evs["surrender"] = -0.5
+
         return evs
 
     def _get_all_evs_composition(
@@ -232,6 +235,9 @@ class EVCalculator:
             evs["split"] = self._ev_split_composition(
                 player_cards[0], dealer_upcard, adj_probs, adj_dealer_outcomes, removed
             )
+
+        if self.config.late_surrender and len(player_cards) == 2:
+            evs["surrender"] = -0.5
 
         return evs
 

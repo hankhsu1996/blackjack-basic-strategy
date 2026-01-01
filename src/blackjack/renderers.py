@@ -21,5 +21,5 @@ class StrategyData:
     soft_table: TableData
     pair_table: TableData
     legend: str = field(
-        default="S=Stand, H=Hit, Dh=Double/Hit, Ds=Double/Stand, P=Split"
+        default="S=Stand, H=Hit, Dh=Double/Hit, Ds=Double/Stand, P=Split, R=Surrender"
     )

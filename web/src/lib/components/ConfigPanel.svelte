@@ -145,16 +145,15 @@
 
   <!-- === OTHER === -->
 
-  <!-- Surrender (not supported yet) -->
-  <div class="form-control opacity-50">
-    <label class="label cursor-not-allowed justify-start gap-3">
+  <!-- Late Surrender -->
+  <div class="form-control">
+    <label class="label cursor-pointer justify-start gap-3">
       <input
         type="checkbox"
         class="toggle toggle-sm"
-        disabled
-        checked={false}
+        bind:checked={$config.lateSurrender}
       />
-      <span class="label-text">Surrender</span>
+      <span class="label-text">Late surrender</span>
     </label>
   </div>
 </div>

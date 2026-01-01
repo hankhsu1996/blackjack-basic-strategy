@@ -14,6 +14,9 @@ const ACTION_COLORS: Record<string, string> = {
   // Split - Green
   P: "#CBF3BB",
   Ph: "#CBF3BB",
+
+  // Surrender - Purple
+  R: "#E8D5F2",
 };
 
 // Default for unknown actions
@@ -31,3 +34,9 @@ export const LEGEND_ITEMS = [
   { action: "Dh", label: "Double (or Hit)", color: ACTION_COLORS["Dh"] },
   { action: "Ds", label: "Double (or Stand)", color: ACTION_COLORS["Ds"] },
 ];
+
+export const SURRENDER_ITEM = {
+  action: "R",
+  label: "Surrender",
+  color: ACTION_COLORS["R"],
+};

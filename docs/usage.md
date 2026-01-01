@@ -114,7 +114,7 @@ Columns: Dealer's upcard (2-A)
 
 A "hard" hand has no ace counted as 11, or would bust if the ace were 11.
 
-### Soft Totals
+### Soft Hands
 
 Rows: Player's soft hand (A2-A9)
 Columns: Dealer's upcard (2-A)

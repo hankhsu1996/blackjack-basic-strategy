@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { LEGEND_ITEMS } from "../utils/colors";
+  import { LEGEND_ITEMS, SURRENDER_ITEM } from "../utils/colors";
+  import { config } from "../stores/config";
 
   // Split into basic actions and double variants
   const basicItems = LEGEND_ITEMS.filter(
@@ -20,6 +21,17 @@
       <span class="text-base-content/70">{item.label}</span>
     </div>
   {/each}
+
+  <!-- Surrender (only when enabled) -->
+  {#if $config.lateSurrender}
+    <div class="flex items-center gap-1.5">
+      <kbd
+        class="kbd kbd-sm shadow-none border-none flex items-center justify-center text-[14px] select-none"
+        style="background-color: {SURRENDER_ITEM.color}">{SURRENDER_ITEM.action}</kbd
+      >
+      <span class="text-base-content/70">{SURRENDER_ITEM.label}</span>
+    </div>
+  {/if}
 
   <!-- Keep doubles together -->
   <div class="flex gap-x-4 flex-nowrap">

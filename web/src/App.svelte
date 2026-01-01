@@ -146,7 +146,7 @@
       <div class="contents lg:block lg:w-fit lg:mx-auto" style="margin-left: max(18rem, calc(50% - 530px))">
         <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
           <StrategyTable title="Hard Totals" data={strategyData.hard} />
-          <StrategyTable title="Soft Totals" data={strategyData.soft} />
+          <StrategyTable title="Soft Hands" data={strategyData.soft} />
           <StrategyTable title="Pairs" data={strategyData.pairs} />
         </div>
 

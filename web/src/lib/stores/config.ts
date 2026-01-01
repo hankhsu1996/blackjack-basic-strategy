@@ -8,6 +8,7 @@ export interface ConfigState {
   maxSplitHands: number;
   dealerPeeks: boolean;
   blackjackPays: "3:2" | "6:5";
+  lateSurrender: boolean;
 }
 
 export const config = writable<ConfigState>({
@@ -18,6 +19,7 @@ export const config = writable<ConfigState>({
   maxSplitHands: 4,
   dealerPeeks: true,
   blackjackPays: "3:2",
+  lateSurrender: false,
 });
 
 export const strategyFilename = derived(config, ($config) => {
@@ -28,5 +30,6 @@ export const strategyFilename = derived(config, ($config) => {
   const msh = `sp${$config.maxSplitHands}`;
   const peek = $config.dealerPeeks ? "peek" : "nopeek";
   const bj = $config.blackjackPays === "3:2" ? "32" : "65";
-  return `${decks}-${s17}-${das}-${rsa}-${msh}-${peek}-${bj}.json`;
+  const sur = $config.lateSurrender ? "sur" : "nosur";
+  return `${decks}-${s17}-${das}-${rsa}-${msh}-${peek}-${bj}-${sur}.json`;
 });

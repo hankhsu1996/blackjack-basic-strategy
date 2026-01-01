@@ -15,9 +15,7 @@ class GameConfig:
         max_split_hands: Maximum hands from splitting (2-4, default 4)
         blackjack_pays: Payout ratio for blackjack (1.5 for 3:2, 1.2 for 6:5)
         dealer_peeks: True if dealer peeks for blackjack with 10/A showing
-
-    Note:
-        Surrender is not modeled.
+        late_surrender: True if late surrender is allowed (after dealer peeks)
     """
 
     num_decks: int = 6
@@ -27,6 +25,7 @@ class GameConfig:
     max_split_hands: int = 4  # Can resplit up to 4 hands
     blackjack_pays: float = 1.5  # 3:2
     dealer_peeks: bool = True
+    late_surrender: bool = False
 
     @classmethod
     def default(cls) -> "GameConfig":
