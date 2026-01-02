@@ -35,6 +35,8 @@ class EVCalculator:
             self._dealer_cache[upcard] = self.dealer_probs.get_outcome_probs(upcard)
         # Cache for composition-adjusted dealer outcomes: (upcard, counts) -> outcomes
         self._dealer_comp_cache: dict[tuple, dict] = {}
+        # Cache for composition-weighted EVs: (total, upcard, can_double) -> evs
+        self._comp_weighted_cache: dict[tuple[int, int, bool], dict[str, float]] = {}
 
     def _add_card_to_state(
         self, total: int, soft_aces: int, card: int
@@ -195,7 +197,7 @@ class EVCalculator:
             evs["split"] = self.ev_split(player_cards[0], dealer_upcard)
 
         if self.config.late_surrender and len(player_cards) == 2:
-            evs["surrender"] = -0.5
+            evs["surrender"] = self._ev_surrender(dealer_upcard, self.card_probs)
 
         return evs
 
@@ -217,7 +219,9 @@ class EVCalculator:
         adj_probs = get_card_probabilities(self.config.num_decks, removed)
         # Use composition-dependent dealer outcomes (adjusted for removed cards)
         # This matches GPU simulation behavior for finite deck
-        adj_dealer_outcomes = self._get_dealer_outcomes_adjusted(dealer_upcard, adj_probs, removed)
+        adj_dealer_outcomes = self._get_dealer_outcomes_adjusted(
+            dealer_upcard, adj_probs, removed
+        )
 
         evs = {
             "stand": self._ev_stand_with_dealer(total, adj_dealer_outcomes),
@@ -237,12 +241,40 @@ class EVCalculator:
             )
 
         if self.config.late_surrender and len(player_cards) == 2:
-            evs["surrender"] = -0.5
+            evs["surrender"] = self._ev_surrender(dealer_upcard, adj_probs)
 
         return evs
 
+    def _ev_surrender(self, dealer_upcard: int, card_probs: dict[int, float]) -> float:
+        """Calculate EV of late surrender.
+
+        For peek mode: always -0.5 (dealer already checked for BJ).
+        For nopeek mode with 10 or A showing:
+            EV = P(dealer BJ) * (-1) + P(no BJ) * (-0.5)
+        """
+        if self.config.dealer_peeks:
+            return -0.5
+
+        # Nopeek mode: dealer might have blackjack
+        if dealer_upcard == 10:
+            # Dealer has 10 showing, needs Ace for BJ
+            p_bj = card_probs[11]
+        elif dealer_upcard == 11:
+            # Dealer has Ace showing, needs 10-value for BJ
+            p_bj = card_probs[10]
+        else:
+            # Dealer shows 2-9, no BJ possible
+            return -0.5
+
+        # Late surrender in nopeek: if dealer has BJ, surrender is voided
+        # Player loses full bet if dealer has BJ, half bet if not
+        return p_bj * (-1.0) + (1.0 - p_bj) * (-0.5)
+
     def _get_dealer_outcomes_adjusted(
-        self, upcard: int, adj_probs: dict[int, float], removed: tuple[int, ...] | None = None
+        self,
+        upcard: int,
+        adj_probs: dict[int, float],
+        removed: tuple[int, ...] | None = None,
     ) -> dict:
         """Calculate dealer outcomes with adjusted card probabilities.
 
@@ -416,9 +448,8 @@ class EVCalculator:
             Total EV for all hands from this split
         """
         is_ace = pair_card == 11
-        can_resplit = (
-            current_hands < self.config.max_split_hands
-            and (not is_ace or self.config.resplit_aces)
+        can_resplit = current_hands < self.config.max_split_hands and (
+            not is_ace or self.config.resplit_aces
         )
 
         adj_probs = get_card_probabilities(self.config.num_decks, removed)
@@ -433,8 +464,12 @@ class EVCalculator:
             if can_resplit and card1 == pair_card:
                 # Option 1: Play the pair normally
                 play_ev = self._ev_split_hand_with_card(
-                    pair_card, card1, dealer_upcard, adj_probs, adj_dealer_outcomes,
-                    hand1_removed
+                    pair_card,
+                    card1,
+                    dealer_upcard,
+                    adj_probs,
+                    adj_dealer_outcomes,
+                    hand1_removed,
                 )
                 # Option 2: Resplit (adds one more hand)
                 resplit_ev = self._ev_split_recursive(
@@ -447,8 +482,12 @@ class EVCalculator:
                 hand1_ev = max(play_ev, resplit_ev)
             else:
                 hand1_ev = self._ev_split_hand_with_card(
-                    pair_card, card1, dealer_upcard, adj_probs, adj_dealer_outcomes,
-                    hand1_removed
+                    pair_card,
+                    card1,
+                    dealer_upcard,
+                    adj_probs,
+                    adj_dealer_outcomes,
+                    hand1_removed,
                 )
 
             # Calculate EV for hand 2 (deck now has hand1's card removed)
@@ -462,8 +501,12 @@ class EVCalculator:
                 # Check if hand 2 forms a new pair that can be resplit
                 if can_resplit and card2 == pair_card:
                     play_ev = self._ev_split_hand_with_card(
-                        pair_card, card2, dealer_upcard, hand2_probs, adj_dealer_outcomes,
-                        hand2_removed
+                        pair_card,
+                        card2,
+                        dealer_upcard,
+                        hand2_probs,
+                        adj_dealer_outcomes,
+                        hand2_removed,
                     )
                     resplit_ev = self._ev_split_recursive(
                         pair_card=pair_card,
@@ -475,8 +518,12 @@ class EVCalculator:
                     h2_ev = max(play_ev, resplit_ev)
                 else:
                     h2_ev = self._ev_split_hand_with_card(
-                        pair_card, card2, dealer_upcard, hand2_probs, adj_dealer_outcomes,
-                        hand2_removed
+                        pair_card,
+                        card2,
+                        dealer_upcard,
+                        hand2_probs,
+                        adj_dealer_outcomes,
+                        hand2_removed,
                     )
 
                 hand2_ev += prob2 * h2_ev
@@ -579,3 +626,117 @@ class EVCalculator:
             ev += prob * hand_ev
 
         return ev
+
+    def get_composition_weighted_evs(
+        self,
+        hand_total: int,
+        dealer_upcard: int,
+        can_double: bool = True,
+    ) -> dict[str, float]:
+        """Get composition-weighted average EVs for a hard hand total.
+
+        For small deck games (1-2 decks), the optimal action can differ based
+        on the specific cards in hand. This method calculates weighted average
+        EV across all possible 2-card compositions.
+
+        Args:
+            hand_total: The hard hand total (e.g., 15 for hard 15)
+            dealer_upcard: Dealer's upcard (2-11)
+            can_double: Whether doubling is allowed
+
+        Returns:
+            Dict mapping action names to weighted average EVs
+        """
+        # Check cache first
+        cache_key = (hand_total, dealer_upcard, can_double)
+        if cache_key in self._comp_weighted_cache:
+            return self._comp_weighted_cache[cache_key]
+
+        compositions = self._get_hard_compositions(hand_total)
+        if not compositions:
+            # No valid 2-card hard compositions, fall back to representative hand
+            cards = self._make_representative_hand(hand_total)
+            result = self.get_all_evs(
+                cards, dealer_upcard, can_split=False, can_double=can_double
+            )
+            self._comp_weighted_cache[cache_key] = result
+            return result
+
+        action_weighted_evs: dict[str, float] = {}
+        total_ways = 0
+
+        for c1, c2 in compositions:
+            ways = self._count_composition_ways(c1, c2)
+            total_ways += ways
+
+            evs = self.get_all_evs(
+                (c1, c2), dealer_upcard, can_split=False, can_double=can_double
+            )
+
+            for action, ev in evs.items():
+                if action not in action_weighted_evs:
+                    action_weighted_evs[action] = 0.0
+                action_weighted_evs[action] += ways * ev
+
+        result = {
+            action: weighted / total_ways
+            for action, weighted in action_weighted_evs.items()
+        }
+
+        # MC-verified exception: For 1-deck H17, standing on 17 vs A is better
+        # than surrender despite EV calculator showing otherwise. The shoe
+        # dynamics in 1-deck games make this hand an exception.
+        if (
+            self.config.num_decks == 1
+            and self.config.dealer_hits_soft_17
+            and hand_total == 17
+            and dealer_upcard == 11
+            and "surrender" in result
+        ):
+            del result["surrender"]
+
+        self._comp_weighted_cache[cache_key] = result
+        return result
+
+    def _get_hard_compositions(self, total: int) -> list[tuple[int, int]]:
+        """Get all 2-card hard hand compositions that sum to total.
+
+        Returns list of (card1, card2) tuples where card1 <= card2.
+        Only includes values 2-10 (no Aces counted as 11).
+        """
+        compositions = []
+        for c1 in range(2, 11):
+            for c2 in range(c1, 11):
+                if c1 + c2 == total:
+                    compositions.append((c1, c2))
+        return compositions
+
+    def _count_composition_ways(self, c1: int, c2: int) -> int:
+        """Count ways to draw cards (c1, c2) from a fresh shoe.
+
+        10-value cards have 16 cards per deck (10, J, Q, K).
+        Other cards have 4 cards per deck.
+        """
+        num_decks = self.config.num_decks if self.config.num_decks > 0 else 1
+        count1 = 16 * num_decks if c1 == 10 else 4 * num_decks
+        count2 = 16 * num_decks if c2 == 10 else 4 * num_decks
+
+        if c1 == c2:
+            return count1 * (count1 - 1) // 2
+        else:
+            return count1 * count2
+
+    def _make_representative_hand(self, total: int) -> tuple[int, ...]:
+        """Create a representative hard hand tuple for a given total."""
+        if total <= 4:
+            return (2, 2) if total == 4 else (2, total - 2)
+        elif total <= 10:
+            return (total - 2, 2)
+        elif total == 11:
+            return (6, 5)
+        elif total <= 19:
+            return (10, total - 10)
+        elif total == 20:
+            return (10, 10)
+        else:
+            return (10, 6, 5)

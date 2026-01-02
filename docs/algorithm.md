@@ -165,3 +165,56 @@ For infinite deck (num_decks = 0), standard probabilities are used:
 | 2-9      | 1/13 each     |
 | 10,J,Q,K | 4/13 combined |
 | A        | 1/13          |
+
+## Small Deck Composition Weighting
+
+For 1-2 deck games, the optimal action can differ based on the specific cards in hand. For example, hard 15 can be:
+- (10, 5) - 64 ways
+- (9, 6) - 16 ways
+- (8, 7) - 16 ways
+
+Each composition has different EVs due to composition-dependent effects. For large decks, these differences are negligible. For small decks, they can change the optimal action.
+
+### Weighted Average Approach
+
+For stiff hands (12+) in 1-2 deck games, we calculate weighted average EV across all 2-card compositions:
+
+```python
+for (c1, c2) in compositions:
+    ways = count_ways(c1, c2)  # probability weight
+    evs = get_all_evs((c1, c2), dealer_upcard)
+    for action, ev in evs.items():
+        weighted_evs[action] += ways * ev
+
+avg_evs = {action: total / total_ways for action, total in weighted_evs.items()}
+```
+
+This ensures the strategy recommendation works well across all hand compositions, not just the (10, X) composition traditionally used.
+
+## MC-Verified Exceptions
+
+Monte Carlo simulation with realistic shoe dynamics sometimes reveals that the EV calculator's recommendation is suboptimal. These cases are rare and occur in small deck games where shoe composition effects are significant.
+
+### 1-Deck H17: Hard 17 vs A
+
+The EV calculator recommends surrender for hard 17 vs A in 1-deck H17 games (margin: +0.0097). However, MC simulation with 5+ billion hands shows that standing is actually better:
+
+| Strategy | House Edge |
+|----------|-----------|
+| With 17 vs A surrender | 0.2895% |
+| Without 17 vs A surrender | 0.2589% |
+
+The difference (0.031%) is statistically significant. This exception is hardcoded in `evaluator.py`:
+
+```python
+# MC-verified exception: For 1-deck H17, standing on 17 vs A is better
+# than surrender despite EV calculator showing otherwise.
+if (num_decks == 1 and dealer_hits_soft_17 and hand_total == 17
+    and dealer_upcard == 11 and "surrender" in result):
+    del result["surrender"]
+```
+
+This issue does not affect:
+- 1-deck S17 (standing is already optimal)
+- 2+ deck games (composition effects are smaller)
+- Other surrender hands (MC confirms they are correct)

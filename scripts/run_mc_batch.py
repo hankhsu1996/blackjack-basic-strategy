@@ -42,7 +42,7 @@ def run_mc(strategy_file: Path, hands_billions: int, mc_binary: Path) -> dict | 
         # Parse: "House edge: 0.4507% +/- 0.0035%"
         match = re.search(r"House edge: ([\d.]+)% \+/- ([\d.]+)%", result.stdout)
         if not match:
-            print(f"  ERROR: Could not parse output")
+            print("  ERROR: Could not parse output")
             return None
 
         return {
@@ -52,11 +52,47 @@ def run_mc(strategy_file: Path, hands_billions: int, mc_binary: Path) -> dict | 
         }
 
     except subprocess.TimeoutExpired:
-        print(f"  ERROR: Timeout")
+        print("  ERROR: Timeout")
         return None
     except Exception as e:
         print(f"  ERROR: {e}")
         return None
+
+
+def validate_sur_vs_nosur(results: dict) -> list[dict]:
+    """Validate that sur house edge < nosur for all config pairs.
+
+    Returns:
+        List of violations (empty if all pass)
+    """
+    violations = []
+
+    # Group configs by base name (without -sur/-nosur suffix)
+    base_configs: dict[str, dict[str, float]] = {}
+    for key, data in results.items():
+        if key.endswith("-sur"):
+            base = key[:-4]
+            base_configs.setdefault(base, {})["sur"] = data["house_edge"]
+        elif key.endswith("-nosur"):
+            base = key[:-6]
+            base_configs.setdefault(base, {})["nosur"] = data["house_edge"]
+
+    # Check each pair
+    for base, edges in sorted(base_configs.items()):
+        if "sur" in edges and "nosur" in edges:
+            sur_edge = edges["sur"]
+            nosur_edge = edges["nosur"]
+            if sur_edge > nosur_edge:
+                violations.append(
+                    {
+                        "config": base,
+                        "sur": sur_edge,
+                        "nosur": nosur_edge,
+                        "diff": sur_edge - nosur_edge,
+                    }
+                )
+
+    return violations
 
 
 def main():
@@ -70,8 +106,13 @@ def main():
     )
     parser.add_argument(
         "--resume",
-        type=str,
+        action="store_true",
         help="Resume from existing mc_house_edge.json, skipping completed configs",
+    )
+    parser.add_argument(
+        "--validate-only",
+        action="store_true",
+        help="Only validate existing results, don't run simulations",
     )
     args = parser.parse_args()
 
@@ -81,20 +122,40 @@ def main():
     strategies_dir = project_root / "web" / "public" / "strategies"
     output_file = strategies_dir / "mc_house_edge.json"
 
+    # Load existing results
+    results = {}
+    if output_file.exists():
+        try:
+            results = json.loads(output_file.read_text())
+            print(f"Loaded {len(results)} existing results")
+        except Exception:
+            pass
+
+    # Validate-only mode
+    if args.validate_only:
+        print("\nValidating sur vs nosur house edges...")
+        violations = validate_sur_vs_nosur(results)
+        if violations:
+            print(f"\nFOUND {len(violations)} VIOLATIONS:")
+            for v in violations:
+                print(
+                    f"  {v['config']}: sur={v['sur']:.4f}% > nosur={v['nosur']:.4f}% "
+                    f"(diff: +{v['diff']:.4f}%)"
+                )
+            sys.exit(1)
+        else:
+            print("All sur/nosur pairs pass validation (sur <= nosur)")
+            sys.exit(0)
+
     # Check MC binary exists
     if not mc_binary.exists():
         print(f"ERROR: MC binary not found at {mc_binary}")
         print("Run 'make' in the cuda/ directory first.")
         sys.exit(1)
 
-    # Load existing results if resuming
-    results = {}
-    if args.resume or output_file.exists():
-        try:
-            results = json.loads(output_file.read_text())
-            print(f"Loaded {len(results)} existing results")
-        except Exception:
-            pass
+    # Skip already computed if --resume
+    if not args.resume:
+        results = {}
 
     # Get all strategy files
     strategy_files = sorted(
@@ -127,8 +188,8 @@ def main():
         )
 
         print(
-            f"[{i+1}/{len(strategy_files)}] {json_file.name} "
-            f"(ETA: {remaining/60:.1f}min)"
+            f"[{i + 1}/{len(strategy_files)}] {json_file.name} "
+            f"(ETA: {remaining / 60:.1f}min)"
         )
 
         result = run_mc(json_file, args.hands_billions, mc_binary)
@@ -140,9 +201,22 @@ def main():
             output_file.write_text(json.dumps(results, indent=2, sort_keys=True))
 
     total_time = time.time() - start_time
-    print(f"\nCompleted {completed} configs in {total_time/60:.1f} minutes")
+    print(f"\nCompleted {completed} configs in {total_time / 60:.1f} minutes")
     print(f"Skipped {skipped} existing configs")
     print(f"Saved to {output_file}")
+
+    # Run validation
+    print("\nValidating sur vs nosur house edges...")
+    violations = validate_sur_vs_nosur(results)
+    if violations:
+        print(f"\nWARNING: {len(violations)} violations found:")
+        for v in violations:
+            print(
+                f"  {v['config']}: sur={v['sur']:.4f}% > nosur={v['nosur']:.4f}% "
+                f"(diff: +{v['diff']:.4f}%)"
+            )
+    else:
+        print("All sur/nosur pairs pass validation (sur <= nosur)")
 
 
 if __name__ == "__main__":

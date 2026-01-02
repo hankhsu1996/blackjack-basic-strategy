@@ -30,10 +30,11 @@ struct GameConfig {
     int max_split_hands;      // Max hands from splitting (default 4)
     bool resplit_aces;        // Can resplit aces
     float penetration;        // Reshuffle at this fraction (0.75 = 75%)
+    bool late_surrender;      // Late surrender allowed
 };
 
 // Strategy tables (will be copied to GPU)
-// Actions: 0=Stand, 1=Hit, 2=Double(hit), 3=Double(stand), 4=Split
+// Actions: 0=Stand, 1=Hit, 2=Double(hit), 3=Double(stand), 4=Split, 5=Surrender
 __constant__ int8_t d_hard_strategy[18 * 10];   // [total-4][upcard-2]
 __constant__ int8_t d_soft_strategy[10 * 10];   // [total-12][upcard-2]
 __constant__ int8_t d_pair_strategy[10 * 10];   // [card-2][upcard-2]
@@ -51,6 +52,7 @@ int8_t parse_action(const char* action) {
     if (strcmp(action, "D") == 0) return 2;   // Double
     if (strcmp(action, "P") == 0) return 4;   // Split
     if (strcmp(action, "Ph") == 0) return 4;  // Split or Hit
+    if (strcmp(action, "R") == 0) return 5;   // Surrender
     return 1;  // Default to hit
 }
 
@@ -123,6 +125,7 @@ bool load_strategy(const char* filename,
         cJSON* max_split = cJSON_GetObjectItem(cfg, "max_split_hands");
         cJSON* rsa = cJSON_GetObjectItem(cfg, "resplit_aces");
         cJSON* pen = cJSON_GetObjectItem(cfg, "penetration");
+        cJSON* sur = cJSON_GetObjectItem(cfg, "late_surrender");
 
         config->num_decks = decks ? decks->valueint : 6;
         config->dealer_hits_soft_17 = h17 && cJSON_IsTrue(h17);
@@ -131,15 +134,17 @@ bool load_strategy(const char* filename,
         config->max_split_hands = max_split ? max_split->valueint : 4;  // Default to 4 hands
         config->resplit_aces = rsa && cJSON_IsTrue(rsa);
         config->penetration = pen ? (float)pen->valuedouble : 0.75f;  // Default 75%
+        config->late_surrender = sur && cJSON_IsTrue(sur);
     }
 
-    printf("Config: Decks=%d, H17=%s, Peek=%s, BJ=%.2f, MaxSplit=%d, RSA=%s, Pen=%.0f%%\n",
+    printf("Config: Decks=%d, H17=%s, Peek=%s, BJ=%.2f, MaxSplit=%d, RSA=%s, Sur=%s, Pen=%.0f%%\n",
            config->num_decks,
            config->dealer_hits_soft_17 ? "Yes" : "No",
            config->dealer_peeks ? "Yes" : "No",
            config->blackjack_pays,
            config->max_split_hands,
            config->resplit_aces ? "Yes" : "No",
+           config->late_surrender ? "Yes" : "No",
            config->penetration * 100);
 
     // Parse hard strategy
@@ -333,7 +338,7 @@ __device__ __forceinline__ int hand_value(int* cards, int num_cards) {
     return total + (aces > 0 ? 100 : 0);
 }
 
-__device__ int get_action(int* cards, int num_cards, int dealer_upcard, bool can_split) {
+__device__ int get_action(int* cards, int num_cards, int dealer_upcard, bool can_split, bool can_surrender = false) {
     int hv = hand_value(cards, num_cards);
     int total = hv % 100;
     bool is_soft = hv >= 100;
@@ -347,21 +352,31 @@ __device__ int get_action(int* cards, int num_cards, int dealer_upcard, bool can
         if (action == 4) return 4;  // Split
     }
 
+    int action;
+
     // Soft hand
     if (is_soft && total >= 12 && total <= 21) {
         int soft_idx = total - 12;
-        return d_soft_strategy[soft_idx * 10 + dealer_idx];
+        action = d_soft_strategy[soft_idx * 10 + dealer_idx];
     }
-
     // Hard hand
-    if (total >= 4 && total <= 21) {
+    else if (total >= 4 && total <= 21) {
         int hard_idx = total - 4;
         if (hard_idx < 0) hard_idx = 0;
         if (hard_idx > 17) hard_idx = 17;
-        return d_hard_strategy[hard_idx * 10 + dealer_idx];
+        action = d_hard_strategy[hard_idx * 10 + dealer_idx];
+    }
+    else {
+        action = 1;  // Hit
     }
 
-    return 1;  // Hit
+    // Surrender (action=5) only allowed when can_surrender is true
+    // Otherwise treat as hit
+    if (action == 5 && !can_surrender) {
+        action = 1;
+    }
+
+    return action;
 }
 
 __device__ int play_dealer(int* cards, int num_cards, Shoe* shoe, curandState* state) {
@@ -397,7 +412,7 @@ __device__ int play_player_hand(
         if (total > 21) return total;
         if (total == 21) return total;
 
-        int action = get_action(cards, *num_cards, dealer_upcard, false);
+        int action = get_action(cards, *num_cards, dealer_upcard, false, false);
 
         if (action == 0) {
             return total;  // Stand
@@ -440,7 +455,7 @@ __device__ float play_single_hand(
         if (total > 21) return -bet;
         if (total == 21) break;
 
-        int action = get_action(player_cards, player_count, dealer_cards[0], false);
+        int action = get_action(player_cards, player_count, dealer_cards[0], false, false);
 
         if (action == 0) {
             break;
@@ -484,11 +499,13 @@ __global__ void simulate_kernel(
     curandState* states,
     unsigned long long hands_per_thread,
     double* total_return,
-    unsigned long long* total_hands
+    unsigned long long* total_hands,
+    unsigned long long* total_surrenders
 ) {
     int tid = blockIdx.x * blockDim.x + threadIdx.x;
     curandState localState = states[tid];
     double thread_return = 0.0;
+    unsigned long long thread_surrenders = 0;
 
     // Initialize finite deck shoe for this thread
     Shoe shoe;
@@ -525,9 +542,13 @@ __global__ void simulate_kernel(
         } else if (dealer_bj) {
             result = -1.0f;
         } else {
-            int action = get_action(player_cards, 2, dealer_cards[0], true);
+            int action = get_action(player_cards, 2, dealer_cards[0], true, true);
 
-            if (action == 4 && player_cards[0] == player_cards[1]) {
+            if (action == 5) {
+                // Surrender: lose half bet
+                result = -0.5f;
+                thread_surrenders++;
+            } else if (action == 4 && player_cards[0] == player_cards[1]) {
                 // Split with resplit support
                 int pair_card = player_cards[0];
                 bool is_ace = (pair_card == 11);
@@ -645,6 +666,7 @@ __global__ void simulate_kernel(
     states[tid] = localState;
     atomicAdd(total_return, thread_return);
     atomicAdd(total_hands, hands_per_thread);
+    atomicAdd(total_surrenders, thread_surrenders);
 }
 
 __global__ void init_rng_kernel(curandState* states, unsigned long long seed) {
@@ -693,12 +715,15 @@ int main(int argc, char** argv) {
     curandState* d_states;
     double* d_total_return;
     unsigned long long* d_total_hands;
+    unsigned long long* d_total_surrenders;
 
     cudaMalloc(&d_states, total_threads * sizeof(curandState));
     cudaMalloc(&d_total_return, sizeof(double));
     cudaMalloc(&d_total_hands, sizeof(unsigned long long));
+    cudaMalloc(&d_total_surrenders, sizeof(unsigned long long));
     cudaMemset(d_total_return, 0, sizeof(double));
     cudaMemset(d_total_hands, 0, sizeof(unsigned long long));
+    cudaMemset(d_total_surrenders, 0, sizeof(unsigned long long));
 
     printf("Initializing RNG...\n");
     init_rng_kernel<<<num_blocks, threads_per_block>>>(d_states, 42);
@@ -710,7 +735,7 @@ int main(int argc, char** argv) {
 
     printf("Running simulation...\n");
     cudaEventRecord(start);
-    simulate_kernel<<<num_blocks, threads_per_block>>>(d_states, hands_per_thread, d_total_return, d_total_hands);
+    simulate_kernel<<<num_blocks, threads_per_block>>>(d_states, hands_per_thread, d_total_return, d_total_hands, d_total_surrenders);
     cudaEventRecord(stop);
     cudaDeviceSynchronize();
 
@@ -725,14 +750,17 @@ int main(int argc, char** argv) {
 
     double total_return;
     unsigned long long total_hands;
+    unsigned long long total_surrenders;
     cudaMemcpy(&total_return, d_total_return, sizeof(double), cudaMemcpyDeviceToHost);
     cudaMemcpy(&total_hands, d_total_hands, sizeof(unsigned long long), cudaMemcpyDeviceToHost);
+    cudaMemcpy(&total_surrenders, d_total_surrenders, sizeof(unsigned long long), cudaMemcpyDeviceToHost);
 
     double house_edge = -total_return / total_hands * 100.0;
     double std_error = 1.14 / sqrt((double)total_hands) * 100.0;
 
     printf("\n=== Results ===\n");
     printf("Hands: %.2f billion\n", total_hands / 1e9);
+    printf("Surrenders: %llu (%.4f%%)\n", total_surrenders, (double)total_surrenders / total_hands * 100.0);
     printf("House edge: %.4f%% +/- %.4f%%\n", house_edge, std_error * 1.96);
     printf("95%% CI: [%.4f%%, %.4f%%]\n", house_edge - std_error * 1.96, house_edge + std_error * 1.96);
     printf("Time: %.2f seconds\n", milliseconds / 1000.0);
@@ -741,6 +769,7 @@ int main(int argc, char** argv) {
     cudaFree(d_states);
     cudaFree(d_total_return);
     cudaFree(d_total_hands);
+    cudaFree(d_total_surrenders);
 
     return 0;
 }

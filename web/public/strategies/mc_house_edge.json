@@ -1,963 +1,963 @@
 {
   "1-h17-das-nrsa-sp2-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3913
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3852
   },
   "1-h17-das-nrsa-sp2-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.4523
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3748
   },
   "1-h17-das-nrsa-sp2-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7743
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7686
   },
   "1-h17-das-nrsa-sp2-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.8353
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7582
   },
   "1-h17-das-nrsa-sp2-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2888
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2821
   },
   "1-h17-das-nrsa-sp2-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3463
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2606
   },
   "1-h17-das-nrsa-sp2-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.672
-  },
-  "1-h17-das-nrsa-sp2-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7294
-  },
-  "1-h17-das-nrsa-sp3-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.365
-  },
-  "1-h17-das-nrsa-sp3-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.4258
-  },
-  "1-h17-das-nrsa-sp3-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.748
-  },
-  "1-h17-das-nrsa-sp3-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.8087
-  },
-  "1-h17-das-nrsa-sp3-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2616
-  },
-  "1-h17-das-nrsa-sp3-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3186
-  },
-  "1-h17-das-nrsa-sp3-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6446
-  },
-  "1-h17-das-nrsa-sp3-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7017
-  },
-  "1-h17-das-nrsa-sp4-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3632
-  },
-  "1-h17-das-nrsa-sp4-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.4241
-  },
-  "1-h17-das-nrsa-sp4-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7462
-  },
-  "1-h17-das-nrsa-sp4-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.8071
-  },
-  "1-h17-das-nrsa-sp4-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2596
-  },
-  "1-h17-das-nrsa-sp4-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3169
-  },
-  "1-h17-das-nrsa-sp4-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6427
-  },
-  "1-h17-das-nrsa-sp4-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7
-  },
-  "1-h17-das-rsa-sp2-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3877
-  },
-  "1-h17-das-rsa-sp2-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.4486
-  },
-  "1-h17-das-rsa-sp2-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7708
-  },
-  "1-h17-das-rsa-sp2-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.8317
-  },
-  "1-h17-das-rsa-sp2-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2888
-  },
-  "1-h17-das-rsa-sp2-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3463
-  },
-  "1-h17-das-rsa-sp2-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.672
-  },
-  "1-h17-das-rsa-sp2-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7294
-  },
-  "1-h17-das-rsa-sp3-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3288
-  },
-  "1-h17-das-rsa-sp3-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3895
-  },
-  "1-h17-das-rsa-sp3-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7119
-  },
-  "1-h17-das-rsa-sp3-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7726
-  },
-  "1-h17-das-rsa-sp3-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2288
-  },
-  "1-h17-das-rsa-sp3-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2861
-  },
-  "1-h17-das-rsa-sp3-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.612
-  },
-  "1-h17-das-rsa-sp3-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6693
-  },
-  "1-h17-das-rsa-sp4-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3247
-  },
-  "1-h17-das-rsa-sp4-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3856
-  },
-  "1-h17-das-rsa-sp4-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7078
-  },
-  "1-h17-das-rsa-sp4-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7687
-  },
-  "1-h17-das-rsa-sp4-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2247
-  },
-  "1-h17-das-rsa-sp4-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2823
-  },
-  "1-h17-das-rsa-sp4-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6079
-  },
-  "1-h17-das-rsa-sp4-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
+    "ci": 0.0035,
+    "hands_billions": 4,
     "house_edge": 1.6655
   },
+  "1-h17-das-nrsa-sp2-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6435
+  },
+  "1-h17-das-nrsa-sp3-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3586
+  },
+  "1-h17-das-nrsa-sp3-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3483
+  },
+  "1-h17-das-nrsa-sp3-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7419
+  },
+  "1-h17-das-nrsa-sp3-nopeek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7317
+  },
+  "1-h17-das-nrsa-sp3-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2546
+  },
+  "1-h17-das-nrsa-sp3-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2335
+  },
+  "1-h17-das-nrsa-sp3-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6379
+  },
+  "1-h17-das-nrsa-sp3-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6163
+  },
+  "1-h17-das-nrsa-sp4-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3567
+  },
+  "1-h17-das-nrsa-sp4-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3465
+  },
+  "1-h17-das-nrsa-sp4-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.74
+  },
+  "1-h17-das-nrsa-sp4-nopeek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7299
+  },
+  "1-h17-das-nrsa-sp4-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2527
+  },
+  "1-h17-das-nrsa-sp4-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2315
+  },
+  "1-h17-das-nrsa-sp4-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6359
+  },
+  "1-h17-das-nrsa-sp4-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6143
+  },
+  "1-h17-das-rsa-sp2-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3817
+  },
+  "1-h17-das-rsa-sp2-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3712
+  },
+  "1-h17-das-rsa-sp2-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7651
+  },
+  "1-h17-das-rsa-sp2-nopeek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7547
+  },
+  "1-h17-das-rsa-sp2-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2821
+  },
+  "1-h17-das-rsa-sp2-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2606
+  },
+  "1-h17-das-rsa-sp2-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6655
+  },
+  "1-h17-das-rsa-sp2-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6435
+  },
+  "1-h17-das-rsa-sp3-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3227
+  },
+  "1-h17-das-rsa-sp3-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3125
+  },
+  "1-h17-das-rsa-sp3-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7061
+  },
+  "1-h17-das-rsa-sp3-nopeek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.696
+  },
+  "1-h17-das-rsa-sp3-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2223
+  },
+  "1-h17-das-rsa-sp3-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2013
+  },
+  "1-h17-das-rsa-sp3-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6057
+  },
+  "1-h17-das-rsa-sp3-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5842
+  },
+  "1-h17-das-rsa-sp4-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3185
+  },
+  "1-h17-das-rsa-sp4-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3082
+  },
+  "1-h17-das-rsa-sp4-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7019
+  },
+  "1-h17-das-rsa-sp4-nopeek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6917
+  },
+  "1-h17-das-rsa-sp4-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.218
+  },
+  "1-h17-das-rsa-sp4-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.197
+  },
+  "1-h17-das-rsa-sp4-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6014
+  },
+  "1-h17-das-rsa-sp4-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5798
+  },
   "1-h17-ndas-nrsa-sp2-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.4048
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3989
   },
   "1-h17-ndas-nrsa-sp2-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.4659
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3885
   },
   "1-h17-ndas-nrsa-sp2-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.788
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7824
   },
   "1-h17-ndas-nrsa-sp2-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.8491
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7721
   },
   "1-h17-ndas-nrsa-sp2-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3026
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2962
   },
   "1-h17-ndas-nrsa-sp2-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3601
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2742
   },
   "1-h17-ndas-nrsa-sp2-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6859
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6797
   },
   "1-h17-ndas-nrsa-sp2-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7434
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6572
   },
   "1-h17-ndas-nrsa-sp3-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3795
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3738
   },
   "1-h17-ndas-nrsa-sp3-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.4406
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3636
   },
   "1-h17-ndas-nrsa-sp3-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7627
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7573
   },
   "1-h17-ndas-nrsa-sp3-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.8238
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7471
   },
   "1-h17-ndas-nrsa-sp3-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2766
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2703
   },
   "1-h17-ndas-nrsa-sp3-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3337
-  },
-  "1-h17-ndas-nrsa-sp3-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6598
-  },
-  "1-h17-ndas-nrsa-sp3-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.717
-  },
-  "1-h17-ndas-nrsa-sp4-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3778
-  },
-  "1-h17-ndas-nrsa-sp4-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.439
-  },
-  "1-h17-ndas-nrsa-sp4-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.761
-  },
-  "1-h17-ndas-nrsa-sp4-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.8222
-  },
-  "1-h17-ndas-nrsa-sp4-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2748
-  },
-  "1-h17-ndas-nrsa-sp4-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3321
-  },
-  "1-h17-ndas-nrsa-sp4-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.658
-  },
-  "1-h17-ndas-nrsa-sp4-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7153
-  },
-  "1-h17-ndas-rsa-sp2-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.4012
-  },
-  "1-h17-ndas-rsa-sp2-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.4622
-  },
-  "1-h17-ndas-rsa-sp2-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7844
-  },
-  "1-h17-ndas-rsa-sp2-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.8455
-  },
-  "1-h17-ndas-rsa-sp2-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3026
-  },
-  "1-h17-ndas-rsa-sp2-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3601
-  },
-  "1-h17-ndas-rsa-sp2-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6859
-  },
-  "1-h17-ndas-rsa-sp2-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7434
-  },
-  "1-h17-ndas-rsa-sp3-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3434
-  },
-  "1-h17-ndas-rsa-sp3-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.4042
-  },
-  "1-h17-ndas-rsa-sp3-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7267
-  },
-  "1-h17-ndas-rsa-sp3-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7876
-  },
-  "1-h17-ndas-rsa-sp3-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2438
-  },
-  "1-h17-ndas-rsa-sp3-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3011
-  },
-  "1-h17-ndas-rsa-sp3-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6271
-  },
-  "1-h17-ndas-rsa-sp3-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6845
-  },
-  "1-h17-ndas-rsa-sp4-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.3394
-  },
-  "1-h17-ndas-rsa-sp4-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.4005
-  },
-  "1-h17-ndas-rsa-sp4-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7227
-  },
-  "1-h17-ndas-rsa-sp4-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.7838
-  },
-  "1-h17-ndas-rsa-sp4-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2399
-  },
-  "1-h17-ndas-rsa-sp4-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2974
-  },
-  "1-h17-ndas-rsa-sp4-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6232
-  },
-  "1-h17-ndas-rsa-sp4-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6808
-  },
-  "1-s17-das-nrsa-sp2-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2055
-  },
-  "1-s17-das-nrsa-sp2-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2766
-  },
-  "1-s17-das-nrsa-sp2-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5876
-  },
-  "1-s17-das-nrsa-sp2-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6587
-  },
-  "1-s17-das-nrsa-sp2-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1095
-  },
-  "1-s17-das-nrsa-sp2-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1095
-  },
-  "1-s17-das-nrsa-sp2-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4917
-  },
-  "1-s17-das-nrsa-sp2-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4917
-  },
-  "1-s17-das-nrsa-sp3-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1795
-  },
-  "1-s17-das-nrsa-sp3-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2502
-  },
-  "1-s17-das-nrsa-sp3-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5615
-  },
-  "1-s17-das-nrsa-sp3-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6323
-  },
-  "1-s17-das-nrsa-sp3-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.082
-  },
-  "1-s17-das-nrsa-sp3-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.082
-  },
-  "1-s17-das-nrsa-sp3-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4641
-  },
-  "1-s17-das-nrsa-sp3-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4641
-  },
-  "1-s17-das-nrsa-sp4-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1777
-  },
-  "1-s17-das-nrsa-sp4-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
+    "ci": 0.0035,
+    "hands_billions": 4,
     "house_edge": 0.2484
   },
+  "1-h17-ndas-nrsa-sp3-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6537
+  },
+  "1-h17-ndas-nrsa-sp3-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6314
+  },
+  "1-h17-ndas-nrsa-sp4-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.372
+  },
+  "1-h17-ndas-nrsa-sp4-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3618
+  },
+  "1-h17-ndas-nrsa-sp4-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7555
+  },
+  "1-h17-ndas-nrsa-sp4-nopeek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7454
+  },
+  "1-h17-ndas-nrsa-sp4-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2684
+  },
+  "1-h17-ndas-nrsa-sp4-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2465
+  },
+  "1-h17-ndas-nrsa-sp4-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6518
+  },
+  "1-h17-ndas-nrsa-sp4-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6294
+  },
+  "1-h17-ndas-rsa-sp2-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3954
+  },
+  "1-h17-ndas-rsa-sp2-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.385
+  },
+  "1-h17-ndas-rsa-sp2-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7789
+  },
+  "1-h17-ndas-rsa-sp2-nopeek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7686
+  },
+  "1-h17-ndas-rsa-sp2-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2962
+  },
+  "1-h17-ndas-rsa-sp2-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2742
+  },
+  "1-h17-ndas-rsa-sp2-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6797
+  },
+  "1-h17-ndas-rsa-sp2-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6572
+  },
+  "1-h17-ndas-rsa-sp3-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3379
+  },
+  "1-h17-ndas-rsa-sp3-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3277
+  },
+  "1-h17-ndas-rsa-sp3-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7215
+  },
+  "1-h17-ndas-rsa-sp3-nopeek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7114
+  },
+  "1-h17-ndas-rsa-sp3-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2379
+  },
+  "1-h17-ndas-rsa-sp3-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2162
+  },
+  "1-h17-ndas-rsa-sp3-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6214
+  },
+  "1-h17-ndas-rsa-sp3-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5992
+  },
+  "1-h17-ndas-rsa-sp4-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3338
+  },
+  "1-h17-ndas-rsa-sp4-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.3236
+  },
+  "1-h17-ndas-rsa-sp4-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7174
+  },
+  "1-h17-ndas-rsa-sp4-nopeek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.7072
+  },
+  "1-h17-ndas-rsa-sp4-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2337
+  },
+  "1-h17-ndas-rsa-sp4-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.2119
+  },
+  "1-h17-ndas-rsa-sp4-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.6172
+  },
+  "1-h17-ndas-rsa-sp4-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5949
+  },
+  "1-s17-das-nrsa-sp2-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1878
+  },
+  "1-s17-das-nrsa-sp2-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1776
+  },
+  "1-s17-das-nrsa-sp2-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5702
+  },
+  "1-s17-das-nrsa-sp2-nopeek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5601
+  },
+  "1-s17-das-nrsa-sp2-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.091
+  },
+  "1-s17-das-nrsa-sp2-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0814
+  },
+  "1-s17-das-nrsa-sp2-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4734
+  },
+  "1-s17-das-nrsa-sp2-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4636
+  },
+  "1-s17-das-nrsa-sp3-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1614
+  },
+  "1-s17-das-nrsa-sp3-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1513
+  },
+  "1-s17-das-nrsa-sp3-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5438
+  },
+  "1-s17-das-nrsa-sp3-nopeek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5337
+  },
+  "1-s17-das-nrsa-sp3-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0636
+  },
+  "1-s17-das-nrsa-sp3-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0539
+  },
+  "1-s17-das-nrsa-sp3-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4459
+  },
+  "1-s17-das-nrsa-sp3-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.436
+  },
+  "1-s17-das-nrsa-sp4-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1596
+  },
+  "1-s17-das-nrsa-sp4-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1493
+  },
   "1-s17-das-nrsa-sp4-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5597
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5419
   },
   "1-s17-das-nrsa-sp4-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6305
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5318
   },
   "1-s17-das-nrsa-sp4-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0802
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0616
   },
   "1-s17-das-nrsa-sp4-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0802
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0519
   },
   "1-s17-das-nrsa-sp4-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4623
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.444
   },
   "1-s17-das-nrsa-sp4-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4623
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.434
   },
   "1-s17-das-rsa-sp2-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2055
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1878
   },
   "1-s17-das-rsa-sp2-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2766
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1776
   },
   "1-s17-das-rsa-sp2-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5876
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5702
   },
   "1-s17-das-rsa-sp2-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6587
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5601
   },
   "1-s17-das-rsa-sp2-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1095
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.091
   },
   "1-s17-das-rsa-sp2-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1095
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0814
   },
   "1-s17-das-rsa-sp2-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4917
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4734
   },
   "1-s17-das-rsa-sp2-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4917
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4636
   },
   "1-s17-das-rsa-sp3-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1474
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1296
   },
   "1-s17-das-rsa-sp3-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2181
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1195
   },
   "1-s17-das-rsa-sp3-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5295
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5121
   },
   "1-s17-das-rsa-sp3-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6003
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.502
   },
   "1-s17-das-rsa-sp3-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0496
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0311
   },
   "1-s17-das-rsa-sp3-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0496
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0215
   },
   "1-s17-das-rsa-sp3-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4318
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4136
   },
   "1-s17-das-rsa-sp3-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4318
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4037
   },
   "1-s17-das-rsa-sp4-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1433
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1253
   },
   "1-s17-das-rsa-sp4-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.214
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1152
   },
   "1-s17-das-rsa-sp4-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5254
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5078
   },
   "1-s17-das-rsa-sp4-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5962
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4977
   },
   "1-s17-das-rsa-sp4-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0455
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0269
   },
   "1-s17-das-rsa-sp4-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0455
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0171
   },
   "1-s17-das-rsa-sp4-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4277
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4093
   },
   "1-s17-das-rsa-sp4-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4277
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.3994
   },
   "1-s17-ndas-nrsa-sp2-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2151
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1981
   },
   "1-s17-ndas-nrsa-sp2-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2866
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1877
   },
   "1-s17-ndas-nrsa-sp2-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5974
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5807
   },
   "1-s17-ndas-nrsa-sp2-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6689
-  },
-  "1-s17-ndas-nrsa-sp2-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1198
-  },
-  "1-s17-ndas-nrsa-sp2-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1198
-  },
-  "1-s17-ndas-nrsa-sp2-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5022
-  },
-  "1-s17-ndas-nrsa-sp2-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5022
-  },
-  "1-s17-ndas-nrsa-sp3-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1899
-  },
-  "1-s17-ndas-nrsa-sp3-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2612
-  },
-  "1-s17-ndas-nrsa-sp3-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.572
-  },
-  "1-s17-ndas-nrsa-sp3-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6434
-  },
-  "1-s17-ndas-nrsa-sp3-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0933
-  },
-  "1-s17-ndas-nrsa-sp3-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0933
-  },
-  "1-s17-ndas-nrsa-sp3-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4755
-  },
-  "1-s17-ndas-nrsa-sp3-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4755
-  },
-  "1-s17-ndas-nrsa-sp4-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1881
-  },
-  "1-s17-ndas-nrsa-sp4-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2594
-  },
-  "1-s17-ndas-nrsa-sp4-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
+    "ci": 0.0035,
+    "hands_billions": 4,
     "house_edge": 1.5703
   },
+  "1-s17-ndas-nrsa-sp2-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1015
+  },
+  "1-s17-ndas-nrsa-sp2-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0915
+  },
+  "1-s17-ndas-nrsa-sp2-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4841
+  },
+  "1-s17-ndas-nrsa-sp2-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4738
+  },
+  "1-s17-ndas-nrsa-sp3-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1727
+  },
+  "1-s17-ndas-nrsa-sp3-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1624
+  },
+  "1-s17-ndas-nrsa-sp3-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5553
+  },
+  "1-s17-ndas-nrsa-sp3-nopeek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.545
+  },
+  "1-s17-ndas-nrsa-sp3-peek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0752
+  },
+  "1-s17-ndas-nrsa-sp3-peek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0652
+  },
+  "1-s17-ndas-nrsa-sp3-peek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4576
+  },
+  "1-s17-ndas-nrsa-sp3-peek-65-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4474
+  },
+  "1-s17-ndas-nrsa-sp4-nopeek-32-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.171
+  },
+  "1-s17-ndas-nrsa-sp4-nopeek-32-sur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1606
+  },
+  "1-s17-ndas-nrsa-sp4-nopeek-65-nosur": {
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5535
+  },
   "1-s17-ndas-nrsa-sp4-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6416
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5431
   },
   "1-s17-ndas-nrsa-sp4-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0915
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0733
   },
   "1-s17-ndas-nrsa-sp4-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0915
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0632
   },
   "1-s17-ndas-nrsa-sp4-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4738
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4558
   },
   "1-s17-ndas-nrsa-sp4-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4738
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4455
   },
   "1-s17-ndas-rsa-sp2-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2151
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1981
   },
   "1-s17-ndas-rsa-sp2-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.2866
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1877
   },
   "1-s17-ndas-rsa-sp2-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5974
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5807
   },
   "1-s17-ndas-rsa-sp2-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6689
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5703
   },
   "1-s17-ndas-rsa-sp2-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1198
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1015
   },
   "1-s17-ndas-rsa-sp2-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1198
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0915
   },
   "1-s17-ndas-rsa-sp2-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5022
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4841
   },
   "1-s17-ndas-rsa-sp2-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5022
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4738
   },
   "1-s17-ndas-rsa-sp3-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1578
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1409
   },
   "1-s17-ndas-rsa-sp3-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.229
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1307
   },
   "1-s17-ndas-rsa-sp3-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5401
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5236
   },
   "1-s17-ndas-rsa-sp3-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6114
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5133
   },
   "1-s17-ndas-rsa-sp3-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0607
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0427
   },
   "1-s17-ndas-rsa-sp3-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0607
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0328
   },
   "1-s17-ndas-rsa-sp3-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4431
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4253
   },
   "1-s17-ndas-rsa-sp3-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4431
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4152
   },
   "1-s17-ndas-rsa-sp4-nopeek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.1538
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1368
   },
   "1-s17-ndas-rsa-sp4-nopeek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.225
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.1264
   },
   "1-s17-ndas-rsa-sp4-nopeek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.5361
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5195
   },
   "1-s17-ndas-rsa-sp4-nopeek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.6074
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.5091
   },
   "1-s17-ndas-rsa-sp4-peek-32-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0568
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0385
   },
   "1-s17-ndas-rsa-sp4-peek-32-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 0.0568
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 0.0285
   },
   "1-s17-ndas-rsa-sp4-peek-65-nosur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4391
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4211
   },
   "1-s17-ndas-rsa-sp4-peek-65-sur": {
-    "ci": 0.0071,
-    "hands_billions": 1,
-    "house_edge": 1.4391
+    "ci": 0.0035,
+    "hands_billions": 4,
+    "house_edge": 1.4109
   },
   "2-h17-das-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -967,7 +967,7 @@
   "2-h17-das-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6716
+    "house_edge": 0.6034
   },
   "2-h17-das-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -977,7 +977,7 @@
   "2-h17-das-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0401
+    "house_edge": 1.9718
   },
   "2-h17-das-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -987,7 +987,7 @@
   "2-h17-das-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.571
+    "house_edge": 0.4859
   },
   "2-h17-das-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -997,7 +997,7 @@
   "2-h17-das-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9395
+    "house_edge": 1.854
   },
   "2-h17-das-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1007,7 +1007,7 @@
   "2-h17-das-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6348
+    "house_edge": 0.5654
   },
   "2-h17-das-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1017,7 +1017,7 @@
   "2-h17-das-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0032
+    "house_edge": 1.9337
   },
   "2-h17-das-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -1027,7 +1027,7 @@
   "2-h17-das-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5334
+    "house_edge": 0.4467
   },
   "2-h17-das-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -1037,7 +1037,7 @@
   "2-h17-das-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9017
+    "house_edge": 1.8147
   },
   "2-h17-das-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1047,7 +1047,7 @@
   "2-h17-das-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6295
+    "house_edge": 0.5603
   },
   "2-h17-das-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1057,7 +1057,7 @@
   "2-h17-das-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9979
+    "house_edge": 1.9286
   },
   "2-h17-das-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -1067,7 +1067,7 @@
   "2-h17-das-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5278
+    "house_edge": 0.4417
   },
   "2-h17-das-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -1077,7 +1077,7 @@
   "2-h17-das-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8961
+    "house_edge": 1.8097
   },
   "2-h17-das-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1087,7 +1087,7 @@
   "2-h17-das-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6667
+    "house_edge": 0.5986
   },
   "2-h17-das-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1097,7 +1097,7 @@
   "2-h17-das-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0352
+    "house_edge": 1.9669
   },
   "2-h17-das-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -1107,7 +1107,7 @@
   "2-h17-das-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.571
+    "house_edge": 0.4859
   },
   "2-h17-das-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -1117,7 +1117,7 @@
   "2-h17-das-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9395
+    "house_edge": 1.854
   },
   "2-h17-das-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1127,7 +1127,7 @@
   "2-h17-das-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5831
+    "house_edge": 0.5143
   },
   "2-h17-das-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1137,7 +1137,7 @@
   "2-h17-das-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9516
+    "house_edge": 1.8827
   },
   "2-h17-das-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -1147,7 +1147,7 @@
   "2-h17-das-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4869
+    "house_edge": 0.4003
   },
   "2-h17-das-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -1157,7 +1157,7 @@
   "2-h17-das-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8554
+    "house_edge": 1.7684
   },
   "2-h17-das-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1167,7 +1167,7 @@
   "2-h17-das-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5715
+    "house_edge": 0.5031
   },
   "2-h17-das-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1177,7 +1177,7 @@
   "2-h17-das-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9401
+    "house_edge": 1.8715
   },
   "2-h17-das-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -1187,7 +1187,7 @@
   "2-h17-das-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4753
+    "house_edge": 0.3891
   },
   "2-h17-das-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -1197,7 +1197,7 @@
   "2-h17-das-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8437
+    "house_edge": 1.7572
   },
   "2-h17-ndas-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1207,7 +1207,7 @@
   "2-h17-ndas-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6892
+    "house_edge": 0.6209
   },
   "2-h17-ndas-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1217,7 +1217,7 @@
   "2-h17-ndas-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0577
+    "house_edge": 1.9893
   },
   "2-h17-ndas-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -1227,7 +1227,7 @@
   "2-h17-ndas-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5887
+    "house_edge": 0.5026
   },
   "2-h17-ndas-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -1237,7 +1237,7 @@
   "2-h17-ndas-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9572
+    "house_edge": 1.8707
   },
   "2-h17-ndas-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1247,7 +1247,7 @@
   "2-h17-ndas-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6547
+    "house_edge": 0.5852
   },
   "2-h17-ndas-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1257,7 +1257,7 @@
   "2-h17-ndas-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0231
+    "house_edge": 1.9536
   },
   "2-h17-ndas-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -1267,7 +1267,7 @@
   "2-h17-ndas-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5532
+    "house_edge": 0.4654
   },
   "2-h17-ndas-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -1277,7 +1277,7 @@
   "2-h17-ndas-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9216
+    "house_edge": 1.8334
   },
   "2-h17-ndas-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1287,7 +1287,7 @@
   "2-h17-ndas-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6498
+    "house_edge": 0.5806
   },
   "2-h17-ndas-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1297,7 +1297,7 @@
   "2-h17-ndas-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0182
+    "house_edge": 1.949
   },
   "2-h17-ndas-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -1307,7 +1307,7 @@
   "2-h17-ndas-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5483
+    "house_edge": 0.4607
   },
   "2-h17-ndas-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -1317,7 +1317,7 @@
   "2-h17-ndas-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9166
+    "house_edge": 1.8287
   },
   "2-h17-ndas-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1327,7 +1327,7 @@
   "2-h17-ndas-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6843
+    "house_edge": 0.6161
   },
   "2-h17-ndas-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1337,7 +1337,7 @@
   "2-h17-ndas-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0528
+    "house_edge": 1.9845
   },
   "2-h17-ndas-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -1347,7 +1347,7 @@
   "2-h17-ndas-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5887
+    "house_edge": 0.5026
   },
   "2-h17-ndas-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -1357,7 +1357,7 @@
   "2-h17-ndas-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9572
+    "house_edge": 1.8707
   },
   "2-h17-ndas-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1367,7 +1367,7 @@
   "2-h17-ndas-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6032
+    "house_edge": 0.5343
   },
   "2-h17-ndas-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1377,7 +1377,7 @@
   "2-h17-ndas-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9718
+    "house_edge": 1.9027
   },
   "2-h17-ndas-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -1387,7 +1387,7 @@
   "2-h17-ndas-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5069
+    "house_edge": 0.4189
   },
   "2-h17-ndas-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -1397,7 +1397,7 @@
   "2-h17-ndas-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8754
+    "house_edge": 1.7871
   },
   "2-h17-ndas-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1407,7 +1407,7 @@
   "2-h17-ndas-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5922
+    "house_edge": 0.5235
   },
   "2-h17-ndas-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1417,7 +1417,7 @@
   "2-h17-ndas-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9608
+    "house_edge": 1.892
   },
   "2-h17-ndas-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -1427,7 +1427,7 @@
   "2-h17-ndas-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4959
+    "house_edge": 0.4081
   },
   "2-h17-ndas-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -1437,7 +1437,7 @@
   "2-h17-ndas-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8644
+    "house_edge": 1.7763
   },
   "2-s17-das-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1447,7 +1447,7 @@
   "2-s17-das-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4784
+    "house_edge": 0.3712
   },
   "2-s17-das-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1457,7 +1457,7 @@
   "2-s17-das-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8462
+    "house_edge": 1.739
   },
   "2-s17-das-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -1467,7 +1467,7 @@
   "2-s17-das-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3214
+    "house_edge": 0.2795
   },
   "2-s17-das-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -1477,7 +1477,7 @@
   "2-s17-das-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.6891
+    "house_edge": 1.6471
   },
   "2-s17-das-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1487,7 +1487,7 @@
   "2-s17-das-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4415
+    "house_edge": 0.3334
   },
   "2-s17-das-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1497,7 +1497,7 @@
   "2-s17-das-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8092
+    "house_edge": 1.7011
   },
   "2-s17-das-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -1507,7 +1507,7 @@
   "2-s17-das-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.284
+    "house_edge": 0.2402
   },
   "2-s17-das-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -1517,7 +1517,7 @@
   "2-s17-das-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.6516
+    "house_edge": 1.6077
   },
   "2-s17-das-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1527,7 +1527,7 @@
   "2-s17-das-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4368
+    "house_edge": 0.3287
   },
   "2-s17-das-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1537,7 +1537,7 @@
   "2-s17-das-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8045
+    "house_edge": 1.6963
   },
   "2-s17-das-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -1547,7 +1547,7 @@
   "2-s17-das-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.2792
+    "house_edge": 0.2352
   },
   "2-s17-das-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -1557,7 +1557,7 @@
   "2-s17-das-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.6468
+    "house_edge": 1.6028
   },
   "2-s17-das-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1567,7 +1567,7 @@
   "2-s17-das-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4784
+    "house_edge": 0.3712
   },
   "2-s17-das-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1577,7 +1577,7 @@
   "2-s17-das-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8462
+    "house_edge": 1.739
   },
   "2-s17-das-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -1587,7 +1587,7 @@
   "2-s17-das-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3214
+    "house_edge": 0.2795
   },
   "2-s17-das-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -1597,7 +1597,7 @@
   "2-s17-das-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.6891
+    "house_edge": 1.6471
   },
   "2-s17-das-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1607,7 +1607,7 @@
   "2-s17-das-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.396
+    "house_edge": 0.2885
   },
   "2-s17-das-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1617,7 +1617,7 @@
   "2-s17-das-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7639
+    "house_edge": 1.6562
   },
   "2-s17-das-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -1627,7 +1627,7 @@
   "2-s17-das-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.2368
+    "house_edge": 0.1931
   },
   "2-s17-das-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -1637,7 +1637,7 @@
   "2-s17-das-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.6045
+    "house_edge": 1.5608
   },
   "2-s17-das-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1647,7 +1647,7 @@
   "2-s17-das-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3854
+    "house_edge": 0.2777
   },
   "2-s17-das-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1657,7 +1657,7 @@
   "2-s17-das-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7532
+    "house_edge": 1.6454
   },
   "2-s17-das-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -1667,7 +1667,7 @@
   "2-s17-das-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.226
+    "house_edge": 0.1821
   },
   "2-s17-das-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -1677,7 +1677,7 @@
   "2-s17-das-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.5937
+    "house_edge": 1.5497
   },
   "2-s17-ndas-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1687,7 +1687,7 @@
   "2-s17-ndas-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.493
+    "house_edge": 0.3872
   },
   "2-s17-ndas-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1697,7 +1697,7 @@
   "2-s17-ndas-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8608
+    "house_edge": 1.755
   },
   "2-s17-ndas-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -1707,7 +1707,7 @@
   "2-s17-ndas-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3368
+    "house_edge": 0.2951
   },
   "2-s17-ndas-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -1717,7 +1717,7 @@
   "2-s17-ndas-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7045
+    "house_edge": 1.6628
   },
   "2-s17-ndas-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1727,7 +1727,7 @@
   "2-s17-ndas-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4574
+    "house_edge": 0.3506
   },
   "2-s17-ndas-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1737,7 +1737,7 @@
   "2-s17-ndas-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8252
+    "house_edge": 1.7183
   },
   "2-s17-ndas-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -1747,7 +1747,7 @@
   "2-s17-ndas-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3004
+    "house_edge": 0.2571
   },
   "2-s17-ndas-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -1757,7 +1757,7 @@
   "2-s17-ndas-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.6681
+    "house_edge": 1.6248
   },
   "2-s17-ndas-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1767,7 +1767,7 @@
   "2-s17-ndas-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.453
+    "house_edge": 0.3463
   },
   "2-s17-ndas-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1777,7 +1777,7 @@
   "2-s17-ndas-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8208
+    "house_edge": 1.714
   },
   "2-s17-ndas-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -1787,7 +1787,7 @@
   "2-s17-ndas-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.296
+    "house_edge": 0.2527
   },
   "2-s17-ndas-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -1797,7 +1797,7 @@
   "2-s17-ndas-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.6636
+    "house_edge": 1.6204
   },
   "2-s17-ndas-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1807,7 +1807,7 @@
   "2-s17-ndas-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.493
+    "house_edge": 0.3872
   },
   "2-s17-ndas-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1817,7 +1817,7 @@
   "2-s17-ndas-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8608
+    "house_edge": 1.755
   },
   "2-s17-ndas-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -1827,7 +1827,7 @@
   "2-s17-ndas-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3368
+    "house_edge": 0.2951
   },
   "2-s17-ndas-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -1837,7 +1837,7 @@
   "2-s17-ndas-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7045
+    "house_edge": 1.6628
   },
   "2-s17-ndas-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1847,7 +1847,7 @@
   "2-s17-ndas-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4122
+    "house_edge": 0.3057
   },
   "2-s17-ndas-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1857,7 +1857,7 @@
   "2-s17-ndas-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.78
+    "house_edge": 1.6735
   },
   "2-s17-ndas-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -1867,7 +1867,7 @@
   "2-s17-ndas-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.2532
+    "house_edge": 0.2102
   },
   "2-s17-ndas-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -1877,7 +1877,7 @@
   "2-s17-ndas-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.6209
+    "house_edge": 1.578
   },
   "2-s17-ndas-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1887,7 +1887,7 @@
   "2-s17-ndas-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4018
+    "house_edge": 0.2954
   },
   "2-s17-ndas-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1897,7 +1897,7 @@
   "2-s17-ndas-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7697
+    "house_edge": 1.6632
   },
   "2-s17-ndas-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -1907,7 +1907,7 @@
   "2-s17-ndas-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.2428
+    "house_edge": 0.1998
   },
   "2-s17-ndas-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -1917,7 +1917,7 @@
   "2-s17-ndas-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.6105
+    "house_edge": 1.5675
   },
   "4-h17-das-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1927,7 +1927,7 @@
   "4-h17-das-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.795
+    "house_edge": 0.6951
   },
   "4-h17-das-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1937,7 +1937,7 @@
   "4-h17-das-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1556
+    "house_edge": 2.0557
   },
   "4-h17-das-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -1947,7 +1947,7 @@
   "4-h17-das-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6946
+    "house_edge": 0.5924
   },
   "4-h17-das-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -1957,7 +1957,7 @@
   "4-h17-das-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0553
+    "house_edge": 1.9528
   },
   "4-h17-das-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -1967,7 +1967,7 @@
   "4-h17-das-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7533
+    "house_edge": 0.6534
   },
   "4-h17-das-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -1977,7 +1977,7 @@
   "4-h17-das-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1138
+    "house_edge": 2.0138
   },
   "4-h17-das-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -1987,7 +1987,7 @@
   "4-h17-das-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6521
+    "house_edge": 0.5498
   },
   "4-h17-das-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -1997,7 +1997,7 @@
   "4-h17-das-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0127
+    "house_edge": 1.9102
   },
   "4-h17-das-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2007,7 +2007,7 @@
   "4-h17-das-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7466
+    "house_edge": 0.6467
   },
   "4-h17-das-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2017,7 +2017,7 @@
   "4-h17-das-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1071
+    "house_edge": 2.0072
   },
   "4-h17-das-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -2027,7 +2027,7 @@
   "4-h17-das-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6451
+    "house_edge": 0.5431
   },
   "4-h17-das-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -2037,7 +2037,7 @@
   "4-h17-das-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0056
+    "house_edge": 1.9035
   },
   "4-h17-das-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2047,7 +2047,7 @@
   "4-h17-das-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7898
+    "house_edge": 0.6901
   },
   "4-h17-das-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2057,7 +2057,7 @@
   "4-h17-das-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1504
+    "house_edge": 2.0507
   },
   "4-h17-das-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -2067,7 +2067,7 @@
   "4-h17-das-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6946
+    "house_edge": 0.5924
   },
   "4-h17-das-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -2077,7 +2077,7 @@
   "4-h17-das-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0553
+    "house_edge": 1.9528
   },
   "4-h17-das-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2087,7 +2087,7 @@
   "4-h17-das-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6929
+    "house_edge": 0.5931
   },
   "4-h17-das-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2097,7 +2097,7 @@
   "4-h17-das-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0535
+    "house_edge": 1.9536
   },
   "4-h17-das-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -2107,7 +2107,7 @@
   "4-h17-das-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5973
+    "house_edge": 0.4949
   },
   "4-h17-das-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -2117,7 +2117,7 @@
   "4-h17-das-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9579
+    "house_edge": 1.8553
   },
   "4-h17-das-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2127,7 +2127,7 @@
   "4-h17-das-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6775
+    "house_edge": 0.5775
   },
   "4-h17-das-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2137,7 +2137,7 @@
   "4-h17-das-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0381
+    "house_edge": 1.938
   },
   "4-h17-das-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -2147,7 +2147,7 @@
   "4-h17-das-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5816
+    "house_edge": 0.4792
   },
   "4-h17-das-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -2157,7 +2157,7 @@
   "4-h17-das-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9422
+    "house_edge": 1.8396
   },
   "4-h17-ndas-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2167,7 +2167,7 @@
   "4-h17-ndas-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8094
+    "house_edge": 0.7091
   },
   "4-h17-ndas-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2177,7 +2177,7 @@
   "4-h17-ndas-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.17
+    "house_edge": 2.0697
   },
   "4-h17-ndas-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -2187,7 +2187,7 @@
   "4-h17-ndas-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.709
+    "house_edge": 0.6067
   },
   "4-h17-ndas-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -2197,7 +2197,7 @@
   "4-h17-ndas-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0697
+    "house_edge": 1.9672
   },
   "4-h17-ndas-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2207,7 +2207,7 @@
   "4-h17-ndas-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7692
+    "house_edge": 0.669
   },
   "4-h17-ndas-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2217,7 +2217,7 @@
   "4-h17-ndas-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1297
+    "house_edge": 2.0295
   },
   "4-h17-ndas-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -2227,7 +2227,7 @@
   "4-h17-ndas-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6678
+    "house_edge": 0.5659
   },
   "4-h17-ndas-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -2237,7 +2237,7 @@
   "4-h17-ndas-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0284
+    "house_edge": 1.9263
   },
   "4-h17-ndas-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2247,7 +2247,7 @@
   "4-h17-ndas-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7633
+    "house_edge": 0.6629
   },
   "4-h17-ndas-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2257,7 +2257,7 @@
   "4-h17-ndas-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1238
+    "house_edge": 2.0235
   },
   "4-h17-ndas-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -2267,7 +2267,7 @@
   "4-h17-ndas-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6614
+    "house_edge": 0.5596
   },
   "4-h17-ndas-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -2277,7 +2277,7 @@
   "4-h17-ndas-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.022
+    "house_edge": 1.92
   },
   "4-h17-ndas-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2287,7 +2287,7 @@
   "4-h17-ndas-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8042
+    "house_edge": 0.7041
   },
   "4-h17-ndas-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2297,7 +2297,7 @@
   "4-h17-ndas-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1648
+    "house_edge": 2.0647
   },
   "4-h17-ndas-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -2307,7 +2307,7 @@
   "4-h17-ndas-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.709
+    "house_edge": 0.6067
   },
   "4-h17-ndas-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -2317,7 +2317,7 @@
   "4-h17-ndas-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0697
+    "house_edge": 1.9672
   },
   "4-h17-ndas-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2327,7 +2327,7 @@
   "4-h17-ndas-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7088
+    "house_edge": 0.6086
   },
   "4-h17-ndas-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2337,7 +2337,7 @@
   "4-h17-ndas-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0694
+    "house_edge": 1.9691
   },
   "4-h17-ndas-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -2347,7 +2347,7 @@
   "4-h17-ndas-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6127
+    "house_edge": 0.5108
   },
   "4-h17-ndas-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -2357,7 +2357,7 @@
   "4-h17-ndas-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9734
+    "house_edge": 1.8713
   },
   "4-h17-ndas-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2367,7 +2367,7 @@
   "4-h17-ndas-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6941
+    "house_edge": 0.5936
   },
   "4-h17-ndas-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2377,7 +2377,7 @@
   "4-h17-ndas-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0547
+    "house_edge": 1.9542
   },
   "4-h17-ndas-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -2387,7 +2387,7 @@
   "4-h17-ndas-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5977
+    "house_edge": 0.4958
   },
   "4-h17-ndas-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -2397,7 +2397,7 @@
   "4-h17-ndas-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9584
+    "house_edge": 1.8563
   },
   "4-s17-das-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2407,7 +2407,7 @@
   "4-s17-das-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5985
+    "house_edge": 0.4789
   },
   "4-s17-das-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2417,7 +2417,7 @@
   "4-s17-das-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9589
+    "house_edge": 1.8392
   },
   "4-s17-das-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -2427,7 +2427,7 @@
   "4-s17-das-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4405
+    "house_edge": 0.3773
   },
   "4-s17-das-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -2437,7 +2437,7 @@
   "4-s17-das-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.801
+    "house_edge": 1.7376
   },
   "4-s17-das-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2447,7 +2447,7 @@
   "4-s17-das-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5567
+    "house_edge": 0.4376
   },
   "4-s17-das-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2457,7 +2457,7 @@
   "4-s17-das-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.917
+    "house_edge": 1.7978
   },
   "4-s17-das-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -2467,7 +2467,7 @@
   "4-s17-das-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3972
+    "house_edge": 0.3349
   },
   "4-s17-das-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -2477,7 +2477,7 @@
   "4-s17-das-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7576
+    "house_edge": 1.6951
   },
   "4-s17-das-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2487,7 +2487,7 @@
   "4-s17-das-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5501
+    "house_edge": 0.4306
   },
   "4-s17-das-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2497,7 +2497,7 @@
   "4-s17-das-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9104
+    "house_edge": 1.7908
   },
   "4-s17-das-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -2507,7 +2507,7 @@
   "4-s17-das-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3902
+    "house_edge": 0.3276
   },
   "4-s17-das-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -2517,7 +2517,7 @@
   "4-s17-das-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7506
+    "house_edge": 1.6878
   },
   "4-s17-das-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2527,7 +2527,7 @@
   "4-s17-das-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5985
+    "house_edge": 0.4789
   },
   "4-s17-das-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2537,7 +2537,7 @@
   "4-s17-das-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9589
+    "house_edge": 1.8392
   },
   "4-s17-das-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -2547,7 +2547,7 @@
   "4-s17-das-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4405
+    "house_edge": 0.3773
   },
   "4-s17-das-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -2557,7 +2557,7 @@
   "4-s17-das-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.801
+    "house_edge": 1.7376
   },
   "4-s17-das-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2567,7 +2567,7 @@
   "4-s17-das-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5035
+    "house_edge": 0.3846
   },
   "4-s17-das-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2577,7 +2577,7 @@
   "4-s17-das-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8638
+    "house_edge": 1.7449
   },
   "4-s17-das-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -2587,7 +2587,7 @@
   "4-s17-das-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3421
+    "house_edge": 0.2794
   },
   "4-s17-das-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -2597,7 +2597,7 @@
   "4-s17-das-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7025
+    "house_edge": 1.6397
   },
   "4-s17-das-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2607,7 +2607,7 @@
   "4-s17-das-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4885
+    "house_edge": 0.3691
   },
   "4-s17-das-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2617,7 +2617,7 @@
   "4-s17-das-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8489
+    "house_edge": 1.7294
   },
   "4-s17-das-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -2627,7 +2627,7 @@
   "4-s17-das-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3262
+    "house_edge": 0.2632
   },
   "4-s17-das-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -2637,7 +2637,7 @@
   "4-s17-das-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.6866
+    "house_edge": 1.6235
   },
   "4-s17-ndas-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2647,7 +2647,7 @@
   "4-s17-ndas-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6098
+    "house_edge": 0.4903
   },
   "4-s17-ndas-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2657,7 +2657,7 @@
   "4-s17-ndas-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9702
+    "house_edge": 1.8507
   },
   "4-s17-ndas-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -2667,7 +2667,7 @@
   "4-s17-ndas-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4516
+    "house_edge": 0.3896
   },
   "4-s17-ndas-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -2677,7 +2677,7 @@
   "4-s17-ndas-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8121
+    "house_edge": 1.75
   },
   "4-s17-ndas-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2687,7 +2687,7 @@
   "4-s17-ndas-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5696
+    "house_edge": 0.4503
   },
   "4-s17-ndas-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2697,7 +2697,7 @@
   "4-s17-ndas-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.93
+    "house_edge": 1.8106
   },
   "4-s17-ndas-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -2707,7 +2707,7 @@
   "4-s17-ndas-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4101
+    "house_edge": 0.3486
   },
   "4-s17-ndas-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -2717,7 +2717,7 @@
   "4-s17-ndas-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7705
+    "house_edge": 1.7089
   },
   "4-s17-ndas-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2727,7 +2727,7 @@
   "4-s17-ndas-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5637
+    "house_edge": 0.4439
   },
   "4-s17-ndas-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2737,7 +2737,7 @@
   "4-s17-ndas-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.924
+    "house_edge": 1.8042
   },
   "4-s17-ndas-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -2747,7 +2747,7 @@
   "4-s17-ndas-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4035
+    "house_edge": 0.3417
   },
   "4-s17-ndas-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -2757,7 +2757,7 @@
   "4-s17-ndas-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7639
+    "house_edge": 1.702
   },
   "4-s17-ndas-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2767,7 +2767,7 @@
   "4-s17-ndas-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6098
+    "house_edge": 0.4903
   },
   "4-s17-ndas-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2777,7 +2777,7 @@
   "4-s17-ndas-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9702
+    "house_edge": 1.8507
   },
   "4-s17-ndas-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -2787,7 +2787,7 @@
   "4-s17-ndas-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4516
+    "house_edge": 0.3896
   },
   "4-s17-ndas-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -2797,7 +2797,7 @@
   "4-s17-ndas-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8121
+    "house_edge": 1.75
   },
   "4-s17-ndas-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2807,7 +2807,7 @@
   "4-s17-ndas-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5161
+    "house_edge": 0.3972
   },
   "4-s17-ndas-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2817,7 +2817,7 @@
   "4-s17-ndas-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8764
+    "house_edge": 1.7576
   },
   "4-s17-ndas-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -2827,7 +2827,7 @@
   "4-s17-ndas-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3545
+    "house_edge": 0.2929
   },
   "4-s17-ndas-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -2837,7 +2837,7 @@
   "4-s17-ndas-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.715
+    "house_edge": 1.6533
   },
   "4-s17-ndas-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2847,7 +2847,7 @@
   "4-s17-ndas-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5016
+    "house_edge": 0.3823
   },
   "4-s17-ndas-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2857,7 +2857,7 @@
   "4-s17-ndas-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.862
+    "house_edge": 1.7427
   },
   "4-s17-ndas-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -2867,7 +2867,7 @@
   "4-s17-ndas-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3392
+    "house_edge": 0.2773
   },
   "4-s17-ndas-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -2877,7 +2877,7 @@
   "4-s17-ndas-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.6996
+    "house_edge": 1.6376
   },
   "6-h17-das-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2887,7 +2887,7 @@
   "6-h17-das-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.835
+    "house_edge": 0.7348
   },
   "6-h17-das-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2897,7 +2897,7 @@
   "6-h17-das-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1929
+    "house_edge": 2.0925
   },
   "6-h17-das-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -2907,7 +2907,7 @@
   "6-h17-das-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7362
+    "house_edge": 0.6275
   },
   "6-h17-das-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -2917,7 +2917,7 @@
   "6-h17-das-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0941
+    "house_edge": 1.9852
   },
   "6-h17-das-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2927,7 +2927,7 @@
   "6-h17-das-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7918
+    "house_edge": 0.6909
   },
   "6-h17-das-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2937,7 +2937,7 @@
   "6-h17-das-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1497
+    "house_edge": 2.0486
   },
   "6-h17-das-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -2947,7 +2947,7 @@
   "6-h17-das-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6913
+    "house_edge": 0.5826
   },
   "6-h17-das-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -2957,7 +2957,7 @@
   "6-h17-das-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0491
+    "house_edge": 1.9403
   },
   "6-h17-das-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -2967,7 +2967,7 @@
   "6-h17-das-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7846
+    "house_edge": 0.6837
   },
   "6-h17-das-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -2977,7 +2977,7 @@
   "6-h17-das-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1425
+    "house_edge": 2.0414
   },
   "6-h17-das-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -2987,7 +2987,7 @@
   "6-h17-das-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6846
+    "house_edge": 0.5755
   },
   "6-h17-das-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -2997,7 +2997,7 @@
   "6-h17-das-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0424
+    "house_edge": 1.9331
   },
   "6-h17-das-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3007,7 +3007,7 @@
   "6-h17-das-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8301
+    "house_edge": 0.7296
   },
   "6-h17-das-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3017,7 +3017,7 @@
   "6-h17-das-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.188
+    "house_edge": 2.0873
   },
   "6-h17-das-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -3027,7 +3027,7 @@
   "6-h17-das-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7362
+    "house_edge": 0.6275
   },
   "6-h17-das-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -3037,7 +3037,7 @@
   "6-h17-das-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0941
+    "house_edge": 1.9852
   },
   "6-h17-das-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3047,7 +3047,7 @@
   "6-h17-das-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7277
+    "house_edge": 0.6269
   },
   "6-h17-das-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3057,7 +3057,7 @@
   "6-h17-das-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0856
+    "house_edge": 1.9847
   },
   "6-h17-das-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -3067,7 +3067,7 @@
   "6-h17-das-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6322
+    "house_edge": 0.5243
   },
   "6-h17-das-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -3077,7 +3077,7 @@
   "6-h17-das-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9901
+    "house_edge": 1.8819
   },
   "6-h17-das-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3087,7 +3087,7 @@
   "6-h17-das-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7114
+    "house_edge": 0.6107
   },
   "6-h17-das-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3097,7 +3097,7 @@
   "6-h17-das-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0694
+    "house_edge": 1.9684
   },
   "6-h17-das-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -3107,7 +3107,7 @@
   "6-h17-das-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6162
+    "house_edge": 0.508
   },
   "6-h17-das-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -3117,7 +3117,7 @@
   "6-h17-das-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.974
+    "house_edge": 1.8657
   },
   "6-h17-ndas-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3127,7 +3127,7 @@
   "6-h17-ndas-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8505
+    "house_edge": 0.7482
   },
   "6-h17-ndas-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3137,7 +3137,7 @@
   "6-h17-ndas-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2085
+    "house_edge": 2.1059
   },
   "6-h17-ndas-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -3147,7 +3147,7 @@
   "6-h17-ndas-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7516
+    "house_edge": 0.6407
   },
   "6-h17-ndas-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -3157,7 +3157,7 @@
   "6-h17-ndas-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1095
+    "house_edge": 1.9985
   },
   "6-h17-ndas-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3167,7 +3167,7 @@
   "6-h17-ndas-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8085
+    "house_edge": 0.7053
   },
   "6-h17-ndas-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3177,7 +3177,7 @@
   "6-h17-ndas-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1664
+    "house_edge": 2.063
   },
   "6-h17-ndas-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -3187,7 +3187,7 @@
   "6-h17-ndas-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7081
+    "house_edge": 0.5974
   },
   "6-h17-ndas-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -3197,7 +3197,7 @@
   "6-h17-ndas-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0659
+    "house_edge": 1.9551
   },
   "6-h17-ndas-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3207,7 +3207,7 @@
   "6-h17-ndas-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8016
+    "house_edge": 0.6982
   },
   "6-h17-ndas-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3217,7 +3217,7 @@
   "6-h17-ndas-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1595
+    "house_edge": 2.0559
   },
   "6-h17-ndas-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -3227,7 +3227,7 @@
   "6-h17-ndas-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7014
+    "house_edge": 0.5901
   },
   "6-h17-ndas-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -3237,7 +3237,7 @@
   "6-h17-ndas-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0592
+    "house_edge": 1.9478
   },
   "6-h17-ndas-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3247,7 +3247,7 @@
   "6-h17-ndas-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8457
+    "house_edge": 0.743
   },
   "6-h17-ndas-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3257,7 +3257,7 @@
   "6-h17-ndas-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2037
+    "house_edge": 2.1008
   },
   "6-h17-ndas-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -3267,7 +3267,7 @@
   "6-h17-ndas-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7516
+    "house_edge": 0.6407
   },
   "6-h17-ndas-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -3277,7 +3277,7 @@
   "6-h17-ndas-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1095
+    "house_edge": 1.9985
   },
   "6-h17-ndas-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3287,7 +3287,7 @@
   "6-h17-ndas-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7445
+    "house_edge": 0.6415
   },
   "6-h17-ndas-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3297,7 +3297,7 @@
   "6-h17-ndas-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1025
+    "house_edge": 1.9992
   },
   "6-h17-ndas-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -3307,7 +3307,7 @@
   "6-h17-ndas-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.649
+    "house_edge": 0.5389
   },
   "6-h17-ndas-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -3317,7 +3317,7 @@
   "6-h17-ndas-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0068
+    "house_edge": 1.8967
   },
   "6-h17-ndas-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3327,7 +3327,7 @@
   "6-h17-ndas-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7283
+    "house_edge": 0.6251
   },
   "6-h17-ndas-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3337,7 +3337,7 @@
   "6-h17-ndas-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0863
+    "house_edge": 1.9828
   },
   "6-h17-ndas-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -3347,7 +3347,7 @@
   "6-h17-ndas-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6329
+    "house_edge": 0.5224
   },
   "6-h17-ndas-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -3357,7 +3357,7 @@
   "6-h17-ndas-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9907
+    "house_edge": 1.8801
   },
   "6-s17-das-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3367,7 +3367,7 @@
   "6-s17-das-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6348
+    "house_edge": 0.5088
   },
   "6-s17-das-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3377,7 +3377,7 @@
   "6-s17-das-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9926
+    "house_edge": 1.8666
   },
   "6-s17-das-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -3387,7 +3387,7 @@
   "6-s17-das-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4771
+    "house_edge": 0.4089
   },
   "6-s17-das-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -3397,7 +3397,7 @@
   "6-s17-das-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8349
+    "house_edge": 1.7665
   },
   "6-s17-das-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3407,7 +3407,7 @@
   "6-s17-das-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5927
+    "house_edge": 0.4663
   },
   "6-s17-das-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3417,7 +3417,7 @@
   "6-s17-das-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9504
+    "house_edge": 1.8239
   },
   "6-s17-das-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -3427,7 +3427,7 @@
   "6-s17-das-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4333
+    "house_edge": 0.3633
   },
   "6-s17-das-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -3437,7 +3437,7 @@
   "6-s17-das-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.791
+    "house_edge": 1.7208
   },
   "6-s17-das-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3447,7 +3447,7 @@
   "6-s17-das-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5859
+    "house_edge": 0.4593
   },
   "6-s17-das-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3457,7 +3457,7 @@
   "6-s17-das-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9436
+    "house_edge": 1.8169
   },
   "6-s17-das-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -3467,7 +3467,7 @@
   "6-s17-das-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4264
+    "house_edge": 0.3562
   },
   "6-s17-das-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -3477,7 +3477,7 @@
   "6-s17-das-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7841
+    "house_edge": 1.7137
   },
   "6-s17-das-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3487,7 +3487,7 @@
   "6-s17-das-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6348
+    "house_edge": 0.5088
   },
   "6-s17-das-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3497,7 +3497,7 @@
   "6-s17-das-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9926
+    "house_edge": 1.8666
   },
   "6-s17-das-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -3507,7 +3507,7 @@
   "6-s17-das-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4771
+    "house_edge": 0.4089
   },
   "6-s17-das-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -3517,7 +3517,7 @@
   "6-s17-das-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8349
+    "house_edge": 1.7665
   },
   "6-s17-das-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3527,7 +3527,7 @@
   "6-s17-das-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5365
+    "house_edge": 0.41
   },
   "6-s17-das-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3537,7 +3537,7 @@
   "6-s17-das-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8942
+    "house_edge": 1.7677
   },
   "6-s17-das-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -3547,7 +3547,7 @@
   "6-s17-das-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3744
+    "house_edge": 0.3041
   },
   "6-s17-das-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -3557,7 +3557,7 @@
   "6-s17-das-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7321
+    "house_edge": 1.6617
   },
   "6-s17-das-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3567,7 +3567,7 @@
   "6-s17-das-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5207
+    "house_edge": 0.394
   },
   "6-s17-das-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3577,7 +3577,7 @@
   "6-s17-das-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8784
+    "house_edge": 1.7517
   },
   "6-s17-das-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -3587,7 +3587,7 @@
   "6-s17-das-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.358
+    "house_edge": 0.2878
   },
   "6-s17-das-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -3597,7 +3597,7 @@
   "6-s17-das-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7156
+    "house_edge": 1.6454
   },
   "6-s17-ndas-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3607,7 +3607,7 @@
   "6-s17-ndas-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6477
+    "house_edge": 0.5212
   },
   "6-s17-ndas-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3617,7 +3617,7 @@
   "6-s17-ndas-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0055
+    "house_edge": 1.879
   },
   "6-s17-ndas-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -3627,7 +3627,7 @@
   "6-s17-ndas-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4905
+    "house_edge": 0.4205
   },
   "6-s17-ndas-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -3637,7 +3637,7 @@
   "6-s17-ndas-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8483
+    "house_edge": 1.7781
   },
   "6-s17-ndas-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3647,7 +3647,7 @@
   "6-s17-ndas-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6064
+    "house_edge": 0.4796
   },
   "6-s17-ndas-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3657,7 +3657,7 @@
   "6-s17-ndas-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9641
+    "house_edge": 1.8373
   },
   "6-s17-ndas-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -3667,7 +3667,7 @@
   "6-s17-ndas-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4472
+    "house_edge": 0.3753
   },
   "6-s17-ndas-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -3677,7 +3677,7 @@
   "6-s17-ndas-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.805
+    "house_edge": 1.733
   },
   "6-s17-ndas-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3687,7 +3687,7 @@
   "6-s17-ndas-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5995
+    "house_edge": 0.4726
   },
   "6-s17-ndas-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3697,7 +3697,7 @@
   "6-s17-ndas-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9572
+    "house_edge": 1.8303
   },
   "6-s17-ndas-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -3707,7 +3707,7 @@
   "6-s17-ndas-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4404
+    "house_edge": 0.3682
   },
   "6-s17-ndas-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -3717,7 +3717,7 @@
   "6-s17-ndas-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7981
+    "house_edge": 1.7258
   },
   "6-s17-ndas-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3727,7 +3727,7 @@
   "6-s17-ndas-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6477
+    "house_edge": 0.5212
   },
   "6-s17-ndas-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3737,7 +3737,7 @@
   "6-s17-ndas-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0055
+    "house_edge": 1.879
   },
   "6-s17-ndas-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -3747,7 +3747,7 @@
   "6-s17-ndas-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4905
+    "house_edge": 0.4205
   },
   "6-s17-ndas-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -3757,7 +3757,7 @@
   "6-s17-ndas-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8483
+    "house_edge": 1.7781
   },
   "6-s17-ndas-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3767,7 +3767,7 @@
   "6-s17-ndas-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.55
+    "house_edge": 0.4232
   },
   "6-s17-ndas-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3777,7 +3777,7 @@
   "6-s17-ndas-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9077
+    "house_edge": 1.7809
   },
   "6-s17-ndas-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -3787,7 +3787,7 @@
   "6-s17-ndas-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3881
+    "house_edge": 0.3162
   },
   "6-s17-ndas-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -3797,7 +3797,7 @@
   "6-s17-ndas-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7459
+    "house_edge": 1.6738
   },
   "6-s17-ndas-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3807,7 +3807,7 @@
   "6-s17-ndas-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.534
+    "house_edge": 0.4073
   },
   "6-s17-ndas-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3817,7 +3817,7 @@
   "6-s17-ndas-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8917
+    "house_edge": 1.765
   },
   "6-s17-ndas-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -3827,7 +3827,7 @@
   "6-s17-ndas-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3716
+    "house_edge": 0.2997
   },
   "6-s17-ndas-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -3837,7 +3837,7 @@
   "6-s17-ndas-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7293
+    "house_edge": 1.6573
   },
   "8-h17-das-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3847,7 +3847,7 @@
   "8-h17-das-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8605
+    "house_edge": 0.7522
   },
   "8-h17-das-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3857,7 +3857,7 @@
   "8-h17-das-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2175
+    "house_edge": 2.1091
   },
   "8-h17-das-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -3867,7 +3867,7 @@
   "8-h17-das-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7607
+    "house_edge": 0.6486
   },
   "8-h17-das-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -3877,7 +3877,7 @@
   "8-h17-das-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1177
+    "house_edge": 2.0054
   },
   "8-h17-das-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3887,7 +3887,7 @@
   "8-h17-das-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8146
+    "house_edge": 0.7063
   },
   "8-h17-das-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3897,7 +3897,7 @@
   "8-h17-das-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1715
+    "house_edge": 2.0631
   },
   "8-h17-das-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -3907,7 +3907,7 @@
   "8-h17-das-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7141
+    "house_edge": 0.6024
   },
   "8-h17-das-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -3917,7 +3917,7 @@
   "8-h17-das-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.071
+    "house_edge": 1.959
   },
   "8-h17-das-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3927,7 +3927,7 @@
   "8-h17-das-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8074
+    "house_edge": 0.6994
   },
   "8-h17-das-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3937,7 +3937,7 @@
   "8-h17-das-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1642
+    "house_edge": 2.0561
   },
   "8-h17-das-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -3947,7 +3947,7 @@
   "8-h17-das-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7067
+    "house_edge": 0.5951
   },
   "8-h17-das-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -3957,7 +3957,7 @@
   "8-h17-das-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0636
+    "house_edge": 1.9518
   },
   "8-h17-das-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -3967,7 +3967,7 @@
   "8-h17-das-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8551
+    "house_edge": 0.7469
   },
   "8-h17-das-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -3977,7 +3977,7 @@
   "8-h17-das-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.212
+    "house_edge": 2.1037
   },
   "8-h17-das-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -3987,7 +3987,7 @@
   "8-h17-das-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7607
+    "house_edge": 0.6486
   },
   "8-h17-das-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -3997,7 +3997,7 @@
   "8-h17-das-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1177
+    "house_edge": 2.0054
   },
   "8-h17-das-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4007,7 +4007,7 @@
   "8-h17-das-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7483
+    "house_edge": 0.6403
   },
   "8-h17-das-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4017,7 +4017,7 @@
   "8-h17-das-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1052
+    "house_edge": 1.9972
   },
   "8-h17-das-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -4027,7 +4027,7 @@
   "8-h17-das-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6532
+    "house_edge": 0.5419
   },
   "8-h17-das-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -4037,7 +4037,7 @@
   "8-h17-das-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0102
+    "house_edge": 1.8987
   },
   "8-h17-das-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4047,7 +4047,7 @@
   "8-h17-das-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7311
+    "house_edge": 0.6231
   },
   "8-h17-das-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4057,7 +4057,7 @@
   "8-h17-das-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.088
+    "house_edge": 1.98
   },
   "8-h17-das-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -4067,7 +4067,7 @@
   "8-h17-das-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.636
+    "house_edge": 0.5248
   },
   "8-h17-das-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -4077,7 +4077,7 @@
   "8-h17-das-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.993
+    "house_edge": 1.8815
   },
   "8-h17-ndas-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4087,7 +4087,7 @@
   "8-h17-ndas-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8727
+    "house_edge": 0.7643
   },
   "8-h17-ndas-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4097,7 +4097,7 @@
   "8-h17-ndas-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2298
+    "house_edge": 2.1212
   },
   "8-h17-ndas-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -4107,7 +4107,7 @@
   "8-h17-ndas-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7735
+    "house_edge": 0.6612
   },
   "8-h17-ndas-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -4117,7 +4117,7 @@
   "8-h17-ndas-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1306
+    "house_edge": 2.018
   },
   "8-h17-ndas-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4127,7 +4127,7 @@
   "8-h17-ndas-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8295
+    "house_edge": 0.7211
   },
   "8-h17-ndas-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4137,7 +4137,7 @@
   "8-h17-ndas-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1865
+    "house_edge": 2.0779
   },
   "8-h17-ndas-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -4147,7 +4147,7 @@
   "8-h17-ndas-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7293
+    "house_edge": 0.6173
   },
   "8-h17-ndas-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -4157,7 +4157,7 @@
   "8-h17-ndas-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0862
+    "house_edge": 1.9741
   },
   "8-h17-ndas-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4167,7 +4167,7 @@
   "8-h17-ndas-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8224
+    "house_edge": 0.7142
   },
   "8-h17-ndas-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4177,7 +4177,7 @@
   "8-h17-ndas-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1793
+    "house_edge": 2.071
   },
   "8-h17-ndas-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -4187,7 +4187,7 @@
   "8-h17-ndas-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7221
+    "house_edge": 0.6103
   },
   "8-h17-ndas-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -4197,7 +4197,7 @@
   "8-h17-ndas-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0791
+    "house_edge": 1.9671
   },
   "8-h17-ndas-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4207,7 +4207,7 @@
   "8-h17-ndas-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8674
+    "house_edge": 0.759
   },
   "8-h17-ndas-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4217,7 +4217,7 @@
   "8-h17-ndas-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2244
+    "house_edge": 2.1159
   },
   "8-h17-ndas-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -4227,7 +4227,7 @@
   "8-h17-ndas-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7735
+    "house_edge": 0.6612
   },
   "8-h17-ndas-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -4237,7 +4237,7 @@
   "8-h17-ndas-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1306
+    "house_edge": 2.018
   },
   "8-h17-ndas-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4247,7 +4247,7 @@
   "8-h17-ndas-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7631
+    "house_edge": 0.6552
   },
   "8-h17-ndas-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4257,7 +4257,7 @@
   "8-h17-ndas-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1201
+    "house_edge": 2.0121
   },
   "8-h17-ndas-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -4267,7 +4267,7 @@
   "8-h17-ndas-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6684
+    "house_edge": 0.5566
   },
   "8-h17-ndas-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -4277,7 +4277,7 @@
   "8-h17-ndas-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0254
+    "house_edge": 1.9135
   },
   "8-h17-ndas-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4287,7 +4287,7 @@
   "8-h17-ndas-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7461
+    "house_edge": 0.638
   },
   "8-h17-ndas-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4297,7 +4297,7 @@
   "8-h17-ndas-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1031
+    "house_edge": 1.9949
   },
   "8-h17-ndas-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -4307,7 +4307,7 @@
   "8-h17-ndas-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6513
+    "house_edge": 0.5395
   },
   "8-h17-ndas-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -4317,7 +4317,7 @@
   "8-h17-ndas-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0083
+    "house_edge": 1.8963
   },
   "8-s17-das-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4327,7 +4327,7 @@
   "8-s17-das-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6556
+    "house_edge": 0.5267
   },
   "8-s17-das-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4337,7 +4337,7 @@
   "8-s17-das-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0124
+    "house_edge": 1.8834
   },
   "8-s17-das-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -4347,7 +4347,7 @@
   "8-s17-das-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4989
+    "house_edge": 0.4262
   },
   "8-s17-das-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -4357,7 +4357,7 @@
   "8-s17-das-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8556
+    "house_edge": 1.7829
   },
   "8-s17-das-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4367,7 +4367,7 @@
   "8-s17-das-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6096
+    "house_edge": 0.4811
   },
   "8-s17-das-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4377,7 +4377,7 @@
   "8-s17-das-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9663
+    "house_edge": 1.8379
   },
   "8-s17-das-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -4387,7 +4387,7 @@
   "8-s17-das-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4513
+    "house_edge": 0.38
   },
   "8-s17-das-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -4397,7 +4397,7 @@
   "8-s17-das-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8081
+    "house_edge": 1.7367
   },
   "8-s17-das-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4407,7 +4407,7 @@
   "8-s17-das-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6025
+    "house_edge": 0.4738
   },
   "8-s17-das-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4417,7 +4417,7 @@
   "8-s17-das-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9592
+    "house_edge": 1.8304
   },
   "8-s17-das-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0035,
@@ -4427,7 +4427,7 @@
   "8-s17-das-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4435
+    "house_edge": 0.3725
   },
   "8-s17-das-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -4437,7 +4437,7 @@
   "8-s17-das-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8003
+    "house_edge": 1.7292
   },
   "8-s17-das-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4447,7 +4447,7 @@
   "8-s17-das-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6556
+    "house_edge": 0.5267
   },
   "8-s17-das-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4457,7 +4457,7 @@
   "8-s17-das-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0124
+    "house_edge": 1.8834
   },
   "8-s17-das-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -4467,7 +4467,7 @@
   "8-s17-das-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4989
+    "house_edge": 0.4262
   },
   "8-s17-das-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -4477,7 +4477,7 @@
   "8-s17-das-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8556
+    "house_edge": 1.7829
   },
   "8-s17-das-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4487,7 +4487,7 @@
   "8-s17-das-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5519
+    "house_edge": 0.4228
   },
   "8-s17-das-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4497,7 +4497,7 @@
   "8-s17-das-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9087
+    "house_edge": 1.7796
   },
   "8-s17-das-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -4507,7 +4507,7 @@
   "8-s17-das-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3905
+    "house_edge": 0.3186
   },
   "8-s17-das-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -4517,7 +4517,7 @@
   "8-s17-das-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7473
+    "house_edge": 1.6754
   },
   "8-s17-das-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4527,7 +4527,7 @@
   "8-s17-das-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.535
+    "house_edge": 0.4057
   },
   "8-s17-das-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4537,7 +4537,7 @@
   "8-s17-das-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8917
+    "house_edge": 1.7625
   },
   "8-s17-das-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -4547,7 +4547,7 @@
   "8-s17-das-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3725
+    "house_edge": 0.3009
   },
   "8-s17-das-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -4557,7 +4557,7 @@
   "8-s17-das-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7293
+    "house_edge": 1.6576
   },
   "8-s17-ndas-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4567,7 +4567,7 @@
   "8-s17-ndas-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6658
+    "house_edge": 0.5376
   },
   "8-s17-ndas-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4577,7 +4577,7 @@
   "8-s17-ndas-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0227
+    "house_edge": 1.8944
   },
   "8-s17-ndas-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -4587,7 +4587,7 @@
   "8-s17-ndas-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5097
+    "house_edge": 0.4376
   },
   "8-s17-ndas-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -4597,7 +4597,7 @@
   "8-s17-ndas-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8665
+    "house_edge": 1.7944
   },
   "8-s17-ndas-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4607,7 +4607,7 @@
   "8-s17-ndas-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.622
+    "house_edge": 0.4939
   },
   "8-s17-ndas-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4617,7 +4617,7 @@
   "8-s17-ndas-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9788
+    "house_edge": 1.8507
   },
   "8-s17-ndas-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -4627,7 +4627,7 @@
   "8-s17-ndas-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.464
+    "house_edge": 0.3928
   },
   "8-s17-ndas-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -4637,7 +4637,7 @@
   "8-s17-ndas-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8208
+    "house_edge": 1.7495
   },
   "8-s17-ndas-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4647,7 +4647,7 @@
   "8-s17-ndas-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6153
+    "house_edge": 0.487
   },
   "8-s17-ndas-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4657,7 +4657,7 @@
   "8-s17-ndas-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.972
+    "house_edge": 1.8437
   },
   "8-s17-ndas-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -4667,7 +4667,7 @@
   "8-s17-ndas-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4569
+    "house_edge": 0.3856
   },
   "8-s17-ndas-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -4677,7 +4677,7 @@
   "8-s17-ndas-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8137
+    "house_edge": 1.7423
   },
   "8-s17-ndas-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4687,7 +4687,7 @@
   "8-s17-ndas-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6658
+    "house_edge": 0.5376
   },
   "8-s17-ndas-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4697,7 +4697,7 @@
   "8-s17-ndas-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0227
+    "house_edge": 1.8944
   },
   "8-s17-ndas-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -4707,7 +4707,7 @@
   "8-s17-ndas-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5097
+    "house_edge": 0.4376
   },
   "8-s17-ndas-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -4717,7 +4717,7 @@
   "8-s17-ndas-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8665
+    "house_edge": 1.7944
   },
   "8-s17-ndas-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4727,7 +4727,7 @@
   "8-s17-ndas-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5642
+    "house_edge": 0.4357
   },
   "8-s17-ndas-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4737,7 +4737,7 @@
   "8-s17-ndas-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.921
+    "house_edge": 1.7926
   },
   "8-s17-ndas-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -4747,7 +4747,7 @@
   "8-s17-ndas-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.403
+    "house_edge": 0.3312
   },
   "8-s17-ndas-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -4757,7 +4757,7 @@
   "8-s17-ndas-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7598
+    "house_edge": 1.6879
   },
   "8-s17-ndas-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4767,7 +4767,7 @@
   "8-s17-ndas-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5477
+    "house_edge": 0.4187
   },
   "8-s17-ndas-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4777,7 +4777,7 @@
   "8-s17-ndas-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9045
+    "house_edge": 1.7755
   },
   "8-s17-ndas-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -4787,7 +4787,7 @@
   "8-s17-ndas-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.3855
+    "house_edge": 0.3137
   },
   "8-s17-ndas-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -4797,7 +4797,7 @@
   "8-s17-ndas-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7423
+    "house_edge": 1.6705
   },
   "inf-h17-das-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4807,7 +4807,7 @@
   "inf-h17-das-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.934
+    "house_edge": 0.8114
   },
   "inf-h17-das-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4817,7 +4817,7 @@
   "inf-h17-das-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2869
+    "house_edge": 2.1642
   },
   "inf-h17-das-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -4827,7 +4827,7 @@
   "inf-h17-das-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8372
+    "house_edge": 0.7085
   },
   "inf-h17-das-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -4837,7 +4837,7 @@
   "inf-h17-das-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1902
+    "house_edge": 2.0612
   },
   "inf-h17-das-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4847,7 +4847,7 @@
   "inf-h17-das-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8865
+    "house_edge": 0.7637
   },
   "inf-h17-das-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4857,7 +4857,7 @@
   "inf-h17-das-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2393
+    "house_edge": 2.1165
   },
   "inf-h17-das-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -4867,7 +4867,7 @@
   "inf-h17-das-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7889
+    "house_edge": 0.6593
   },
   "inf-h17-das-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -4877,7 +4877,7 @@
   "inf-h17-das-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1419
+    "house_edge": 2.012
   },
   "inf-h17-das-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4887,7 +4887,7 @@
   "inf-h17-das-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8769
+    "house_edge": 0.7539
   },
   "inf-h17-das-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4897,7 +4897,7 @@
   "inf-h17-das-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2298
+    "house_edge": 2.1067
   },
   "inf-h17-das-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -4907,7 +4907,7 @@
   "inf-h17-das-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7791
+    "house_edge": 0.6502
   },
   "inf-h17-das-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -4917,7 +4917,7 @@
   "inf-h17-das-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.132
+    "house_edge": 2.0029
   },
   "inf-h17-das-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4927,7 +4927,7 @@
   "inf-h17-das-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.934
+    "house_edge": 0.8114
   },
   "inf-h17-das-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4937,7 +4937,7 @@
   "inf-h17-das-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2869
+    "house_edge": 2.1642
   },
   "inf-h17-das-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -4947,7 +4947,7 @@
   "inf-h17-das-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8372
+    "house_edge": 0.7085
   },
   "inf-h17-das-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -4957,7 +4957,7 @@
   "inf-h17-das-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1902
+    "house_edge": 2.0612
   },
   "inf-h17-das-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -4967,7 +4967,7 @@
   "inf-h17-das-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8244
+    "house_edge": 0.702
   },
   "inf-h17-das-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -4977,7 +4977,7 @@
   "inf-h17-das-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1773
+    "house_edge": 2.0549
   },
   "inf-h17-das-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -4987,7 +4987,7 @@
   "inf-h17-das-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7232
+    "house_edge": 0.5945
   },
   "inf-h17-das-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -4997,7 +4997,7 @@
   "inf-h17-das-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0761
+    "house_edge": 1.9471
   },
   "inf-h17-das-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5007,7 +5007,7 @@
   "inf-h17-das-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8041
+    "house_edge": 0.6813
   },
   "inf-h17-das-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5017,7 +5017,7 @@
   "inf-h17-das-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1569
+    "house_edge": 2.0341
   },
   "inf-h17-das-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -5027,7 +5027,7 @@
   "inf-h17-das-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7022
+    "house_edge": 0.5739
   },
   "inf-h17-das-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -5037,7 +5037,7 @@
   "inf-h17-das-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0551
+    "house_edge": 1.9266
   },
   "inf-h17-ndas-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5047,7 +5047,7 @@
   "inf-h17-ndas-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.9438
+    "house_edge": 0.8217
   },
   "inf-h17-ndas-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5057,7 +5057,7 @@
   "inf-h17-ndas-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2966
+    "house_edge": 2.1745
   },
   "inf-h17-ndas-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -5067,7 +5067,7 @@
   "inf-h17-ndas-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8466
+    "house_edge": 0.7185
   },
   "inf-h17-ndas-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -5077,7 +5077,7 @@
   "inf-h17-ndas-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1994
+    "house_edge": 2.0712
   },
   "inf-h17-ndas-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5087,7 +5087,7 @@
   "inf-h17-ndas-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8991
+    "house_edge": 0.7766
   },
   "inf-h17-ndas-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5097,7 +5097,7 @@
   "inf-h17-ndas-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2519
+    "house_edge": 2.1294
   },
   "inf-h17-ndas-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -5107,7 +5107,7 @@
   "inf-h17-ndas-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8009
+    "house_edge": 0.6717
   },
   "inf-h17-ndas-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -5117,7 +5117,7 @@
   "inf-h17-ndas-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1537
+    "house_edge": 2.0244
   },
   "inf-h17-ndas-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5127,7 +5127,7 @@
   "inf-h17-ndas-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.89
+    "house_edge": 0.7673
   },
   "inf-h17-ndas-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5137,7 +5137,7 @@
   "inf-h17-ndas-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2428
+    "house_edge": 2.1201
   },
   "inf-h17-ndas-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -5147,7 +5147,7 @@
   "inf-h17-ndas-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7916
+    "house_edge": 0.6626
   },
   "inf-h17-ndas-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -5157,7 +5157,7 @@
   "inf-h17-ndas-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1445
+    "house_edge": 2.0153
   },
   "inf-h17-ndas-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5167,7 +5167,7 @@
   "inf-h17-ndas-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.9438
+    "house_edge": 0.8217
   },
   "inf-h17-ndas-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5177,7 +5177,7 @@
   "inf-h17-ndas-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.2966
+    "house_edge": 2.1745
   },
   "inf-h17-ndas-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -5187,7 +5187,7 @@
   "inf-h17-ndas-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8466
+    "house_edge": 0.7185
   },
   "inf-h17-ndas-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -5197,7 +5197,7 @@
   "inf-h17-ndas-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1994
+    "house_edge": 2.0712
   },
   "inf-h17-ndas-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5207,7 +5207,7 @@
   "inf-h17-ndas-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.8369
+    "house_edge": 0.7147
   },
   "inf-h17-ndas-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5217,7 +5217,7 @@
   "inf-h17-ndas-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1897
+    "house_edge": 2.0675
   },
   "inf-h17-ndas-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -5227,7 +5227,7 @@
   "inf-h17-ndas-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7349
+    "house_edge": 0.6067
   },
   "inf-h17-ndas-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -5237,7 +5237,7 @@
   "inf-h17-ndas-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0877
+    "house_edge": 1.9594
   },
   "inf-h17-ndas-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5247,7 +5247,7 @@
   "inf-h17-ndas-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.817
+    "house_edge": 0.6945
   },
   "inf-h17-ndas-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5257,7 +5257,7 @@
   "inf-h17-ndas-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.1698
+    "house_edge": 2.0473
   },
   "inf-h17-ndas-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -5267,7 +5267,7 @@
   "inf-h17-ndas-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7144
+    "house_edge": 0.5863
   },
   "inf-h17-ndas-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -5277,7 +5277,7 @@
   "inf-h17-ndas-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0672
+    "house_edge": 1.939
   },
   "inf-s17-das-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5287,7 +5287,7 @@
   "inf-s17-das-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7244
+    "house_edge": 0.5851
   },
   "inf-s17-das-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5297,7 +5297,7 @@
   "inf-s17-das-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0775
+    "house_edge": 1.9382
   },
   "inf-s17-das-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -5307,7 +5307,7 @@
   "inf-s17-das-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5703
+    "house_edge": 0.4846
   },
   "inf-s17-das-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -5317,7 +5317,7 @@
   "inf-s17-das-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9233
+    "house_edge": 1.8375
   },
   "inf-s17-das-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5327,7 +5327,7 @@
   "inf-s17-das-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6772
+    "house_edge": 0.5381
   },
   "inf-s17-das-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5337,7 +5337,7 @@
   "inf-s17-das-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0302
+    "house_edge": 1.8912
   },
   "inf-s17-das-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -5347,7 +5347,7 @@
   "inf-s17-das-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5209
+    "house_edge": 0.4343
   },
   "inf-s17-das-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -5357,7 +5357,7 @@
   "inf-s17-das-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8739
+    "house_edge": 1.7872
   },
   "inf-s17-das-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5367,7 +5367,7 @@
   "inf-s17-das-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6677
+    "house_edge": 0.5283
   },
   "inf-s17-das-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5377,7 +5377,7 @@
   "inf-s17-das-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0207
+    "house_edge": 1.8813
   },
   "inf-s17-das-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -5387,7 +5387,7 @@
   "inf-s17-das-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5112
+    "house_edge": 0.4246
   },
   "inf-s17-das-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -5397,7 +5397,7 @@
   "inf-s17-das-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8642
+    "house_edge": 1.7775
   },
   "inf-s17-das-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5407,7 +5407,7 @@
   "inf-s17-das-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7244
+    "house_edge": 0.5851
   },
   "inf-s17-das-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5417,7 +5417,7 @@
   "inf-s17-das-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0775
+    "house_edge": 1.9382
   },
   "inf-s17-das-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -5427,7 +5427,7 @@
   "inf-s17-das-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5703
+    "house_edge": 0.4846
   },
   "inf-s17-das-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -5437,7 +5437,7 @@
   "inf-s17-das-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9233
+    "house_edge": 1.8375
   },
   "inf-s17-das-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5447,7 +5447,7 @@
   "inf-s17-das-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.615
+    "house_edge": 0.476
   },
   "inf-s17-das-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5457,7 +5457,7 @@
   "inf-s17-das-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.968
+    "house_edge": 1.8291
   },
   "inf-s17-das-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -5467,7 +5467,7 @@
   "inf-s17-das-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4547
+    "house_edge": 0.3691
   },
   "inf-s17-das-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -5477,7 +5477,7 @@
   "inf-s17-das-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8078
+    "house_edge": 1.722
   },
   "inf-s17-das-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5487,7 +5487,7 @@
   "inf-s17-das-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5947
+    "house_edge": 0.4553
   },
   "inf-s17-das-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5497,7 +5497,7 @@
   "inf-s17-das-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9477
+    "house_edge": 1.8083
   },
   "inf-s17-das-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -5507,7 +5507,7 @@
   "inf-s17-das-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4337
+    "house_edge": 0.3476
   },
   "inf-s17-das-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -5517,7 +5517,7 @@
   "inf-s17-das-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7867
+    "house_edge": 1.7005
   },
   "inf-s17-ndas-nrsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5527,7 +5527,7 @@
   "inf-s17-ndas-nrsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7327
+    "house_edge": 0.5934
   },
   "inf-s17-ndas-nrsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5537,7 +5537,7 @@
   "inf-s17-ndas-nrsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0857
+    "house_edge": 1.9465
   },
   "inf-s17-ndas-nrsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -5547,7 +5547,7 @@
   "inf-s17-ndas-nrsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5782
+    "house_edge": 0.4928
   },
   "inf-s17-ndas-nrsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -5557,7 +5557,7 @@
   "inf-s17-ndas-nrsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9312
+    "house_edge": 1.8457
   },
   "inf-s17-ndas-nrsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5567,7 +5567,7 @@
   "inf-s17-ndas-nrsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6876
+    "house_edge": 0.5485
   },
   "inf-s17-ndas-nrsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5577,7 +5577,7 @@
   "inf-s17-ndas-nrsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0406
+    "house_edge": 1.9016
   },
   "inf-s17-ndas-nrsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -5587,7 +5587,7 @@
   "inf-s17-ndas-nrsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5308
+    "house_edge": 0.4448
   },
   "inf-s17-ndas-nrsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -5597,7 +5597,7 @@
   "inf-s17-ndas-nrsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8838
+    "house_edge": 1.7977
   },
   "inf-s17-ndas-nrsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5607,7 +5607,7 @@
   "inf-s17-ndas-nrsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.6785
+    "house_edge": 0.5391
   },
   "inf-s17-ndas-nrsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5617,7 +5617,7 @@
   "inf-s17-ndas-nrsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0314
+    "house_edge": 1.8922
   },
   "inf-s17-ndas-nrsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -5627,7 +5627,7 @@
   "inf-s17-ndas-nrsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5215
+    "house_edge": 0.4353
   },
   "inf-s17-ndas-nrsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -5637,7 +5637,7 @@
   "inf-s17-ndas-nrsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8745
+    "house_edge": 1.7882
   },
   "inf-s17-ndas-rsa-sp2-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5647,7 +5647,7 @@
   "inf-s17-ndas-rsa-sp2-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.7327
+    "house_edge": 0.5934
   },
   "inf-s17-ndas-rsa-sp2-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5657,7 +5657,7 @@
   "inf-s17-ndas-rsa-sp2-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 2.0857
+    "house_edge": 1.9465
   },
   "inf-s17-ndas-rsa-sp2-peek-32-nosur": {
     "ci": 0.0071,
@@ -5667,7 +5667,7 @@
   "inf-s17-ndas-rsa-sp2-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.5782
+    "house_edge": 0.4928
   },
   "inf-s17-ndas-rsa-sp2-peek-65-nosur": {
     "ci": 0.0071,
@@ -5677,7 +5677,7 @@
   "inf-s17-ndas-rsa-sp2-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.9312
+    "house_edge": 1.8457
   },
   "inf-s17-ndas-rsa-sp3-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5687,7 +5687,7 @@
   "inf-s17-ndas-rsa-sp3-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.625
+    "house_edge": 0.4861
   },
   "inf-s17-ndas-rsa-sp3-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5697,7 +5697,7 @@
   "inf-s17-ndas-rsa-sp3-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.978
+    "house_edge": 1.8392
   },
   "inf-s17-ndas-rsa-sp3-peek-32-nosur": {
     "ci": 0.0071,
@@ -5707,7 +5707,7 @@
   "inf-s17-ndas-rsa-sp3-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4646
+    "house_edge": 0.3793
   },
   "inf-s17-ndas-rsa-sp3-peek-65-nosur": {
     "ci": 0.0071,
@@ -5717,7 +5717,7 @@
   "inf-s17-ndas-rsa-sp3-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.8177
+    "house_edge": 1.7322
   },
   "inf-s17-ndas-rsa-sp4-nopeek-32-nosur": {
     "ci": 0.0071,
@@ -5727,7 +5727,7 @@
   "inf-s17-ndas-rsa-sp4-nopeek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.605
+    "house_edge": 0.4657
   },
   "inf-s17-ndas-rsa-sp4-nopeek-65-nosur": {
     "ci": 0.0071,
@@ -5737,7 +5737,7 @@
   "inf-s17-ndas-rsa-sp4-nopeek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.958
+    "house_edge": 1.8188
   },
   "inf-s17-ndas-rsa-sp4-peek-32-nosur": {
     "ci": 0.0071,
@@ -5747,7 +5747,7 @@
   "inf-s17-ndas-rsa-sp4-peek-32-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 0.4438
+    "house_edge": 0.3583
   },
   "inf-s17-ndas-rsa-sp4-peek-65-nosur": {
     "ci": 0.0071,
@@ -5757,6 +5757,6 @@
   "inf-s17-ndas-rsa-sp4-peek-65-sur": {
     "ci": 0.0071,
     "hands_billions": 1,
-    "house_edge": 1.7968
+    "house_edge": 1.7112
   }
 }

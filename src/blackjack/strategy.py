@@ -3,6 +3,15 @@
 from .config import GameConfig
 from .evaluator import EVCalculator
 
+# Threshold for using composition-weighted average (small decks).
+# For 1-2 deck games, composition effects are significant enough that
+# using a single (10, X) composition can give wrong recommendations.
+COMPOSITION_WEIGHTED_DECK_THRESHOLD = 2
+
+# Minimum hand total for composition-weighted calculation.
+# Only stiff hands (12+) have close decisions where composition matters.
+COMPOSITION_WEIGHTED_MIN_TOTAL = 12
+
 # Action codes for the strategy tables
 ACTION_STAND = "S"
 ACTION_HIT = "H"
@@ -20,6 +29,35 @@ class BasicStrategy:
     def __init__(self, config: GameConfig | None = None):
         self.config = config or GameConfig.default()
         self.ev_calc = EVCalculator(self.config)
+
+    def _evs_to_action(self, evs: dict[str, float]) -> str:
+        """Convert EV dictionary to action code.
+
+        Args:
+            evs: Dictionary mapping action names to their EVs
+
+        Returns:
+            Action code (S, H, D, Dh, Ds, P, R)
+        """
+        best_action = max(evs, key=lambda k: evs[k])
+
+        if best_action == "double":
+            stand_ev = evs.get("stand", float("-inf"))
+            hit_ev = evs.get("hit", float("-inf"))
+            return (
+                ACTION_DOUBLE_OR_STAND if stand_ev >= hit_ev else ACTION_DOUBLE_OR_HIT
+            )
+
+        if best_action == "split":
+            return ACTION_SPLIT
+
+        if best_action == "surrender":
+            return ACTION_SURRENDER
+
+        if best_action == "stand":
+            return ACTION_STAND
+
+        return ACTION_HIT
 
     def get_action(
         self,
@@ -42,58 +80,33 @@ class BasicStrategy:
         evs = self.ev_calc.get_all_evs(
             player_cards, dealer_upcard, can_split, can_double
         )
-
-        # Find best action
-        best_action = max(evs, key=lambda k: evs[k])
-
-        # Handle conditional actions
-        if best_action == "double":
-            # Check what we'd do without double
-            stand_ev = evs["stand"]
-            hit_ev = evs["hit"]
-            if stand_ev >= hit_ev:
-                return ACTION_DOUBLE_OR_STAND
-            else:
-                return ACTION_DOUBLE_OR_HIT
-
-        if best_action == "split":
-            return ACTION_SPLIT
-
-        if best_action == "surrender":
-            return ACTION_SURRENDER
-
-        if best_action == "stand":
-            return ACTION_STAND
-
-        return ACTION_HIT
+        return self._evs_to_action(evs)
 
     def get_hard_strategy(self) -> dict[tuple[int, int], str]:
         """Generate strategy for hard hands.
 
         Returns:
             Dict mapping (player_total, dealer_upcard) -> action
+
+        For small deck games (1-2 decks), uses composition-weighted average
+        EV across all possible 2-card combinations to determine optimal action.
         """
         strategy = {}
+        use_weighted = (
+            self.config.num_decks > 0
+            and self.config.num_decks <= COMPOSITION_WEIGHTED_DECK_THRESHOLD
+        )
 
         for player_total in range(5, 22):  # Hard 5 through 21
             for dealer_upcard in range(2, 12):  # 2-10, 11=Ace
                 upcard = dealer_upcard if dealer_upcard <= 10 else 11
 
-                # Create a hard hand with this total
-                if player_total <= 11:
-                    cards = (player_total,)  # Simplified representation
+                if use_weighted and player_total >= COMPOSITION_WEIGHTED_MIN_TOTAL:
+                    action = self._get_composition_weighted_action(player_total, upcard)
                 else:
-                    # Use two cards that sum to total without ace-as-11
-                    cards = (
-                        (10, player_total - 10)
-                        if player_total > 11
-                        else (player_total,)
-                    )
+                    cards = self.ev_calc._make_representative_hand(player_total)
+                    action = self.get_action(cards, upcard, can_split=False)
 
-                # For proper EV calculation, we need valid card tuples
-                cards = self._make_hard_hand(player_total)
-
-                action = self.get_action(cards, upcard, can_split=False)
                 strategy[(player_total, dealer_upcard)] = action
 
         return strategy
@@ -136,21 +149,13 @@ class BasicStrategy:
 
         return strategy
 
-    def _make_hard_hand(self, total: int) -> tuple[int, ...]:
-        """Create a hard hand tuple for a given total.
+    def _get_composition_weighted_action(self, total: int, dealer_upcard: int) -> str:
+        """Get optimal action using composition-weighted EV average.
 
-        Always returns 2 cards so doubling can be considered.
+        Delegates to EVCalculator.get_composition_weighted_evs() for the
+        weighted average calculation.
         """
-        if total <= 4:
-            return (2, 2) if total == 4 else (2, total - 2)
-        elif total <= 10:
-            # Use (total - 2, 2) to make a 2-card hand
-            return (total - 2, 2)
-        elif total == 11:
-            return (6, 5)
-        elif total <= 19:
-            return (10, total - 10)
-        elif total == 20:
-            return (10, 10)
-        else:  # 21
-            return (10, 6, 5)
+        avg_evs = self.ev_calc.get_composition_weighted_evs(
+            total, dealer_upcard, can_double=True
+        )
+        return self._evs_to_action(avg_evs)
